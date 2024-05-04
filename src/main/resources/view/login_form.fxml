@@ -5,7 +5,6 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
-<?import javafx.scene.effect.Light.Distant?>
 <?import javafx.scene.effect.Lighting?>
 <?import javafx.scene.effect.SepiaTone?>
 <?import javafx.scene.effect.Shadow?>
@@ -19,27 +18,24 @@
    <children>
       <ImageView fitHeight="611.0" fitWidth="913.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../../../../../../../Pictures/project/images7.jpeg" />
+            <Image url="@../asserts.icon/images7.jpeg" />
          </image>
       </ImageView>
-      <AnchorPane layoutX="59.0" layoutY="48.0" opacity="0.85" prefHeight="490.0" prefWidth="403.0" style="-fx-background-color: #ffffff; -fx-border-color: #f5f6fa;">
+      <AnchorPane layoutX="59.0" layoutY="44.0" opacity="0.85" prefHeight="497.0" prefWidth="403.0" style="-fx-background-color: #ffffff; -fx-background-radius: 35 0 0 35;">
          <children>
-            <Text layoutX="44.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID:" wrappingWidth="63.7294921875" AnchorPane.rightAnchor="295.2705078125">
+            <Text layoutX="44.0" layoutY="209.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID:" wrappingWidth="63.7294921875" AnchorPane.bottomAnchor="301.4449996948242" AnchorPane.rightAnchor="295.2705078125" AnchorPane.topAnchor="136.0">
                <font>
                   <Font name="Noto Serif CJK HK Bold" size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="txtUserId" cache="true" layoutX="137.0" layoutY="189.0" prefHeight="24.0" prefWidth="227.0" promptText="User Name" style="-fx-background-radius: 5;" AnchorPane.rightAnchor="39.0">
+            <TextField fx:id="txtUserId" cache="true" layoutX="136.0" layoutY="188.0" prefHeight="24.0" prefWidth="227.0" promptText="User Name" style="-fx-background-radius: 5;" AnchorPane.leftAnchor="135.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="134.0">
                <effect>
                   <SepiaTone level="0.0">
                      <input>
-                        <Lighting diffuseConstant="1.37" specularConstant="0.0" specularExponent="40.0" surfaceScale="1.74">
+                        <Lighting diffuseConstant="1.37" light="$null" specularConstant="0.0" specularExponent="40.0" surfaceScale="1.74">
                            <bumpInput>
                               <Shadow />
                            </bumpInput>
-                           <light>
-                              <Light.Distant />
-                           </light>
                         </Lighting>
                      </input>
                   </SepiaTone>
@@ -48,22 +44,19 @@
                   <Font size="15.0" />
                </font>
             </TextField>
-            <Text fill="#222020" layoutX="29.0" layoutY="270.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="86.7294921875" AnchorPane.rightAnchor="287.2705078125">
+            <Text fill="#222020" layoutX="29.0" layoutY="209.26499938964844" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="86.7294921875" AnchorPane.rightAnchor="287.2705078125" AnchorPane.topAnchor="192.0">
                <font>
                   <Font name="Noto Serif CJK HK Bold" size="15.0" />
                </font>
             </Text>
-            <PasswordField fx:id="txtPassword" layoutX="138.0" layoutY="250.0" prefHeight="24.0" prefWidth="227.0" promptText="Password" style="-fx-background-radius: 5;" AnchorPane.rightAnchor="39.0">
+            <PasswordField fx:id="txtPassword" layoutX="138.0" layoutY="250.0" prefHeight="24.0" prefWidth="227.0" promptText="Password" style="-fx-background-radius: 5;" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="190.0">
                <font>
                   <Font size="15.0" />
                </font>
                <effect>
                   <SepiaTone level="0.0">
                      <input>
-                        <Lighting diffuseConstant="1.37" specularConstant="0.0" specularExponent="40.0" surfaceScale="1.74">
-                           <light>
-                              <Light.Distant />
-                           </light>
+                        <Lighting diffuseConstant="1.37" light="$null" specularConstant="0.0" specularExponent="40.0" surfaceScale="1.74">
                            <bumpInput>
                               <Shadow />
                            </bumpInput>
@@ -72,29 +65,29 @@
                   </SepiaTone>
                </effect>
             </PasswordField>
-            <JFXButton layoutX="139.0" layoutY="302.0" onAction="#btnlogin" prefHeight="24.0" prefWidth="227.0" style="-fx-background-color: #1abc9c;" text="Login" AnchorPane.rightAnchor="39.0" />
-            <Label layoutX="142.0" layoutY="329.0" mouseTransparent="true" text="Create new user account " textFill="#515151">
+            <JFXButton layoutX="139.0" layoutY="302.0" onAction="#btnlogin" prefHeight="24.0" prefWidth="227.0" style="-fx-background-color: #1abc9c;" text="Login" AnchorPane.rightAnchor="39.0" AnchorPane.topAnchor="243.0" />
+            <Label layoutX="142.0" layoutY="329.0" mouseTransparent="true" text="Create new user account " textFill="#515151" AnchorPane.leftAnchor="137.0" AnchorPane.topAnchor="269.0">
                <font>
                   <Font name="FreeSans Bold Oblique" size="13.0" />
                </font>
             </Label>
-            <Hyperlink layoutX="307.0" layoutY="326.0" onAction="#signUp" text="Sign up" textFill="#0f72a8" underline="true">
+            <Hyperlink layoutX="307.0" layoutY="326.0" onAction="#signUp" text="Sign up" textFill="#0f72a8" underline="true" AnchorPane.leftAnchor="297.0" AnchorPane.rightAnchor="36.0" AnchorPane.topAnchor="266.0">
                <font>
                   <Font name="FreeSans Bold" size="13.0" />
                </font>
             </Hyperlink>
-            <Label layoutX="27.0" layoutY="60.0" prefHeight="67.0" prefWidth="356.0" text="COCO THUMB" textFill="#171c3ce0" underline="true" AnchorPane.leftAnchor="26.0" AnchorPane.rightAnchor="21.0">
+            <Label layoutX="18.0" layoutY="24.0" prefHeight="67.0" prefWidth="381.0" text="COCO THUMB" textFill="#000000e0" underline="true" AnchorPane.leftAnchor="18.0" AnchorPane.rightAnchor="6.0" AnchorPane.topAnchor="36.0">
                <font>
                   <Font name="Serif Bold" size="43.0" />
                </font>
             </Label>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="466.0" layoutY="53.0" prefHeight="485.0" prefWidth="386.0">
+      <AnchorPane layoutX="466.0" layoutY="53.0" prefHeight="488.0" prefWidth="391.0">
          <children>
-            <ImageView fitHeight="500.0" fitWidth="395.0" layoutX="-4.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="512.0" fitWidth="395.0" layoutX="-4.0" layoutY="-7.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../../../Pictures/project/HD-wallpaper-top-view-of-palm-trees.jpg" />
+                  <Image url="@../asserts.icon/HD-wallpaper-top-view-of-palm-trees.jpg" />
                </image>
             </ImageView>
          </children>
