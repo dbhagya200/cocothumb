@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootNodeLogin" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="484.0" prefWidth="790.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.LoginFormController">
+   <children>
+      <ImageView fx:id="rootNode" fitHeight="501.0" fitWidth="803.0" layoutX="-2.0" layoutY="-15.0" opacity="0.8" AnchorPane.bottomAnchor="-2.0" AnchorPane.leftAnchor="-2.0" AnchorPane.rightAnchor="-11.0" AnchorPane.topAnchor="-15.0">
+         <image>
+            <Image url="@../asserts.icon/coco.jpeg" />
+         </image>
+      </ImageView>
+      <Label layoutX="71.0" layoutY="23.0" prefHeight="67.0" prefWidth="501.0" text="COCO THUMB" textFill="#171c3ce0">
+         <font>
+            <Font name="Serif Bold" size="56.0" />
+         </font>
+      </Label>
+      <Text fill="#222020" layoutX="69.0" layoutY="174.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User name" wrappingWidth="86.7294921875">
+         <font>
+            <Font name="Noto Serif CJK HK" size="13.0" />
+         </font>
+      </Text>
+      <Text fill="#222020" layoutX="69.0" layoutY="222.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password" wrappingWidth="86.7294921875">
+         <font>
+            <Font name="Noto Serif CJK HK" size="13.0" />
+         </font>
+      </Text>
+      <JFXButton layoutX="156.0" layoutY="256.0" onAction="#btnlogin" prefHeight="24.0" prefWidth="227.0" style="-fx-background-color: #1abc9c;" text="Login" />
+      <TextField fx:id="txtUserId" layoutX="156.0" layoutY="156.0" prefHeight="24.0" prefWidth="227.0" promptText="User Name" />
+      <PasswordField fx:id="txtPassword" layoutX="156.0" layoutY="204.0" prefHeight="24.0" prefWidth="227.0" promptText="Password" />
+      <Label fx:id="lbldate" layoutX="652.0" layoutY="17.0" prefHeight="25.0" prefWidth="104.0" text="date:">
+         <font>
+            <Font name="System Bold" size="13.0" />
+         </font></Label>
+      <Label layoutX="159.0" layoutY="283.0" mouseTransparent="true" text="Create new user account " textFill="#515151">
+         <font>
+            <Font name="FreeSans Bold Oblique" size="13.0" />
+         </font>
+      </Label>
+      <Hyperlink layoutX="324.0" layoutY="280.0" onAction="#signUp" text="Sign up" textFill="#0f72a8" underline="true">
+         <font>
+            <Font name="FreeSans Bold" size="13.0" />
+         </font>
+      </Hyperlink>
+   </children>
+</AnchorPane>

@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootNodeUserForm" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.UserFormController">
+   <children>
+      <Text fill="#222020" layoutX="42.0" layoutY="126.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID:" wrappingWidth="86.7294921875">
+         <font>
+            <Font name="Noto Serif CJK HK" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtUserId" layoutX="129.0" layoutY="108.0" prefHeight="24.0" prefWidth="130.0" />
+      <Text fill="#222020" layoutX="42.0" layoutY="212.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Email: " wrappingWidth="86.7294921875" AnchorPane.leftAnchor="42.0">
+         <font>
+            <Font name="Noto Serif CJK HK" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtEmail" layoutX="129.0" layoutY="194.0" prefHeight="24.0" prefWidth="270.0" promptText="User Name" />
+      <Label layoutX="149.0" layoutY="24.0" prefHeight="60.0" prefWidth="219.0" text="User  Form">
+         <font>
+            <Font name="Ubuntu Medium Italic" size="40.0" />
+         </font>
+      </Label>
+      <Text fill="#222020" layoutX="42.0" layoutY="172.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User name:" wrappingWidth="86.7294921875" AnchorPane.leftAnchor="42.0">
+         <font>
+            <Font name="Noto Serif CJK HK" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtUserName" layoutX="129.0" layoutY="154.0" prefHeight="24.0" prefWidth="270.0" promptText="User Name" />
+      <Text fill="#222020" layoutX="316.0" layoutY="127.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Employee ID:" wrappingWidth="86.7294921875">
+         <font>
+            <Font name="Noto Serif CJK HK" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtEmpId" layoutX="416.0" layoutY="109.0" prefHeight="24.0" prefWidth="130.0" />
+      <Text fill="#222020" layoutX="41.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password: " wrappingWidth="86.7294921875">
+         <font>
+            <Font name="Noto Serif CJK HK" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtPassword" layoutX="128.0" layoutY="234.0" prefHeight="24.0" prefWidth="130.0" />
+      <Text fill="#222020" layoutX="282.0" layoutY="251.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Confirm Password:" wrappingWidth="130.0">
+         <font>
+            <Font name="Noto Serif CJK HK" size="13.0" />
+         </font>
+      </Text>
+      <TextField fx:id="txtConfirm" layoutX="416.0" layoutY="234.0" prefHeight="24.0" prefWidth="130.0" />
+      <Text fill="#222020" layoutX="41.0" layoutY="299.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Select your Job Role:" wrappingWidth="140.7294921875">
+         <font>
+            <Font name="Noto Serif CJK HK" size="13.0" />
+         </font>
+      </Text>
+      <JFXComboBox fx:id="cmbJobrole" layoutX="182.0" layoutY="282.0" onAction="#cmbJobAction" prefHeight="24.0" prefWidth="130.0" />
+      <JFXButton layoutX="450.0" layoutY="340.0" onAction="#btnConfirm" prefHeight="24.0" prefWidth="87.0" style="-fx-background-color: #74b9ff;" text="Confirm">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </JFXButton>
+   </children>
+</AnchorPane>

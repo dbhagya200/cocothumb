@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+
+<AnchorPane prefHeight="405.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.AddMachineController">
+   <children>
+      <Label layoutX="39.0" layoutY="18.0" prefHeight="60.0" prefWidth="417.0" text="Add New Machine  ">
+         <font>
+            <Font name="Ubuntu Medium Italic" size="40.0" />
+         </font>
+      </Label>
+      <Label layoutX="68.0" layoutY="102.0" text="Machine Id:">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <Label layoutX="375.0" layoutY="101.0" text="Brabnd Name:">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtId" layoutX="52.0" layoutY="134.0" onAction="#idSearch" prefHeight="26.0" prefWidth="256.0" />
+      <TextField fx:id="txtBrandName" layoutX="364.0" layoutY="134.0" prefHeight="26.0" prefWidth="256.0" />
+      <JFXButton buttonType="RAISED" layoutX="525.0" layoutY="33.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" />
+      <JFXButton buttonType="RAISED" layoutX="437.0" layoutY="33.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" />
+      <TableView fx:id="tblMachine" layoutX="94.0" layoutY="191.0" prefHeight="162.0" prefWidth="507.0">
+         <columns>
+            <TableColumn fx:id="colid" prefWidth="104.0" text="Machine Id" />
+            <TableColumn fx:id="colName" prefWidth="312.0" text="Brand Name" />
+            <TableColumn fx:id="colAction" prefWidth="90.0" text="Action" />
+         </columns>
+      </TableView>
+   </children>
+</AnchorPane>
