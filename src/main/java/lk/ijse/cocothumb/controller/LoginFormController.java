@@ -94,10 +94,7 @@ public class LoginFormController {
         stage.setTitle("Dashboard Form");
     }
 
-    public void initialize(){
-        setdate();
 
-    }
 
     private void setdate() {
         LocalDate localDate = LocalDate.now();
