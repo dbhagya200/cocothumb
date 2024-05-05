@@ -56,6 +56,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQtyOnHand1" layoutX="445.0" layoutY="265.0" prefHeight="26.0" prefWidth="256.0" promptText="enter unit price here" AnchorPane.leftAnchor="476.0" AnchorPane.topAnchor="265.0" />
+      <TextField fx:id="txtQtyOnHandCompany" layoutX="445.0" layoutY="265.0" prefHeight="26.0" prefWidth="256.0" promptText="enter unit price here" AnchorPane.leftAnchor="476.0" AnchorPane.topAnchor="265.0" />
    </children>
 </AnchorPane>

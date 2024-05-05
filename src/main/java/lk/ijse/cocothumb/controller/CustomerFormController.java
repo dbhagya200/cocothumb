@@ -69,7 +69,6 @@ public class CustomerFormController {
 
     @FXML
     void btnClear(ActionEvent event) {
-        txtId.setText("");
         txtNIC.setText("");
         txtName.setText("");
         txtAddress.setText("");

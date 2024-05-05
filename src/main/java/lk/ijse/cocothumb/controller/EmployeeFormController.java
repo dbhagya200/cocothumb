@@ -1,25 +1,26 @@
 package lk.ijse.cocothumb.controller;
 
+import com.jfoenix.controls.JFXComboBox;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Employee;
+import lk.ijse.cocothumb.model.Job;
+import lk.ijse.cocothumb.model.tModel.CartTm;
 import lk.ijse.cocothumb.model.tModel.CustomerTm;
 import lk.ijse.cocothumb.model.tModel.EmployeeTm;
 import lk.ijse.cocothumb.repository.CustomerRepo;
 import lk.ijse.cocothumb.repository.EmployeeRepo;
+import lk.ijse.cocothumb.repository.JobRepo;
 
 import java.io.IOException;
 import java.sql.SQLException;
@@ -64,7 +65,36 @@ public class EmployeeFormController {
 
     @FXML
     private TextField txtSalary;
+
+    @FXML
+    private JFXComboBox<String> cmbjobrole;
     private List<Employee> employeeList = new ArrayList<>();
+    private static  List<Job> jobList = new ArrayList<>();
+
+
+    @FXML
+    void cmbjobroleOnAction(ActionEvent event) throws SQLException {
+       // ObservableList<String> observableJobRoles = FXCollections.observableArrayList();
+
+       // ComboBox<String> cmbJobRoles = new ComboBox<>();
+        //cmbJobRoles.setItems(observableJobRoles);
+
+       // observableJobRoles.addAll(String.valueOf(jobList));
+
+
+        String[] jobRolesArray = {
+                "Software Engineer",
+                "Project Manager",
+                "Data Analyst"
+        };
+
+        ObservableList<String> observableJobRoles = FXCollections.observableArrayList(jobRolesArray);
+        cmbjobrole.setItems(observableJobRoles);
+
+
+
+
+    }
 
     @FXML
     void btnClear(ActionEvent event) {
@@ -90,12 +120,13 @@ public class EmployeeFormController {
     void btnSave(ActionEvent event) {
         String e_id = txtId.getText();
         String e_name = txtName.getText();
+        String e_jobrole= (String) cmbjobrole.getValue();
         String e_address = txtAddress.getText();
         String e_contact = txtContact.getText();
         double e_salary = Double.parseDouble(txtSalary.getText());
         String machine_id = AddMachineController.getMachineId();
 
-        Employee employee = new Employee(e_id, e_name, e_address, e_contact,e_salary,machine_id);
+        Employee employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact,e_salary,machine_id);
         System.out.println(employee);
         try {
             boolean isSaved = EmployeeRepo.save(employee);
@@ -112,12 +143,13 @@ public class EmployeeFormController {
     void btnUpdate(ActionEvent event) throws SQLException {
         String e_id = txtId.getText();
         String e_name = txtName.getText();
+        String e_jobrole= (String) cmbjobrole.getValue();
         String e_address = txtAddress.getText();
         String e_contact = txtContact.getText();
         double e_salary = Double.parseDouble(txtSalary.getText());
         String machine_id = AddMachineController.getMachineId();
 
-        Employee employee = new Employee(e_id, e_name, e_address, e_contact,e_salary,machine_id);
+        Employee employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact,e_salary,machine_id);
 
         boolean isUpdated = EmployeeRepo.update(employee);
         if (isUpdated) {
@@ -142,10 +174,21 @@ public class EmployeeFormController {
 
     public void initialize() {
         this.employeeList = getAllEmployees();
+        this.jobList = getAllJobs();
         setEmployeeValue();
         loadEmployeeTable();
         loadNextEmployeeId();
 
+    }
+
+    private List<Job> getAllJobs() {
+        List<Job> jobList = null;
+        try {
+            jobList = JobRepo.getAll();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return jobList;
     }
 
     private void setEmployeeValue() {
@@ -186,6 +229,7 @@ public class EmployeeFormController {
             EmployeeTm employeeTm = new EmployeeTm(
                     employee.getE_Id(),
                     employee.getE_Name(),
+                    employee.getE_jobrole(),
                     employee.getE_Address(),
                     employee.getE_Contact(),
                     employee.getE_Salary()

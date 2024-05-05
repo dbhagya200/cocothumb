@@ -5,6 +5,7 @@ import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Item;
 import lk.ijse.cocothumb.model.OrderDetails;
+import lk.ijse.cocothumb.model.SuppDetails;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -15,14 +16,15 @@ import java.util.List;
 
 public class ItemRepo {
     public static boolean save(Item item) throws SQLException {
-        String sql = "INSERT INTO item VALUES (?, ?, ?, ?, ?)";
+        String sql = "INSERT INTO item VALUES (?, ?, ?, ?, ?,?)";
         PreparedStatement pstm = dbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
         pstm.setObject(1, item.getItem_code());
         pstm.setObject(2, item.getItem_type());
         pstm.setObject(3, item.getUnit_price());
-        pstm.setObject(4, item.getStock_qty());
-        pstm.setObject(5, LoginFormController.getUserId());
+        pstm.setObject(4, item.getUnit_price_forCompany());
+        pstm.setObject(5, item.getStock_qty());
+        pstm.setObject(6, LoginFormController.getUserId());
 
         return pstm.executeUpdate() > 0;
 
@@ -42,8 +44,9 @@ public class ItemRepo {
                     resultSet.getString(1),
                     resultSet.getString(2),
                     resultSet.getDouble(3),
-                    resultSet.getString(4),
-                    resultSet.getString(5)
+                    resultSet.getDouble(4),
+                    resultSet.getString(5),
+                    resultSet.getString(6)
             );
         }
         return null;
@@ -75,26 +78,28 @@ public class ItemRepo {
             String item_code = resultSet.getString(1);
             String item_type = resultSet.getString(2);
             double unit_price = Double.parseDouble(resultSet.getString(3));
-            String stock_qty = resultSet.getString(4);
-            String user_id = resultSet.getString(5);
+            double unit_price_forCompany = Double.parseDouble(resultSet.getString(4));
+            String stock_qty = resultSet.getString(5);
+            String user_id = resultSet.getString(6);
 
 
-            Item item = new Item(item_code, item_type,unit_price, stock_qty,user_id);
+            Item item = new Item(item_code, item_type,unit_price,unit_price_forCompany, stock_qty,user_id);
             itemList.add(item);
         }
         return itemList;
     }
 
     public static boolean update(Item item) throws SQLException {
-        String sql = "UPDATE item SET item_type = ?, unit_price = ?, stock_qty = ? WHERE item_code = ?";
+        String sql = "UPDATE item SET item_type = ?, unit_price = ?,unit_price_forCompany = ?, stock_qty = ? WHERE item_code = ?";
 
         PreparedStatement pstm = dbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
         pstm.setObject(1 ,item.getItem_type());
         pstm.setObject(2 ,item.getUnit_price());
-        pstm.setObject(3 ,item.getStock_qty());
-        pstm.setObject(4 ,item.getItem_code());
+        pstm.setString(3 , String.valueOf(item.getUnit_price_forCompany()));
+        pstm.setObject(4 ,item.getStock_qty());
+        pstm.setObject(5 ,item.getItem_code());
 
 
         return pstm.executeUpdate() > 0;
@@ -144,6 +149,26 @@ public class ItemRepo {
 
         pstm.setInt(1, od.getQty());
         pstm.setString(2, od.getItem_code());
+
+        return pstm.executeUpdate() > 0;
+    }
+    public static boolean updateSQty(List<SuppDetails> odList) throws SQLException {
+        for (SuppDetails sd : odList) {
+            if(!updateSQty(sd)) {
+                return false;
+            }
+        }
+        return true;
+    }
+    private static boolean updateSQty(SuppDetails sd) throws SQLException {
+        String sql = "UPDATE item SET stock_qty = stock_qty + ? WHERE item_code = ?";
+        PreparedStatement pstm = dbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+
+
+        pstm.setInt(1, sd.getQty());
+        pstm.setString(2, sd.getItem_code());
 
         return pstm.executeUpdate() > 0;
     }

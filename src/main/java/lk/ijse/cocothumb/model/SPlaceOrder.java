@@ -4,17 +4,11 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
+import java.util.List;
 @NoArgsConstructor
 @AllArgsConstructor
 @Data
-public class Item {
-String item_code;
-String item_type;
-double unit_price;
-double unit_price_forCompany;
-String stock_qty;
-String user_id;
-
-
-
+public class SPlaceOrder {
+    private SuppOrder suppOrder;
+    private List<SuppDetails> odList;
 }

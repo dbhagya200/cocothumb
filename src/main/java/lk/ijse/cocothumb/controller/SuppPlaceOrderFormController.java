@@ -12,14 +12,18 @@ import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
-import lk.ijse.cocothumb.model.Item;
-import lk.ijse.cocothumb.model.Supplier;
-import lk.ijse.cocothumb.model.tModel.CartTm;
+import lk.ijse.cocothumb.model.*;
+import lk.ijse.cocothumb.model.tModel.CartTms;
 import lk.ijse.cocothumb.repository.ItemRepo;
+import lk.ijse.cocothumb.repository.SPlaceOrderRepo;
 import lk.ijse.cocothumb.repository.SupplierRepo;
 
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Optional;
 
 public class SuppPlaceOrderFormController {
@@ -30,10 +34,10 @@ public class SuppPlaceOrderFormController {
     private JFXButton AddToCart;
 
     @FXML
-    private JFXComboBox<?> cmbItemCode;
+    private JFXComboBox<String> cmbItemCode;
 
     @FXML
-    private JFXComboBox<?> cmbSupplierId;
+    private JFXComboBox<String> cmbSupplierId;
 
     @FXML
     private TableColumn<?, ?> colAction;
@@ -60,7 +64,7 @@ public class SuppPlaceOrderFormController {
     private AnchorPane rootNode6;
 
     @FXML
-    private TableView<?> tblSuppOrderCart;
+    private TableView<CartTms> tblSuppOrderCart;
 
     @FXML
     private TextField txtItemType;
@@ -82,11 +86,8 @@ public class SuppPlaceOrderFormController {
 
     @FXML
     private TextField txtUnitPrice;
-    
 
-
-
-    private ObservableList<CartTm> CartList = FXCollections.observableArrayList();
+    private ObservableList<CartTms> cartList = FXCollections.observableArrayList();
 
     @FXML
     void btnAddNewSupplier(ActionEvent event) throws IOException {
@@ -100,7 +101,49 @@ public class SuppPlaceOrderFormController {
 
     @FXML
     void btnAddToCart(ActionEvent event) {
+        String item_code = (String) cmbItemCode.getValue();
+        int qty = Integer.parseInt(txtQty.getText());
+        String description = txtItemType.getText();
+        double unitPriceForCompany = Double.parseDouble(txtUnitPrice.getText());
+        double amount = qty * unitPriceForCompany;
+        JFXButton btnRemove = new JFXButton("remove");
+        btnRemove.setCursor(Cursor.HAND);
 
+        btnRemove.setOnAction((e) -> {
+            ButtonType yes = new ButtonType("yes", ButtonBar.ButtonData.OK_DONE);
+            ButtonType no = new ButtonType("no", ButtonBar.ButtonData.CANCEL_CLOSE);
+
+            Optional<ButtonType> type = new Alert(Alert.AlertType.INFORMATION, "Are you sure to remove?", yes, no).showAndWait();
+
+            if(type.orElse(no) == yes) {
+                int selectedIndex = tblSuppOrderCart.getSelectionModel().getSelectedIndex();
+                cartList.remove(selectedIndex);
+
+                tblSuppOrderCart.refresh();
+                calculateNetTotal();
+            }
+        });
+        for (int i = 0; i < tblSuppOrderCart.getItems().size(); i++) {
+            if (item_code.equals(colItemCode.getCellData(i))) {
+                qty += cartList.get(i).getQty();
+                amount = unitPriceForCompany * qty;
+
+                cartList.get(i).setQty(qty);
+                cartList.get(i).setTotal(amount);
+
+                tblSuppOrderCart.refresh();
+                calculateNetTotal();
+                txtQty.setText("");
+                return;
+            }
+        }
+        CartTms cartTms = new CartTms(item_code,  qty,description, unitPriceForCompany, amount, btnRemove);
+
+        cartList.add(cartTms);
+
+        tblSuppOrderCart.setItems(cartList);
+        txtQty.setText("");
+        calculateNetTotal();
     }
 
     private void calculateNetTotal() {

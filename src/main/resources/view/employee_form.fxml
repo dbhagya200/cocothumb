@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import javafx.scene.control.ComboBox?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
@@ -60,7 +60,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <ComboBox layoutX="679.0" layoutY="140.0" prefHeight="26.0" prefWidth="256.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="156.0" />
       <JFXButton buttonType="RAISED" layoutX="780.0" layoutY="23.0" onAction="#btnClear" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fad390;" text="Clear" AnchorPane.topAnchor="23.0" />
       <JFXButton buttonType="RAISED" layoutX="956.0" layoutY="23.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.rightAnchor="112.0" />
       <JFXButton buttonType="RAISED" layoutX="868.0" layoutY="23.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" AnchorPane.topAnchor="23.0" />
@@ -70,5 +69,6 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </JFXButton>
+      <JFXComboBox fx:id="cmbjobrole" layoutX="817.0" layoutY="155.0" onAction="#cmbjobroleOnAction" prefHeight="26.0" prefWidth="256.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="156.0" />
    </children>
 </AnchorPane>

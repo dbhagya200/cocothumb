@@ -59,6 +59,9 @@ public class ItemFormController {
     private TextField txtQtyOnHand;
 
     @FXML
+    private TextField txtQtyOnHandCompany;
+
+    @FXML
     private TextField txtUnitPrice;
     private List<Item> itemList = new ArrayList<>();
 
@@ -69,6 +72,7 @@ public class ItemFormController {
         txtCode.setText("");
         txtItemType.setText("");
         txtUnitPrice.setText("");
+        txtQtyOnHandCompany.setText("");
         txtQtyOnHand.setText("");
 
     }
@@ -79,10 +83,11 @@ public class ItemFormController {
         String item_code = txtCode.getText();
         String item_type = txtItemType.getText();
         double unit_price = Double.parseDouble(txtUnitPrice.getText());
+        double unit_price_forCompany = Double.parseDouble(txtQtyOnHandCompany.getText());
         String stock_qty = txtQtyOnHand.getText();
         String user_id = LoginFormController.getUserId();
 
-        Item item = new Item(item_code, item_type, unit_price, stock_qty, user_id);
+        Item item = new Item(item_code, item_type, unit_price,unit_price_forCompany, stock_qty, user_id);
         try {
             boolean isSaved = ItemRepo.save(item);
             if (isSaved) {
@@ -100,10 +105,11 @@ public class ItemFormController {
         String item_code = txtCode.getText();
         String item_type = txtItemType.getText();
         double unit_price = Double.parseDouble(txtUnitPrice.getText());
+        double unit_price_forCompany = Double.parseDouble(txtQtyOnHandCompany.getText());
         String stock_qty = txtQtyOnHand.getText();
         String user_id = LoginFormController.getUserId();
 
-        Item item = new Item(item_code,item_type, unit_price, stock_qty, user_id);
+        Item item = new Item(item_code,item_type, unit_price,unit_price_forCompany, stock_qty, user_id);
 
         try {
             boolean isUpdated = ItemRepo.update(item);
@@ -149,6 +155,7 @@ public class ItemFormController {
                     item.getItem_code(),
                     item.getItem_type(),
                     item.getUnit_price(),
+                    item.getUnit_price_forCompany(),
                     item.getStock_qty()
             );
 
