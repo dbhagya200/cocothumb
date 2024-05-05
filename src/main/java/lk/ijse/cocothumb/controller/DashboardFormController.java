@@ -38,8 +38,13 @@ public class DashboardFormController {
     private int customerCount;
     private int employeeCount;
     private int itemCount;
+
+    private int ordersCount;
     @FXML
     private AnchorPane tabPane;
+
+    @FXML
+    private Label lblOrdersCount;
 
     @FXML
     void btncustomer(ActionEvent event) throws IOException {
@@ -104,6 +109,7 @@ public class DashboardFormController {
                 customerCount = getCustomerCount();
                 employeeCount = getEmployeeCount();
                 itemCount = getItemCount();
+                ordersCount = getOrdersCount();
 
             } catch (SQLException e) {
                 throw new RuntimeException(e);
@@ -111,9 +117,29 @@ public class DashboardFormController {
             setCustomerCount(customerCount);
             setEmployeeCount(employeeCount);
             setItemCount(itemCount);
+            setOrdersCount(ordersCount);
 
 
 
+    }
+
+    private void setOrdersCount(int ordersCount) {
+        lblOrdersCount.setText(String.valueOf(ordersCount));
+    }
+
+    private int getOrdersCount() throws SQLException {
+        String sql = "SELECT COUNT(*) AS orders_count FROM order_details";
+
+        Connection connection = dbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        int ordersCount = 0;
+        if(resultSet.next()) {
+            ordersCount = resultSet.getInt("orders_count");
+        }
+        return ordersCount;
     }
 
     private void setItemCount(int itemCount) {

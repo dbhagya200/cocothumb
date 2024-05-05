@@ -25,32 +25,15 @@ import java.util.Optional;
 public class SuppPlaceOrderFormController {
 
 
-    @FXML
-    private TextField txtItemType;
 
     @FXML
-    private TextField txtOrderId;
+    private JFXButton AddToCart;
 
     @FXML
-    private TextField txtQty;
+    private JFXComboBox<?> cmbItemCode;
 
     @FXML
-    private TextField txtStockQty;
-
-    @FXML
-    private TextField txtSuppName;
-
-    @FXML
-    private TextField txtUnitPrice;
-
-    @FXML
-    private JFXButton btnAddToCart;
-
-    @FXML
-    private JFXComboBox<String> cmbItemCode;
-
-    @FXML
-    private JFXComboBox<String> cmbSupplierId;
+    private JFXComboBox<?> cmbSupplierId;
 
     @FXML
     private TableColumn<?, ?> colAction;
@@ -71,10 +54,35 @@ public class SuppPlaceOrderFormController {
     private TableColumn<?, ?> colUnitPrice;
 
     @FXML
+    private Label lblNetTotal;
+
+    @FXML
     private AnchorPane rootNode6;
 
     @FXML
-    private TableView<?> tblOrderCart;
+    private TableView<?> tblSuppOrderCart;
+
+    @FXML
+    private TextField txtItemType;
+
+    @FXML
+    private TextField txtNetTotal;
+
+    @FXML
+    private TextField txtOrderId;
+
+    @FXML
+    private TextField txtQty;
+
+    @FXML
+    private TextField txtStockQty;
+
+    @FXML
+    private TextField txtSuppName;
+
+    @FXML
+    private TextField txtUnitPrice;
+    
 
 
 

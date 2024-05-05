@@ -26,7 +26,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="424.0" layoutY="129.0" text="Customer Id:" AnchorPane.bottomAnchor="434.0" AnchorPane.leftAnchor="424.0" AnchorPane.rightAnchor="614.0" AnchorPane.topAnchor="129.0">
+      <Label layoutX="424.0" layoutY="129.0" text="Customer Id:" AnchorPane.bottomAnchor="434.0" AnchorPane.leftAnchor="424.0" AnchorPane.rightAnchor="614.0" AnchorPane.topAnchor="131.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -36,7 +36,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="45.0" layoutY="297.0" text="Item type:" AnchorPane.rightAnchor="1014.0" AnchorPane.topAnchor="297.0">
+      <Label layoutX="45.0" layoutY="297.0" text="Item type:" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="1014.0" AnchorPane.topAnchor="297.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -51,13 +51,13 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="1020.0" layoutY="280.0" prefHeight="19.0" prefWidth="82.0" text="Buy Qty:" AnchorPane.bottomAnchor="283.0" AnchorPane.leftAnchor="1020.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="280.0">
+      <Label layoutX="1020.0" layoutY="280.0" prefHeight="19.0" prefWidth="82.0" text="Buy Qty:" AnchorPane.bottomAnchor="283.0" AnchorPane.leftAnchor="972.0" AnchorPane.rightAnchor="85.0" AnchorPane.topAnchor="280.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbItemCode" editable="true" labelFloat="true" layoutX="43.0" layoutY="233.0" onAction="#cmbItemOnAction" prefHeight="33.0" prefWidth="313.0" promptText="Item Code" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="233.0" />
-      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="985.0" layoutY="503.0" onAction="#btnAddToCartOnAction" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: #f6b93b;" text="Add to cart" textFill="WHITE" AnchorPane.bottomAnchor="33.0" AnchorPane.rightAnchor="42.0">
+      <JFXComboBox fx:id="cmbItemCode" editable="true" labelFloat="true" layoutX="43.0" layoutY="233.0" onAction="#cmbItemOnAction" prefHeight="33.0" prefWidth="298.0" promptText="Item Code" AnchorPane.leftAnchor="43.0" AnchorPane.topAnchor="233.0" />
+      <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="985.0" layoutY="503.0" onAction="#btnAddToCartOnAction" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: #f6b93b;" text="Add to cart" textFill="WHITE" AnchorPane.bottomAnchor="33.0" AnchorPane.rightAnchor="42.0" AnchorPane.topAnchor="516.0">
          <graphic>
             <ImageView fitHeight="16.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -69,7 +69,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="1018.0" layoutY="23.0" onAction="#btnPlaceOrder" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: #16a085;" text="Place Order" textFill="WHITE" AnchorPane.rightAnchor="45.0">
+      <JFXButton buttonType="RAISED" layoutX="1018.0" layoutY="23.0" onAction="#btnPlaceOrder" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: #16a085;" text="Place Order" textFill="WHITE" AnchorPane.bottomAnchor="525.0" AnchorPane.leftAnchor="982.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="23.0">
          <graphic>
             <ImageView fitHeight="28.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
                <image>
@@ -82,7 +82,7 @@
          </cursor>
       </JFXButton>
       <DatePicker fx:id="lblOrderDate" layoutX="695.0" layoutY="232.0" prefHeight="25.0" prefWidth="224.0" promptText="date" AnchorPane.bottomAnchor="325.0" AnchorPane.leftAnchor="695.0" AnchorPane.rightAnchor="228.0" AnchorPane.topAnchor="232.0" />
-      <TextField fx:id="txtQty" layoutX="1023.0" layoutY="313.0" onAction="#txtQtyOnAction" prefHeight="33.0" prefWidth="66.0" AnchorPane.bottomAnchor="236.0" AnchorPane.rightAnchor="58.0">
+      <TextField fx:id="txtQty" layoutX="1023.0" layoutY="313.0" onAction="#txtQtyOnAction" prefHeight="33.0" prefWidth="66.0" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="975.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="313.0">
          <font>
             <Font name="System Italic" size="15.0" />
          </font></TextField>
@@ -90,8 +90,8 @@
       <TextField fx:id="txtCustId" layoutX="419.0" layoutY="160.0" prefHeight="25.0" prefWidth="299.0" AnchorPane.rightAnchor="426.0" AnchorPane.topAnchor="160.0" />
       <TextField fx:id="txtCustName" layoutX="780.0" layoutY="160.0" prefHeight="25.0" prefWidth="270.0" AnchorPane.rightAnchor="45.0" />
       <TextField fx:id="txtItemType" layoutX="43.0" layoutY="328.0" prefHeight="25.0" prefWidth="202.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="902.0" AnchorPane.topAnchor="328.0" />
-      <TextField fx:id="txtUnitPrice" layoutX="399.0" layoutY="324.0" prefHeight="25.0" prefWidth="140.0" AnchorPane.bottomAnchor="233.0" AnchorPane.rightAnchor="608.0" AnchorPane.topAnchor="324.0" />
-      <TextField fx:id="txtStockQty" layoutX="727.0" layoutY="321.0" prefHeight="25.0" prefWidth="140.0" AnchorPane.bottomAnchor="233.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="321.0" />
+      <TextField fx:id="txtUnitPrice" layoutX="399.0" layoutY="324.0" prefHeight="25.0" prefWidth="140.0" AnchorPane.bottomAnchor="233.0" AnchorPane.leftAnchor="399.0" AnchorPane.rightAnchor="608.0" AnchorPane.topAnchor="324.0" />
+      <TextField fx:id="txtStockQty" layoutX="727.0" layoutY="321.0" prefHeight="25.0" prefWidth="140.0" AnchorPane.bottomAnchor="233.0" AnchorPane.leftAnchor="727.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="321.0" />
       <JFXButton buttonType="RAISED" layoutX="862.0" layoutY="505.0" onAction="#btnShowTable" prefHeight="34.0" prefWidth="100.0" style="-fx-background-radius: 10 10 10 10; -fx-background-color: #41B06E;" text="Show Cart" textFill="#ecf1f5" AnchorPane.bottomAnchor="33.0" AnchorPane.rightAnchor="175.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />
@@ -102,7 +102,7 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TableView fx:id="tblOrderCart" layoutX="180.0" layoutY="371.0" prefHeight="131.0" prefWidth="788.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="179.0">
+      <TableView fx:id="tblOrderCart" layoutX="180.0" layoutY="371.0" prefHeight="131.0" prefWidth="788.0" AnchorPane.bottomAnchor="80.0" AnchorPane.leftAnchor="180.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="371.0">
          <columns>
             <TableColumn fx:id="colItemCode" prefWidth="112.0" text="Code" />
             <TableColumn fx:id="colDescription" prefWidth="189.0" text="Description" />
@@ -112,7 +112,7 @@
             <TableColumn fx:id="colAction" minWidth="0.0" prefWidth="114.0" text="Action" />
          </columns>
       </TableView>
-      <Label layoutX="236.0" layoutY="526.0" text="Net Total:" AnchorPane.bottomAnchor="37.0">
+      <Label layoutX="236.0" layoutY="526.0" text="Net Total:" AnchorPane.bottomAnchor="37.0" AnchorPane.leftAnchor="236.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -122,6 +122,6 @@
             <Font name="System Bold" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtNetTotal" layoutX="340.0" layoutY="511.0" prefHeight="24.0" prefWidth="82.0" AnchorPane.bottomAnchor="33.0" />
+      <TextField fx:id="txtNetTotal" layoutX="340.0" layoutY="511.0" prefHeight="24.0" prefWidth="82.0" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="340.0" />
    </children>
 </AnchorPane>

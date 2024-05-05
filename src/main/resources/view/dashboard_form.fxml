@@ -61,7 +61,7 @@
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font></Label>
-            <JFXButton buttonType="RAISED" layoutX="962.0" layoutY="25.0" onAction="#btnHome" prefHeight="33.0" prefWidth="66.0" style="-fx-background-color: #95a5a6; -fx-background-radius: 10 0 10 0;" text="Home">
+            <JFXButton buttonType="RAISED" layoutX="968.0" layoutY="25.0" onAction="#btnHome" prefHeight="33.0" prefWidth="66.0" style="-fx-background-color: #95a5a6; -fx-background-radius: 10 0 10 0;" text="Home">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>

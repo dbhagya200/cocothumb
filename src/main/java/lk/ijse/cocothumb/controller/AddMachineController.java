@@ -6,9 +6,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.layout.AnchorPane;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Machine;
 import lk.ijse.cocothumb.repository.CustomerRepo;
+import lk.ijse.cocothumb.repository.EmployeeRepo;
 import lk.ijse.cocothumb.repository.MachineRepo;
 
 import java.sql.SQLException;
@@ -24,6 +26,9 @@ public class AddMachineController {
 
     @FXML
     private TableColumn<?, ?> colid;
+
+    @FXML
+    private AnchorPane rootNodeMachine;
 
     @FXML
     private TableView<?> tblMachine;
@@ -86,5 +91,29 @@ public class AddMachineController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
+    public void initialize() {
+        loadNextMachineId();
+    }
+    private void loadNextMachineId() {
+        try {
+            String currentId = MachineRepo.currentId();
+            String nextId = nextId(currentId);
+
+            txtId.setText(nextId);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private String nextId(String currentId) {
+        if (currentId != null) {
+            String[] split = currentId.split("m00");
+            int id = Integer.parseInt(split[1]);
+            return "m00" + ++id;
+
+        }
+        return "m001";
     }
 }

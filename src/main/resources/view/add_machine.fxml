@@ -8,10 +8,9 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="405.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.AddMachineController">
+<AnchorPane fx:id="rootNodeMachine" prefHeight="405.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.AddMachineController">
    <children>
-      <Label layoutX="39.0" layoutY="18.0" prefHeight="60.0" prefWidth="417.0" text="Add New Machine  ">
+      <Label layoutX="39.0" layoutY="18.0" prefHeight="60.0" prefWidth="349.0" text="Add New Machine  " AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="8.0">
          <font>
             <Font name="Ubuntu Medium Italic" size="40.0" />
          </font>

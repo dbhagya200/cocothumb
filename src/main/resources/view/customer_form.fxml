@@ -20,27 +20,27 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="135.0" layoutY="235.0" text=" Name:" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="750.0">
+      <Label layoutX="135.0" layoutY="235.0" text=" Name:" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="750.0" AnchorPane.topAnchor="234.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
       <TextField fx:id="txtId" layoutX="83.0" layoutY="156.0" onAction="#idSearch" prefHeight="26.0" prefWidth="256.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="808.0" AnchorPane.topAnchor="156.0" />
       <TextField fx:id="txtName" layoutX="90.0" layoutY="265.0" prefHeight="26.0" prefWidth="256.0" promptText="enter name here" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="808.0" AnchorPane.topAnchor="265.0" />
-      <Label layoutX="483.0" layoutY="234.0" text=" Address:">
+      <Label layoutX="483.0" layoutY="234.0" text=" Address:" AnchorPane.leftAnchor="483.0" AnchorPane.rightAnchor="584.0" AnchorPane.topAnchor="234.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="830.0" layoutY="124.0" text="Contact Number:" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="124.0">
+      <Label layoutX="830.0" layoutY="124.0" text="Contact Number:" AnchorPane.leftAnchor="823.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="124.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtAddress" layoutX="476.0" layoutY="268.0" prefHeight="26.0" prefWidth="256.0" promptText="enter address here" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="268.0" />
+      <TextField fx:id="txtAddress" layoutX="476.0" layoutY="268.0" prefHeight="26.0" prefWidth="256.0" promptText="enter address here" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="476.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="265.0" />
       <TextField fx:id="txtContact" layoutX="714.0" layoutY="156.0" prefHeight="26.0" prefWidth="256.0" promptText="enter valid contact " AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="156.0" />
       <JFXButton buttonType="RAISED" layoutX="780.0" layoutY="23.0" onAction="#btnClear" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fad390;" text="Clear" AnchorPane.topAnchor="23.0" />
-      <JFXButton buttonType="RAISED" layoutX="956.0" layoutY="23.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.rightAnchor="118.0" />
+      <JFXButton buttonType="RAISED" layoutX="955.0" layoutY="23.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.rightAnchor="112.0" />
       <JFXButton buttonType="RAISED" layoutX="868.0" layoutY="23.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" />
       <TableView fx:id="tblCustomer" layoutX="45.0" layoutY="353.0" prefHeight="164.0" prefWidth="1057.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="353.0">
          <columns>
@@ -54,7 +54,7 @@
          </columns>
       </TableView>
       <TextField fx:id="txtNIC" layoutX="476.0" layoutY="156.0" onAction="#NICSearch" prefHeight="26.0" prefWidth="256.0" promptText="enter NIC" AnchorPane.leftAnchor="476.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="156.0" />
-      <Label layoutX="486.0" layoutY="123.0" prefHeight="18.0" prefWidth="122.0" text="Customer NIC:" AnchorPane.rightAnchor="546.0" AnchorPane.topAnchor="123.0">
+      <Label layoutX="486.0" layoutY="123.0" prefHeight="18.0" prefWidth="122.0" text="Customer NIC:" AnchorPane.leftAnchor="479.0" AnchorPane.rightAnchor="546.0" AnchorPane.topAnchor="123.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>

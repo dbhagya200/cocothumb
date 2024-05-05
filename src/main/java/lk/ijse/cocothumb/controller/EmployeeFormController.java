@@ -12,6 +12,7 @@ import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Employee;
@@ -67,12 +68,22 @@ public class EmployeeFormController {
 
     @FXML
     void btnClear(ActionEvent event) {
-        txtId.setText("");
         txtName.setText("");
         txtAddress.setText("");
         txtContact.setText("");
         txtSalary.setText("");
 
+    }
+
+    @FXML
+    void btnAddNewMachine(ActionEvent event) throws IOException {
+        AnchorPane rootNodeMachine = FXMLLoader.load(getClass().getResource("/view/add_machine.fxml"));
+
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setTitle("Popup Window");
+        popupStage.setScene(new Scene(rootNodeMachine));
+        popupStage.showAndWait();
     }
 
     @FXML
@@ -89,7 +100,7 @@ public class EmployeeFormController {
         try {
             boolean isSaved = EmployeeRepo.save(employee);
             if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "employee saved!").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "machine saved!").show();
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();

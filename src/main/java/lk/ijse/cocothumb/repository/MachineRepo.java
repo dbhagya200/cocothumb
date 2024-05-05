@@ -5,6 +5,7 @@ import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Machine;
 
+import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -54,5 +55,18 @@ public class MachineRepo {
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
+    }
+
+    public static String currentId() throws SQLException {
+        String sql = "SELECT machine_id FROM machine ORDER BY machine_id desc LIMIT 1";
+
+        Connection connection = dbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        ResultSet resultSet = pstm.executeQuery();
+
+        if(resultSet.next()) {
+            return resultSet.getString(1);
+        }
+        return null;
     }
 }

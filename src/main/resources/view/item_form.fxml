@@ -15,7 +15,7 @@
             <Font name="Ubuntu Medium Italic" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="85.0" layoutY="240.0" text="Unit Price:" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="846.0" AnchorPane.topAnchor="240.0">
+      <Label layoutX="85.0" layoutY="240.0" text="Unit Price:" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="846.0" AnchorPane.topAnchor="234.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -27,13 +27,13 @@
       </Label>
       <TextField fx:id="txtCode" layoutX="165.0" layoutY="142.0" onAction="#SearchCode" prefHeight="26.0" prefWidth="256.0" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="156.0" />
       <TextField fx:id="txtUnitPrice" layoutX="167.0" layoutY="249.0" prefHeight="26.0" prefWidth="256.0" promptText="enter unit price here" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="265.0" />
-      <Label layoutX="511.0" layoutY="240.0" text="Qty On Hand:" AnchorPane.rightAnchor="529.0" AnchorPane.topAnchor="240.0">
+      <Label layoutX="779.0" layoutY="237.0" text="Qty On Hand:" AnchorPane.leftAnchor="823.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="234.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQtyOnHand" layoutX="476.0" layoutY="265.0" prefHeight="26.0" prefWidth="256.0" promptText="enter qty on hand here" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="265.0" />
-      <Label layoutX="511.0" layoutY="128.0" text="Item Type:" AnchorPane.rightAnchor="552.0" AnchorPane.topAnchor="128.0">
+      <TextField fx:id="txtQtyOnHand" layoutX="751.0" layoutY="262.0" prefHeight="26.0" prefWidth="256.0" promptText="enter qty on hand here" AnchorPane.bottomAnchor="291.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="265.0" />
+      <Label layoutX="511.0" layoutY="128.0" text="Item Type:" AnchorPane.leftAnchor="479.0" AnchorPane.rightAnchor="552.0" AnchorPane.topAnchor="128.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -48,8 +48,14 @@
          </columns>
       </TableView>
       <JFXButton buttonType="RAISED" layoutX="780.0" layoutY="23.0" onAction="#btnClear" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fad390;" text="Clear" AnchorPane.topAnchor="23.0" />
-      <JFXButton buttonType="RAISED" layoutX="956.0" layoutY="23.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.rightAnchor="118.0" AnchorPane.topAnchor="23.0" />
+      <JFXButton buttonType="RAISED" layoutX="956.0" layoutY="23.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="23.0" />
       <JFXButton buttonType="RAISED" layoutX="868.0" layoutY="23.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" AnchorPane.topAnchor="23.0" />
       <JFXButton buttonType="RAISED" layoutX="1042.0" layoutY="23.0" onAction="#btnDelete" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fab1a0;" text="Delete" />
+      <Label layoutX="473.0" layoutY="240.0" prefHeight="19.0" prefWidth="212.0" text="Unit Price for Company:" AnchorPane.leftAnchor="483.0" AnchorPane.rightAnchor="452.0" AnchorPane.topAnchor="234.0">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtQtyOnHand1" layoutX="445.0" layoutY="265.0" prefHeight="26.0" prefWidth="256.0" promptText="enter unit price here" AnchorPane.leftAnchor="476.0" AnchorPane.topAnchor="265.0" />
    </children>
 </AnchorPane>
