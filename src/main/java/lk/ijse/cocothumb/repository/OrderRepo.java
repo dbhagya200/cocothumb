@@ -22,6 +22,7 @@ public class OrderRepo {
 
 
     public static boolean save(Orders orders) throws SQLException {
+        System.out.println(orders);
         String sql = "INSERT INTO orders VALUES(?, ?, ?,?,?)";
         PreparedStatement pstm = dbConnection.getInstance().getConnection()
                 .prepareStatement(sql);

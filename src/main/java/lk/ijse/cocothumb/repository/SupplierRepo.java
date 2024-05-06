@@ -104,5 +104,19 @@ public class SupplierRepo {
         }
         return suppliersList;
     }
+
+    public static List<String> getIds() throws SQLException {
+        String sql = "SELECT supp_id FROM supplier";
+
+        Connection connection = dbConnection.getInstance().getConnection();
+        ResultSet resultSet = connection.prepareStatement(sql).executeQuery();
+
+        List<String> idList = new ArrayList<>();
+
+        while (resultSet.next()) {
+            idList.add(resultSet.getString(1));
+        }
+        return idList;
+    }
 }
 

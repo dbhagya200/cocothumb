@@ -14,10 +14,13 @@ public class PlaceOrderRepo {
 
         try {
             boolean isOrderSaved = OrderRepo.save(PO.getOrders());
+            System.out.println("1");
             if (isOrderSaved) {
                 boolean isOrderDetailSaved = OrderDetailsRepo.save(PO.getOdList());
+                System.out.println("2");
                 if (isOrderDetailSaved) {
                     boolean isItemQtyUpdate = ItemRepo.updateQty(PO.getOdList());
+                    System.out.println("3");
                     if (isItemQtyUpdate) {
                         connection.commit();
                         return true;
@@ -32,5 +35,6 @@ public class PlaceOrderRepo {
         } finally {
             connection.setAutoCommit(true);
         }
+
     }
 }

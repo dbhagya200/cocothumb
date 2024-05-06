@@ -10,13 +10,12 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.cocothumb.model.*;
 import lk.ijse.cocothumb.model.tModel.CartTms;
-import lk.ijse.cocothumb.repository.ItemRepo;
-import lk.ijse.cocothumb.repository.SPlaceOrderRepo;
-import lk.ijse.cocothumb.repository.SupplierRepo;
+import lk.ijse.cocothumb.repository.*;
 
 import java.io.IOException;
 import java.sql.Date;
@@ -147,7 +146,11 @@ public class SuppPlaceOrderFormController {
     }
 
     private void calculateNetTotal() {
-
+        double netTotal = 0;
+        for (int i = 0; i < tblSuppOrderCart.getItems().size(); i++) {
+            netTotal += (double) colTotal.getCellData(i);
+        }
+        txtNetTotal.setText(String.valueOf(netTotal));
     }
 
     @FXML
@@ -162,7 +165,40 @@ public class SuppPlaceOrderFormController {
 
     @FXML
     void btnPlaceOrder(ActionEvent event) {
+        String order_id = txtOrderId.getText();
+        String supp_id = cmbSupplierId.getValue();
+        String user_id = LoginFormController.getUserId();
+        Date date = Date.valueOf(LocalDate.now());
 
+        var suppOrder = new SuppOrder(order_id, supp_id, user_id, date);
+
+        List<SuppDetails> sodList = new ArrayList<>();
+        for (int i=0;i<tblSuppOrderCart.getItems().size();i++) {
+            CartTms tms = cartList.get(i);
+
+            SuppDetails SD = new SuppDetails(
+                    tms.getItem_code(),
+                    supp_id,
+                    order_id,
+                    tms.getQty(),
+                    tms.getDescription(),
+                    tms.getUnit_price_forCompany(),
+                    tms.getAmount()
+            );
+            sodList.add(SD);
+        }
+        SPlaceOrder SPO = new SPlaceOrder(suppOrder, sodList);
+
+        try {
+            boolean isPlaced = SPlaceOrderRepo.splaceOrder(SPO);
+            if(isPlaced) {
+                new Alert(Alert.AlertType.CONFIRMATION, "supplier order placed!").show();
+            } else {
+                new Alert(Alert.AlertType.WARNING, "supplier order not placed!").show();
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 
     @FXML
@@ -194,16 +230,71 @@ public class SuppPlaceOrderFormController {
         }
     }
 
-    public void btnAddNewItem(ActionEvent actionEvent) throws IOException {
-        AnchorPane rootNode7 = FXMLLoader.load(getClass().getResource("/view/item_form.fxml"));
-        Stage stage = (Stage) rootNode6.getScene().getWindow();
-        rootNode6.getChildren().clear();
-        rootNode6.getChildren().add(rootNode7);
-        stage.setTitle("Add Item Form");
-        stage.centerOnScreen();
+    public void initialize() {
+        setCellValueFactory();
+        loadNextOrderId();
+        getSupplierId();
+        getItemCodes();
     }
 
-    public void btnShowTable(ActionEvent actionEvent) {
+    private void getItemCodes() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+        try {
+            List<String> codeList = ItemRepo.getCodes();
+            for (String code : codeList) {
+                obList.add(code);
+            }
 
+            cmbItemCode.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
+
+    private void getSupplierId() {
+        ObservableList<String> obList = FXCollections.observableArrayList();
+
+        try {
+            List<String> idList = SupplierRepo.getIds();
+
+            obList.addAll(idList);
+            cmbSupplierId.setItems(obList);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private void loadNextOrderId() {
+        try {
+            String currentId = SuppOrderRepo.currentId();
+            String nextId = nextId(currentId);
+
+            txtOrderId.setText(nextId);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private String nextId(String currentId) {
+        if (currentId != null) {
+            String[] split = currentId.split("SO");
+            int id = Integer.parseInt(split[1]);
+            return "SO" + ++id;
+
+        }
+        return "SO1";
+    }
+
+    private void setCellValueFactory() {
+        colItemCode.setCellValueFactory(new PropertyValueFactory<>("item_code"));
+        colDescription.setCellValueFactory(new PropertyValueFactory<>("description"));
+        colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
+        colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unit_price_forCompany"));
+        colTotal.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        colAction.setCellValueFactory(new PropertyValueFactory<>("btnRemove"));
+    }
+
+
 }

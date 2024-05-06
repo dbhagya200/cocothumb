@@ -10,5 +10,5 @@ import java.util.List;
 @Data
 public class SPlaceOrder {
     private SuppOrder suppOrder;
-    private List<SuppDetails> odList;
+    private List<SuppDetails> sodList;
 }

@@ -13,6 +13,6 @@ public class SuppOrder {
     private String order_id;
     private String supp_id;
     private String user_id;
-    private Date order_date;
+    private Date date;
 
 }

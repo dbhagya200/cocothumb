@@ -17,12 +17,12 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCustId" layoutX="78.0" layoutY="121.0" prefHeight="25.0" prefWidth="299.0" />
+      <TextField fx:id="txtCustId" layoutX="78.0" layoutY="121.0" prefHeight="25.0" prefWidth="299.0" style="-fx-background-radius: 10 10 10 10;" />
       <Label layoutX="445.0" layoutY="89.0" text="Customer Id:">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCustId1" layoutX="440.0" layoutY="120.0" prefHeight="25.0" prefWidth="299.0" />
+      <TextField fx:id="txtCustId1" layoutX="440.0" layoutY="120.0" prefHeight="25.0" prefWidth="299.0" style="-fx-background-radius: 10 10 10 10;" />
    </children>
 </AnchorPane>

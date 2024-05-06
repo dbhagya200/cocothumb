@@ -92,26 +92,21 @@
             <TableColumn fx:id="colAction" prefWidth="129.6666259765625" text="Action" />
          </columns>
       </TableView>
-      <TextField fx:id="txtQty" layoutX="975.0" layoutY="313.0" prefHeight="33.0" prefWidth="66.0" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="975.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="313.0">
+      <TextField fx:id="txtQty" layoutX="975.0" layoutY="313.0" prefHeight="33.0" prefWidth="66.0" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="236.0" AnchorPane.leftAnchor="975.0" AnchorPane.rightAnchor="106.0" AnchorPane.topAnchor="313.0">
          <font>
             <Font size="15.0" />
          </font></TextField>
       <Label fx:id="lblNetTotal" layoutX="143.0" layoutY="524.0" prefHeight="16.0" prefWidth="0.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="143.0" />
-      <TextField fx:id="txtOrderId" layoutX="143.0" layoutY="92.0" prefHeight="24.0" prefWidth="82.0" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="92.0" />
-      <TextField fx:id="txtItemType" layoutX="53.0" layoutY="338.0" prefHeight="25.0" prefWidth="202.0" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="902.0" AnchorPane.topAnchor="328.0" />
-      <TextField fx:id="txtUnitPrice" layoutX="432.0" layoutY="334.0" prefHeight="25.0" prefWidth="140.0" AnchorPane.leftAnchor="399.0" AnchorPane.rightAnchor="608.0" AnchorPane.topAnchor="324.0" />
-      <TextField fx:id="txtSuppName" layoutX="514.0" layoutY="170.0" prefHeight="25.0" prefWidth="299.0" AnchorPane.leftAnchor="422.0" AnchorPane.rightAnchor="426.0" AnchorPane.topAnchor="160.0" />
-      <TextField fx:id="txtStockQty" layoutX="799.0" layoutY="333.0" prefHeight="25.0" prefWidth="140.0" AnchorPane.bottomAnchor="233.0" AnchorPane.leftAnchor="727.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="321.0" />
+      <TextField fx:id="txtOrderId" layoutX="143.0" layoutY="92.0" prefHeight="24.0" prefWidth="82.0" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="143.0" AnchorPane.topAnchor="92.0" />
+      <TextField fx:id="txtItemType" layoutX="53.0" layoutY="338.0" prefHeight="25.0" prefWidth="202.0" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="43.0" AnchorPane.rightAnchor="902.0" AnchorPane.topAnchor="328.0" />
+      <TextField fx:id="txtUnitPrice" layoutX="432.0" layoutY="334.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="399.0" AnchorPane.rightAnchor="608.0" AnchorPane.topAnchor="324.0" />
+      <TextField fx:id="txtSuppName" layoutX="514.0" layoutY="170.0" prefHeight="25.0" prefWidth="299.0" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="422.0" AnchorPane.rightAnchor="426.0" AnchorPane.topAnchor="160.0" />
+      <TextField fx:id="txtStockQty" layoutX="799.0" layoutY="333.0" prefHeight="25.0" prefWidth="140.0" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="233.0" AnchorPane.leftAnchor="727.0" AnchorPane.rightAnchor="280.0" AnchorPane.topAnchor="321.0" />
       <Label layoutX="430.0" layoutY="231.0" text="Select Order Date: " AnchorPane.bottomAnchor="327.0" AnchorPane.leftAnchor="518.0" AnchorPane.rightAnchor="466.0" AnchorPane.topAnchor="236.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="872.0" layoutY="515.0" onAction="#btnShowTable" prefHeight="34.0" prefWidth="100.0" style="-fx-background-radius: 10 10 10 10; -fx-background-color: #41B06E;" text="Show Cart" textFill="#ecf1f5" AnchorPane.bottomAnchor="33.0" AnchorPane.rightAnchor="175.0">
-         <font>
-            <Font name="System Bold Italic" size="13.0" />
-         </font>
-      </JFXButton>
-      <TextField fx:id="txtNetTotal" layoutX="350.0" layoutY="521.0" prefHeight="24.0" prefWidth="82.0" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="340.0" />
+      <TextField fx:id="txtNetTotal" layoutX="350.0" layoutY="521.0" prefHeight="24.0" prefWidth="82.0" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="33.0" AnchorPane.leftAnchor="340.0" />
    </children>
 </AnchorPane>
