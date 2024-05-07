@@ -67,31 +67,16 @@ public class EmployeeFormController {
     private TextField txtSalary;
 
     @FXML
-    private JFXComboBox<String> cmbjobrole;
+    private JFXComboBox<JobRole> cmbjobrole;
     private List<Employee> employeeList = new ArrayList<>();
-    private static  List<Job> jobList = new ArrayList<>();
+    private static String e_id;
 
+    public static String getE_id() {
+        return e_id;
+    }
 
     @FXML
     void cmbjobroleOnAction(ActionEvent event) throws SQLException {
-       // ObservableList<String> observableJobRoles = FXCollections.observableArrayList();
-
-       // ComboBox<String> cmbJobRoles = new ComboBox<>();
-        //cmbJobRoles.setItems(observableJobRoles);
-
-       // observableJobRoles.addAll(String.valueOf(jobList));
-
-
-        String[] jobRolesArray = {
-                "Software Engineer",
-                "Project Manager",
-                "Data Analyst"
-        };
-
-        ObservableList<String> observableJobRoles = FXCollections.observableArrayList(jobRolesArray);
-        cmbjobrole.setItems(observableJobRoles);
-
-
 
 
     }
@@ -117,10 +102,10 @@ public class EmployeeFormController {
     }
 
     @FXML
-    void btnSave(ActionEvent event) {
-        String e_id = txtId.getText();
+    void btnSave(ActionEvent event) throws IOException {
+         e_id = txtId.getText();
         String e_name = txtName.getText();
-        String e_jobrole= (String) cmbjobrole.getValue();
+        String e_jobrole= cmbjobrole.getValue().toString();
         String e_address = txtAddress.getText();
         String e_contact = txtContact.getText();
         double e_salary = Double.parseDouble(txtSalary.getText());
@@ -137,13 +122,14 @@ public class EmployeeFormController {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
 
         }
+        btnClear(event);
     }
 
     @FXML
     void btnUpdate(ActionEvent event) throws SQLException {
         String e_id = txtId.getText();
         String e_name = txtName.getText();
-        String e_jobrole= (String) cmbjobrole.getValue();
+        String e_jobrole= cmbjobrole.getValue().toString();
         String e_address = txtAddress.getText();
         String e_contact = txtContact.getText();
         double e_salary = Double.parseDouble(txtSalary.getText());
@@ -174,22 +160,14 @@ public class EmployeeFormController {
 
     public void initialize() {
         this.employeeList = getAllEmployees();
-        this.jobList = getAllJobs();
         setEmployeeValue();
         loadEmployeeTable();
         loadNextEmployeeId();
+        comboJob();
 
     }
 
-    private List<Job> getAllJobs() {
-        List<Job> jobList = null;
-        try {
-            jobList = JobRepo.getAll();
-        } catch (SQLException e) {
-            throw new RuntimeException(e);
-        }
-        return jobList;
-    }
+
 
     private void setEmployeeValue() {
         colid.setCellValueFactory(new PropertyValueFactory<>("e_id"));
@@ -244,6 +222,15 @@ public class EmployeeFormController {
 
     }
 
+    public void comboJob(){
+        cmbjobrole.getItems().addAll(JobRole.values());
+
+        cmbjobrole.setOnAction(event -> {
+            JobRole selected = cmbjobrole.getSelectionModel().getSelectedItem();
+            System.out.println("Selected item: " + selected);
+        });
+
+    }
 
 
     private List<Employee> getAllEmployees() {

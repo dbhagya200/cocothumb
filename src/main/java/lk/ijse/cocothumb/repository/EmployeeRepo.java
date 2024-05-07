@@ -1,6 +1,7 @@
 package lk.ijse.cocothumb.repository;
 
 import lk.ijse.cocothumb.controller.AddMachineController;
+import lk.ijse.cocothumb.controller.UserFormController;
 import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.Employee;
 
@@ -15,15 +16,16 @@ public class EmployeeRepo {
 
     public static boolean save(Employee employee) throws SQLException {
 
-        String sql = "INSERT INTO employee VALUES (?, ?, ?, ?, ?,?)";
+        String sql = "INSERT INTO employee VALUES (?, ?, ?, ?, ?,?,?)";
         PreparedStatement pstm = dbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
         pstm.setObject(1, employee.getE_Id());
         pstm.setObject(2, employee.getE_Name());
-        pstm.setObject(3, employee.getE_Address());
-        pstm.setObject(4, employee.getE_Contact());
-        pstm.setObject(5, employee.getE_Salary());
-        pstm.setObject(6, AddMachineController.getMachineId());
+        pstm.setObject(3, employee.getE_jobrole());
+        pstm.setObject(4, employee.getE_Address());
+        pstm.setObject(5, employee.getE_Contact());
+        pstm.setObject(6, employee.getE_Salary());
+        pstm.setObject(7, AddMachineController.getMachineId());
 
 
         return pstm.executeUpdate() > 0;

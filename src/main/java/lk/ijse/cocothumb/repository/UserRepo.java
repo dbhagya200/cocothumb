@@ -1,5 +1,6 @@
 package lk.ijse.cocothumb.repository;
 
+import lk.ijse.cocothumb.controller.EmployeeFormController;
 import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.User;
@@ -22,7 +23,7 @@ public class UserRepo {
         pstm.setObject(3, user.getU_password());
         pstm.setObject(4, user.getU_role());
         pstm.setObject(5, user.getU_email());
-        pstm.setObject(6, "e001");
+        pstm.setObject(6, EmployeeFormController.getE_id());
 
 
         return pstm.executeUpdate() > 0;
