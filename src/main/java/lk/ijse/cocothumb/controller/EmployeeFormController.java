@@ -96,7 +96,7 @@ public class EmployeeFormController {
 
         Stage popupStage = new Stage();
         popupStage.initModality(Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Popup Window");
+        popupStage.setTitle("Add Machine Form");
         popupStage.setScene(new Scene(rootNodeMachine));
         popupStage.showAndWait();
     }
@@ -139,7 +139,7 @@ public class EmployeeFormController {
 
         boolean isUpdated = EmployeeRepo.update(employee);
         if (isUpdated) {
-            new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
+            new Alert(Alert.AlertType.CONFIRMATION, "employee updated!").show();
         }
     }
 

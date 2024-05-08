@@ -1,18 +1,24 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextArea?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Line?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1375.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.DashboardFormController">
+<AnchorPane fx:id="rootNode1" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="699.0" prefWidth="1372.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.DashboardFormController">
    <children>
-      <ImageView fitHeight="501.0" fitWidth="724.0" pickOnBounds="true" preserveRatio="true" />
       <AnchorPane layoutX="-2.0" opacity="0.7" prefHeight="690.0" prefWidth="221.0" style="-fx-background-radius: 0 0 30 0; -fx-background-color: #d1d8e0; -fx-background-insets: 0 10 0 0;">
          <children>
+            <ImageView fitHeight="691.0" fitWidth="211.0" opacity="0.14" pickOnBounds="true">
+               <image>
+                  <Image url="@../asserts.icon/images6.jpeg" />
+               </image>
+            </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
             <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="12.0" layoutY="195.0" onAction="#btncustomer" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Add Customer" textFill="#07060d">
                <font>
@@ -55,8 +61,13 @@
             </AnchorPane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="207.0" layoutY="-7.0" prefHeight="98.0" prefWidth="1166.0" style="-fx-background-radius: 0 0 0 0; -fx-background-color: #dfe6e9;">
+      <AnchorPane layoutX="207.0" layoutY="-7.0" prefHeight="98.0" prefWidth="1158.0" style="-fx-background-radius: 0 0 0 0; -fx-background-color: #dfe6e9;">
          <children>
+            <ImageView fitHeight="97.0" fitWidth="1165.0" opacity="0.26" pickOnBounds="true">
+               <image>
+                  <Image url="@../asserts.icon/d98f5e4432c2c9de5418ed4b668faee5.jpeg" />
+               </image>
+            </ImageView>
             <Label fx:id="lbldate1" layoutX="66.0" layoutY="19.0" prefHeight="16.0" prefWidth="95.0" text="Date">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
@@ -76,82 +87,113 @@
                   <Font name="System Bold Italic" size="13.0" />
                </font>
             </JFXButton>
+            <Line endX="26.666671752929688" endY="80.0" layoutX="-6.0" startX="26.666671752929688" startY="23.292892456054688" stroke="#294051" strokeWidth="2.0" />
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="customRoot" layoutX="221.0" layoutY="107.0" prefHeight="587.0" prefWidth="1144.0" style="-fx-background-radius: 30 0 0 30;" AnchorPane.leftAnchor="221.0" AnchorPane.rightAnchor="10.0">
+      <AnchorPane fx:id="customRoot" layoutX="220.0" layoutY="101.0" prefHeight="582.0" prefWidth="1147.0" style="-fx-background-radius: 30 0 0 30;" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="9.0">
          <children>
-            <ImageView fitHeight="578.0" fitWidth="1137.0" pickOnBounds="true">
+            <ImageView fitHeight="587.0" fitWidth="1141.0" opacity="0.46" pickOnBounds="true">
                <image>
-                  <Image url="@../asserts.icon/d98f5e4432c2c9de5418ed4b668faee5.jpeg" />
+                  <Image url="@../asserts.icon/360_F_734228501_NaaxC9BrNqMZ5OxGNIMG4KlTXngZeoeB.jpg" />
                </image>
             </ImageView>
-            <AnchorPane fx:id="tabPane" layoutX="-1.0" layoutY="-7.0" prefHeight="592.0" prefWidth="413.0">
+            <AnchorPane fx:id="tabPane1" layoutX="401.0" layoutY="-1.0" prefHeight="579.0" prefWidth="731.0">
+               <children>
+                  <JFXTextArea editable="false" focusColor="#253b7c" layoutX="-5.0" layoutY="93.0" prefHeight="388.0" prefWidth="717.0" text="&#10;Introducing Coco Thumb! &#10;&#10;With just one press, you can enjoy a delicious, nutritious and additive-free drink made from 100% Fresh without the hassle!" unFocusColor="BLACK">
+                     <font>
+                        <Font name="FreeSerif Bold Italic" size="38.0" />
+                     </font>
+                  </JFXTextArea>
+                  <Label layoutX="169.0" layoutY="36.0" prefHeight="55.0" prefWidth="464.0" text="Easy to Drink Coconut" textFill="#2d4054" underline="true">
+                     <font>
+                        <Font name="Ubuntu Bold Italic" size="40.0" />
+                     </font>
+                  </Label>
+               </children>
+            </AnchorPane>
+            <AnchorPane fx:id="tabPane" layoutX="-1.0" layoutY="-7.0" prefHeight="592.0" prefWidth="416.0">
                <children>
                   <AnchorPane layoutX="30.0" layoutY="30.0" prefHeight="88.0" prefWidth="284.0" style="-fx-background-color: #8DECB4; -fx-background-radius: 25;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="84.0" AnchorPane.topAnchor="30.0">
                      <children>
-                        <Label layoutX="66.0" layoutY="59.0" prefHeight="21.0" prefWidth="166.0" text="Customer Count">
+                        <Label layoutX="38.0" layoutY="59.0" prefHeight="21.0" prefWidth="166.0" text="Customer Count">
                            <font>
                               <Font name="System Bold Italic" size="17.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblCustomerCount" layoutX="119.0" layoutY="14.0" opacity="0.8" text="15" textFill="#030000">
+                        <Label fx:id="lblCustomerCount" layoutX="82.0" layoutY="14.0" opacity="0.8" text="15" textFill="#030000">
                            <font>
                               <Font name="System Bold" size="32.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="86.0" fitWidth="94.0" layoutX="199.0" layoutY="2.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/icons8-customer-64.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="30.0" layoutY="179.0" prefHeight="88.0" prefWidth="284.0" style="-fx-background-color: #8DECB4; -fx-background-radius: 25;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="84.0">
                      <children>
-                        <Label layoutX="65.0" layoutY="53.0" prefHeight="21.0" prefWidth="166.0" text="Employee Count">
+                        <Label layoutX="42.0" layoutY="53.0" prefHeight="21.0" prefWidth="166.0" text="Employee Count">
                            <font>
                               <Font name="System Bold Italic" size="17.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblEmployeeCount" layoutX="120.0" layoutY="10.0" opacity="0.81" text="15" textFill="#030000">
+                        <Label fx:id="lblEmployeeCount" layoutX="80.0" layoutY="10.0" opacity="0.81" text="15" textFill="#030000">
                            <font>
                               <Font name="System Bold" size="32.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="86.0" fitWidth="71.0" layoutX="208.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/icons8-collaborator-male-50.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="30.0" layoutY="326.0" prefHeight="88.0" prefWidth="287.0" style="-fx-background-color: #8DECB4; -fx-background-radius: 25;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="84.0">
+                  <AnchorPane layoutX="30.0" layoutY="326.0" prefHeight="88.0" prefWidth="284.0" style="-fx-background-color: #8DECB4; -fx-background-radius: 25;" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="84.0">
                      <children>
-                        <Label layoutX="89.0" layoutY="56.0" prefHeight="21.0" prefWidth="125.0" text="Item Count">
+                        <Label layoutX="56.0" layoutY="56.0" prefHeight="21.0" prefWidth="125.0" text="Item Count">
                            <font>
                               <Font name="System Bold Italic" size="17.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblItemCount" layoutX="119.0" layoutY="19.0" opacity="0.8" text="15" textFill="#030000">
+                        <Label fx:id="lblItemCount" layoutX="82.0" layoutY="19.0" opacity="0.8" text="15" textFill="#030000">
                            <font>
                               <Font name="System Bold" size="32.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="201.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/icons8-sell-stock-100.png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
                   <AnchorPane layoutX="43.0" layoutY="433.0" prefHeight="88.0" prefWidth="284.0" style="-fx-background-color: #8DECB4; -fx-background-radius: 25;" AnchorPane.bottomAnchor="30.0" AnchorPane.leftAnchor="30.0" AnchorPane.rightAnchor="84.0">
                      <children>
-                        <Label layoutX="83.0" layoutY="56.0" prefHeight="21.0" prefWidth="125.0" text="Total Orders">
+                        <Label layoutX="47.0" layoutY="56.0" prefHeight="21.0" prefWidth="125.0" text="Total Orders">
                            <font>
                               <Font name="System Bold Italic" size="17.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lblOrdersCount" layoutX="119.0" layoutY="19.0" opacity="0.8" text="15" textFill="#030000">
+                        <Label fx:id="lblOrdersCount" layoutX="82.0" layoutY="19.0" opacity="0.8" text="15" textFill="#030000">
                            <font>
                               <Font name="System Bold" size="32.0" />
                            </font>
                         </Label>
+                        <ImageView fitHeight="74.0" fitWidth="71.0" layoutX="204.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../asserts.icon/icons8-logistics-64(1).png" />
+                           </image>
+                        </ImageView>
                      </children>
                   </AnchorPane>
+                  <Line endX="198.0" endY="75.0" layoutX="129.0" layoutY="74.0" startX="-91.33334350585938" startY="75.0" stroke="#294051" strokeWidth="2.0" />
+                  <Line endX="171.66668701171875" endY="217.0" layoutX="154.0" layoutY="88.0" startX="-116.33334350585938" startY="217.0" stroke="#294051" strokeWidth="2.0" />
+                  <Line endX="171.66668701171875" endY="217.0" layoutX="161.0" layoutY="225.0" startX="-126.0" startY="217.0" stroke="#294051" strokeWidth="2.0" />
                </children>
             </AnchorPane>
-            <AnchorPane layoutX="410.0" layoutY="-3.0" prefHeight="590.0" prefWidth="736.0">
-               <children>
-                  <ImageView fitHeight="359.0" fitWidth="403.0" layoutX="317.0" layoutY="21.0" pickOnBounds="true">
-                     <image>
-                        <Image url="@../asserts.icon/istockphoto-522794304-612x612.jpg" />
-                     </image></ImageView>
-               </children></AnchorPane>
          </children>
       </AnchorPane>
    </children>

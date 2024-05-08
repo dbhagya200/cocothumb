@@ -61,7 +61,6 @@ public class AddSuppFormController {
 
     @FXML
     void btnClear(ActionEvent event) {
-        txtId.setText("");
         txtName.setText("");
         txtAddress.setText("");
         txtContact.setText("");
@@ -103,10 +102,13 @@ public class AddSuppFormController {
             boolean isSaved = SupplierRepo.save(supplier);
             if (isSaved) {
                 new Alert(Alert.AlertType.CONFIRMATION, "supplier saved!").show();
+                initialize();
+                btnClear(event);
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+
     }
 
     @FXML
@@ -124,6 +126,8 @@ public class AddSuppFormController {
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "supplier updated!").show();
             }
+            initialize();
+            btnClear(event);
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
@@ -139,6 +143,8 @@ public class AddSuppFormController {
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "supplier deleted!").show();
             }
+            initialize();
+            btnClear(event);
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }

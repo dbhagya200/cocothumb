@@ -6,41 +6,48 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="rootNode2" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="1147.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.EmployeeFormController">
    <children>
+      <ImageView fitHeight="582.0" fitWidth="1135.0" opacity="0.35" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="12.0">
+         <image>
+            <Image url="@../asserts.icon/Thai%20Food%20and%20Travel%20-%20Deep%20Knowledge(1).jpeg" />
+         </image>
+      </ImageView>
       <Label layoutX="47.0" layoutY="22.0" prefHeight="60.0" prefWidth="417.0" text="Add Employee  Form" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="8.0">
          <font>
             <Font name="Ubuntu Medium Italic" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="84.0" layoutY="125.0" text="Employee Id:">
+      <Label layoutX="84.0" layoutY="125.0" text="Employee Id:" AnchorPane.topAnchor="123.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="485.0" layoutY="125.0" text=" Name:">
+      <Label layoutX="480.0" layoutY="123.0" text=" Name:" AnchorPane.bottomAnchor="440.0" AnchorPane.leftAnchor="480.0" AnchorPane.rightAnchor="607.0" AnchorPane.topAnchor="123.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtId" layoutX="129.0" layoutY="138.0" onAction="#idSearch" prefHeight="26.0" prefWidth="249.0" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="156.0" />
-      <TextField fx:id="txtName" layoutX="483.0" layoutY="156.0" prefHeight="26.0" prefWidth="256.0" promptText="enter employee name here" AnchorPane.leftAnchor="483.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="156.0" />
-      <Label layoutX="85.0" layoutY="236.0" text=" Address:">
+      <TextField fx:id="txtId" layoutX="129.0" layoutY="138.0" onAction="#idSearch" prefHeight="26.0" prefWidth="256.0" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="156.0" />
+      <TextField fx:id="txtName" layoutX="483.0" layoutY="156.0" prefHeight="26.0" prefWidth="256.0" promptText="enter employee name here" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="476.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="156.0" />
+      <Label layoutX="85.0" layoutY="236.0" text=" Address:" AnchorPane.topAnchor="234.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="486.0" layoutY="236.0" text="Contact Number:">
+      <Label layoutX="479.0" layoutY="234.0" text="Contact Number:" AnchorPane.topAnchor="234.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtAddress" layoutX="134.0" layoutY="250.0" prefHeight="26.0" prefWidth="249.0" promptText="enter address here" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="265.0" />
-      <TextField fx:id="txtContact" layoutX="483.0" layoutY="265.0" prefHeight="26.0" prefWidth="249.0" promptText="enter valid contact number here" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="265.0" />
-      <TableView fx:id="tblEmployee" layoutX="86.0" layoutY="366.0" prefHeight="164.0" prefWidth="1057.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="353.0">
+      <TextField fx:id="txtAddress" layoutX="134.0" layoutY="250.0" prefHeight="26.0" prefWidth="256.0" promptText="enter address here" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="265.0" />
+      <TextField fx:id="txtContact" layoutX="483.0" layoutY="265.0" prefHeight="26.0" prefWidth="249.0" promptText="enter valid contact number here" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="476.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="265.0" />
+      <TableView fx:id="tblEmployee" layoutX="86.0" layoutY="366.0" prefHeight="164.0" prefWidth="1064.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="353.0">
          <columns>
             <TableColumn fx:id="colid" prefWidth="189.6666717529297" text="Employee Id" />
             <TableColumn fx:id="colName" prefWidth="194.0" text="Name" />
@@ -49,13 +56,13 @@
             <TableColumn fx:id="colSalary" minWidth="0.0" prefWidth="186.0" text="Salary" />
          </columns>
       </TableView>
-      <Label layoutX="829.0" layoutY="237.0" text="Salary:">
+      <Label layoutX="829.0" layoutY="237.0" text="Salary:" AnchorPane.topAnchor="234.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSalary" layoutX="678.0" layoutY="249.0" prefHeight="26.0" prefWidth="256.0" promptText="enter salary here" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="265.0" />
-      <Label layoutX="829.0" layoutY="125.0" text="Job role:">
+      <TextField fx:id="txtSalary" layoutX="678.0" layoutY="249.0" prefHeight="26.0" prefWidth="256.0" promptText="enter salary here" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="821.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="265.0" />
+      <Label layoutX="829.0" layoutY="125.0" text="Job role:" AnchorPane.topAnchor="123.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
@@ -63,7 +70,7 @@
       <JFXButton buttonType="RAISED" layoutX="780.0" layoutY="23.0" onAction="#btnClear" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fad390;" text="Clear" AnchorPane.topAnchor="23.0" />
       <JFXButton buttonType="RAISED" layoutX="956.0" layoutY="23.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.rightAnchor="112.0" />
       <JFXButton buttonType="RAISED" layoutX="868.0" layoutY="23.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" AnchorPane.topAnchor="23.0" />
-      <JFXButton buttonType="RAISED" layoutX="1042.0" layoutY="23.0" onAction="#btnDelete" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fab1a0;" text="Delete" />
+      <JFXButton buttonType="RAISED" layoutX="1042.0" layoutY="23.0" onAction="#btnDelete" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fab1a0;" text="Delete" AnchorPane.rightAnchor="25.0" />
       <JFXButton buttonType="RAISED" layoutX="624.0" layoutY="19.0" onAction="#btnAddNewMachine" prefHeight="34.0" prefWidth="149.0" style="-fx-background-radius: 10 10 10 10; -fx-background-color: #41B06E;" text="Add new Machine" textFill="#ecf1f5" AnchorPane.topAnchor="23.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />

@@ -81,7 +81,7 @@ public class CustomerOrderFormController {
     private TableColumn<?, ?> colQty;
 
     @FXML
-    private TableColumn<?, ?> colTotal;
+    private  TableColumn<?, ?> colTotal;
 
     @FXML
     private TableColumn<?, ?> colUnitPrice;
@@ -97,7 +97,9 @@ public class CustomerOrderFormController {
 
     public AnchorPane customRoot;
     private ObservableList<CartTm> cartList = FXCollections.observableArrayList();
-    private double netTotal = 0;
+    private  double netTotal = 0;
+
+
 
     @FXML
     void btnShowTable(ActionEvent event) throws IOException {
@@ -146,6 +148,7 @@ public class CustomerOrderFormController {
                 calculateNetTotal();
             }
         });
+
         for (int i = 0; i < tblOrderCart.getItems().size(); i++) {
             if (item_code.equals(colItemCode.getCellData(i))) {
                 qty += cartList.get(i).getQty();
@@ -154,11 +157,13 @@ public class CustomerOrderFormController {
                 cartList.get(i).setQty(qty);
                 cartList.get(i).setTotal(amount);
 
+                initialize();
                 tblOrderCart.refresh();
                 calculateNetTotal();
                 txtQty.setText("");
                 return;
             }
+            System.out.println("alutin ekam item damma");
         }
         CartTm cartTm = new CartTm(item_code,  qty,description, unitPrice, amount, btnRemove);
 
@@ -172,7 +177,7 @@ public class CustomerOrderFormController {
 
 
     @FXML
-    void btnPlaceOrder(ActionEvent event) {
+    void btnPlaceOrder(ActionEvent event) throws IOException {
         String order_id = txtOrderId.getText();
         String cust_NIC = cmbCustomerNIC.getValue();
         String cust_id = txtCustId.getText();
@@ -203,6 +208,15 @@ public class CustomerOrderFormController {
             boolean isPlaced = PlaceOrderRepo.placeOrder(PO);
             if(isPlaced) {
                 new Alert(Alert.AlertType.CONFIRMATION, "order placed!").show();
+
+                AnchorPane rootNodePayment = FXMLLoader.load(getClass().getResource("/view/cust_payment.fxml"));
+
+                Stage popupStage = new Stage();
+                popupStage.initModality(Modality.APPLICATION_MODAL);
+                popupStage.setTitle("Popup Window");
+                popupStage.setScene(new Scene(rootNodePayment));
+                popupStage.showAndWait();
+
             } else {
                 new Alert(Alert.AlertType.WARNING, "order not placed!").show();
             }

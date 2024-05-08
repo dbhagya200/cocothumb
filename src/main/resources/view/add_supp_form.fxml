@@ -5,40 +5,47 @@
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
 <AnchorPane fx:id="rootNode8" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="1147.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.AddSuppFormController">
    <children>
+      <ImageView fitHeight="582.0" fitWidth="1135.0" opacity="0.35" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="12.0">
+         <image>
+            <Image url="@../asserts.icon/Thai%20Food%20and%20Travel%20-%20Deep%20Knowledge(1).jpeg" />
+         </image>
+      </ImageView>
       <Label layoutX="29.0" layoutY="8.0" prefHeight="60.0" prefWidth="417.0" text="Add Supplier  Form">
          <font>
             <Font name="Ubuntu Medium Italic" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="99.0" layoutY="124.0" text="Supplier Id:" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="123.0">
+      <Label layoutX="86.0" layoutY="123.0" text="Supplier Id:" AnchorPane.leftAnchor="86.0" AnchorPane.topAnchor="123.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="487.0" layoutY="123.0" text=" Name:" AnchorPane.rightAnchor="607.0" AnchorPane.topAnchor="123.0">
+      <Label layoutX="478.0" layoutY="123.0" text=" Name:" AnchorPane.rightAnchor="609.0" AnchorPane.topAnchor="123.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtId" layoutX="83.0" layoutY="156.0" onAction="#idSearch" prefHeight="26.0" prefWidth="256.0" promptText="enter supplier id here" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="808.0" AnchorPane.topAnchor="156.0" />
-      <TextField fx:id="txtName" layoutX="476.0" layoutY="156.0" prefHeight="26.0" prefWidth="256.0" promptText="enter supplier name here" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="156.0" />
+      <TextField fx:id="txtId" layoutX="83.0" layoutY="156.0" onAction="#idSearch" prefHeight="26.0" prefWidth="256.0" promptText="enter supplier id here" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="808.0" AnchorPane.topAnchor="156.0" />
+      <TextField fx:id="txtName" layoutX="476.0" layoutY="156.0" prefHeight="26.0" prefWidth="256.0" promptText="enter supplier name here" style="-fx-background-radius: 10;" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="156.0" />
       <Label layoutX="135.0" layoutY="235.0" text=" Address:" AnchorPane.leftAnchor="83.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="487.0" layoutY="234.0" text="Contact Number:">
+      <Label layoutX="478.0" layoutY="234.0" text="Contact Number:">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtAddress" layoutX="93.0" layoutY="268.0" prefHeight="26.0" prefWidth="256.0" promptText="enter address here" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="808.0" AnchorPane.topAnchor="265.0" />
-      <TextField fx:id="txtContact" layoutX="484.0" layoutY="266.0" prefHeight="26.0" prefWidth="256.0" promptText="enter valid contact number here" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="265.0" />
+      <TextField fx:id="txtAddress" layoutX="93.0" layoutY="268.0" prefHeight="26.0" prefWidth="256.0" promptText="enter address here" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="808.0" AnchorPane.topAnchor="265.0" />
+      <TextField fx:id="txtContact" layoutX="484.0" layoutY="266.0" prefHeight="26.0" prefWidth="256.0" promptText="enter valid contact number here" style="-fx-background-radius: 10;" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="265.0" />
       <TableView fx:id="tblSupplier" layoutX="45.0" layoutY="353.0" prefHeight="164.0" prefWidth="1057.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="353.0">
          <columns>
             <TableColumn fx:id="colid" prefWidth="216.0" text="Supplier Id" />

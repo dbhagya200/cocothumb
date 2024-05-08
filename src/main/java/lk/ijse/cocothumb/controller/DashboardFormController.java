@@ -20,7 +20,8 @@ import java.time.LocalDate;
 public class DashboardFormController {
 
     public AnchorPane customRoot;
-    public TabPane tabPane1;
+    @FXML
+    private AnchorPane tabPane1;
     @FXML
     private Label lblCustomerCount;
 

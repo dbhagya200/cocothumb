@@ -67,6 +67,7 @@ public class CustomerFormController {
     private TextField txtName;
     private List<Customer> customerList = new ArrayList<>();
 
+
     @FXML
     void btnClear(ActionEvent event) {
         txtNIC.setText("");
@@ -94,6 +95,8 @@ public class CustomerFormController {
             if (isSaved) {
                 new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
             }
+            initialize();
+            btnClear(event);
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
@@ -116,6 +119,8 @@ public class CustomerFormController {
             if (isUpdated) {
                 new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
             }
+            initialize();
+            btnClear(event);
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
@@ -170,6 +175,8 @@ public class CustomerFormController {
             if (isDeleted) {
                 new Alert(Alert.AlertType.CONFIRMATION, "customer deleted!").show();
             }
+            initialize();
+            btnClear(event);
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
