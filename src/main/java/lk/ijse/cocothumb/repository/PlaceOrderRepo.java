@@ -22,8 +22,12 @@ public class PlaceOrderRepo {
                     boolean isItemQtyUpdate = ItemRepo.updateQty(PO.getOdList());
                     System.out.println("3");
                     if (isItemQtyUpdate) {
-                        connection.commit();
-                        return true;
+                       // boolean isPaymentSaved = CustPaymentRepo.save(PO.getPayment());
+                        System.out.println("4");
+                        if (isItemQtyUpdate) {
+                            connection.commit();
+                            return true;
+                        }
                     }
                 }
             }

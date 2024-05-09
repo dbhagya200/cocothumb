@@ -1,5 +1,6 @@
 package lk.ijse.cocothumb.controller;
 
+import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -53,7 +54,7 @@ public class CustPaymentController {
     private TextField txtPayId;
 
     @FXML
-    private Label lblMethod;
+    private JFXComboBox<PayMethod> cmbMethod;
 
     @FXML
     void btnClear(ActionEvent event) {
@@ -63,8 +64,8 @@ public class CustPaymentController {
     @FXML
     void btnSave(ActionEvent event) {
     String pay_id = txtPayId.getText();
-    String cust_id = txtCustId.getText();
-    String pay_method = lblMethod.getText();
+    String cust_id = CustomerOrderFormController.getCust_id();
+    String pay_method = cmbMethod.getValue().toString();
     double t_price = Double.parseDouble(lbNetTotal.getText());
     Date date = java.sql.Date.valueOf(LocalDate.now());
 
@@ -84,15 +85,14 @@ public class CustPaymentController {
 
     }
 
-    @FXML
-    void getMethod(ActionEvent event) {
-        if (rButtonVisa.isSelected()){
-            lblMethod.setText(rButtonVisa.getText());
-        } else if (rButtonMaster.isSelected()) {
-            lblMethod.setText(rButtonMaster.getText());
-        } else if (rButtonAmex.isSelected()) {
-            lblMethod.setText(rButtonAmex.getText());
-        }
+
+   public void comboMethod() {
+        cmbMethod.getItems().addAll(PayMethod.values());
+
+        cmbMethod.setOnAction(Event -> {
+            PayMethod selected = cmbMethod.getSelectionModel().getSelectedItem();
+            System.out.println("Selected item: " + selected);
+        });
     }
     private void loadNextPayId() {
         try {
@@ -115,10 +115,12 @@ public class CustPaymentController {
         return "p001";
     }
 
+
     public void initialize() {
         setdate();
         settime();
         loadNextPayId();
+        comboMethod();
     }
 
     private void settime() {

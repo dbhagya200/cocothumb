@@ -19,10 +19,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lk.ijse.cocothumb.model.*;
 import lk.ijse.cocothumb.model.tModel.CartTm;
-import lk.ijse.cocothumb.repository.CustomerRepo;
-import lk.ijse.cocothumb.repository.OrderRepo;
-import lk.ijse.cocothumb.repository.ItemRepo;
-import lk.ijse.cocothumb.repository.PlaceOrderRepo;
+import lk.ijse.cocothumb.repository.*;
 
 import java.sql.Date;
 import java.util.ArrayList;
@@ -98,8 +95,11 @@ public class CustomerOrderFormController {
     public AnchorPane customRoot;
     private ObservableList<CartTm> cartList = FXCollections.observableArrayList();
     private  double netTotal = 0;
+    private static String cust_id;
 
-
+    public static String getCust_id() {
+        return cust_id;
+    }
 
     @FXML
     void btnShowTable(ActionEvent event) throws IOException {
@@ -157,7 +157,7 @@ public class CustomerOrderFormController {
                 cartList.get(i).setQty(qty);
                 cartList.get(i).setTotal(amount);
 
-                initialize();
+                //initialize();
                 tblOrderCart.refresh();
                 calculateNetTotal();
                 txtQty.setText("");
@@ -177,15 +177,19 @@ public class CustomerOrderFormController {
 
 
     @FXML
-    void btnPlaceOrder(ActionEvent event) throws IOException {
+    void btnPlaceOrder(ActionEvent event) throws IOException, SQLException {
         String order_id = txtOrderId.getText();
         String cust_NIC = cmbCustomerNIC.getValue();
-        String cust_id = txtCustId.getText();
+         cust_id = txtCustId.getText();
         String user_id = LoginFormController.getUserId();
         Date date = Date.valueOf(LocalDate.now());
 
 
         var orders = new Orders(order_id, cust_NIC,cust_id, user_id, date);
+
+      /*  String pay_id = CustPaymentRepo.currentId();
+        String cust_id = CustomerOrderFormController.getCust_id();
+        String pay_method = CustPaymentController.lblMethod.getText();*/
 
         List<OrderDetails> odList = new ArrayList<>();
         for (int i = 0; i < tblOrderCart.getItems().size(); i++) {

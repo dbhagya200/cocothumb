@@ -12,6 +12,7 @@ import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.cocothumb.controller.Util.Regex;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.tModel.CartTm;
 import lk.ijse.cocothumb.model.tModel.CustomerTm;
@@ -24,6 +25,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+
+import static lk.ijse.cocothumb.controller.Util.Regex.isValidTextField;
 
 public class CustomerFormController {
 
@@ -90,16 +93,39 @@ public class CustomerFormController {
 
 
         Customer customer = new Customer(cust_id,cust_NIC, cust_name, cust_address, cust_contact,user_id);
-        try {
-            boolean isSaved = CustomerRepo.save(customer);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
+
+
+
+
+           /* try {
+                boolean isSaved = CustomerRepo.save(customer);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "customer saved!").show();
+                }
+                initialize();
+                btnClear(event);
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+            }*/
+
+        boolean isValidNIC = Regex.isValidTextField(txtNIC, cust_NIC);
+
+        if (isValidNIC) {
+            try {
+                boolean isSaved = CustomerRepo.save(customer);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "Customer saved successfully").show();
+                } else {
+                    new Alert(Alert.AlertType.ERROR, "Error saving customer").show();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, "Database error: " + e.getMessage()).show();
             }
-            initialize();
-            btnClear(event);
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        } else {
+            new Alert(Alert.AlertType.ERROR, "Invalid NIC format").show();
         }
+
+
 
     }
 
