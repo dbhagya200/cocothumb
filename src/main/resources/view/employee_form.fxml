@@ -2,10 +2,10 @@
 
 <?import com.jfoenix.controls.JFXButton?>
 <?import com.jfoenix.controls.JFXComboBox?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -33,8 +33,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtId" layoutX="129.0" layoutY="138.0" onAction="#idSearch" prefHeight="26.0" prefWidth="256.0" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="156.0" />
-      <TextField fx:id="txtName" layoutX="483.0" layoutY="156.0" prefHeight="26.0" prefWidth="256.0" promptText="enter employee name here" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="476.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="156.0" />
       <Label layoutX="85.0" layoutY="236.0" text=" Address:" AnchorPane.topAnchor="234.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
@@ -45,8 +43,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtAddress" layoutX="134.0" layoutY="250.0" prefHeight="26.0" prefWidth="256.0" promptText="enter address here" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="265.0" />
-      <TextField fx:id="txtContact" layoutX="483.0" layoutY="265.0" prefHeight="26.0" prefWidth="249.0" promptText="enter valid contact number here" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="476.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="265.0" />
       <TableView fx:id="tblEmployee" layoutX="86.0" layoutY="366.0" prefHeight="164.0" prefWidth="1064.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="353.0">
          <columns>
             <TableColumn fx:id="colid" prefWidth="189.6666717529297" text="Employee Id" />
@@ -61,7 +57,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtSalary" layoutX="678.0" layoutY="249.0" prefHeight="26.0" prefWidth="256.0" promptText="enter salary here" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="821.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="265.0" />
       <Label layoutX="829.0" layoutY="125.0" text="Job role:" AnchorPane.topAnchor="123.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
@@ -77,5 +72,10 @@
          </font>
       </JFXButton>
       <JFXComboBox fx:id="cmbjobrole" layoutX="817.0" layoutY="155.0" onAction="#cmbjobroleOnAction" prefHeight="26.0" prefWidth="256.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="156.0" />
+      <JFXTextField fx:id="txtId" editable="false" layoutX="83.0" layoutY="157.0" onAction="#idSearch" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtName" layoutX="480.0" layoutY="155.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtAddress" layoutX="87.0" layoutY="276.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtContact" layoutX="468.0" layoutY="278.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtSalary" layoutX="823.0" layoutY="276.0" prefHeight="24.0" prefWidth="256.0" />
    </children>
 </AnchorPane>

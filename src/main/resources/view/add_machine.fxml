@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -25,8 +25,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtId" layoutX="52.0" layoutY="134.0" onAction="#idSearch" prefHeight="26.0" prefWidth="256.0" />
-      <TextField fx:id="txtBrandName" layoutX="364.0" layoutY="134.0" prefHeight="26.0" prefWidth="256.0" />
       <JFXButton buttonType="RAISED" layoutX="525.0" layoutY="33.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" />
       <JFXButton buttonType="RAISED" layoutX="437.0" layoutY="33.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" />
       <TableView fx:id="tblMachine" layoutX="94.0" layoutY="191.0" prefHeight="162.0" prefWidth="507.0">
@@ -36,5 +34,7 @@
             <TableColumn fx:id="colAction" prefWidth="90.0" text="Action" />
          </columns>
       </TableView>
+      <JFXTextField fx:id="txtId" layoutX="68.0" layoutY="135.0" onAction="#idSearch" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtBrandName" layoutX="369.0" layoutY="135.0" prefHeight="24.0" prefWidth="256.0" />
    </children>
 </AnchorPane>

@@ -1,5 +1,6 @@
 package lk.ijse.cocothumb.controller;
 
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -13,6 +14,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.cocothumb.controller.Util.Regex;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Supplier;
 import lk.ijse.cocothumb.model.tModel.CustomerTm;
@@ -46,16 +48,16 @@ public class AddSuppFormController {
     private TableView<SupplierTm> tblSupplier;
 
     @FXML
-    private TextField txtAddress;
+    private JFXTextField txtAddress;
 
     @FXML
-    private TextField txtContact;
+    private JFXTextField txtContact;
 
     @FXML
-    private TextField txtId;
+    private JFXTextField txtId;
 
     @FXML
-    private TextField txtName;
+    private JFXTextField txtName;
 
     private List<Supplier> supplierList = new ArrayList<>();
 
@@ -233,6 +235,15 @@ public class AddSuppFormController {
             throw new RuntimeException(e);
         }
         return supplierList;
+    }
+
+    public void txtEmployeeContactOnKeyReleased(ActionEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact.contact,txtContact);
+    }
+
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact,txtContact)) return false;
+        return true;
     }
 
 }

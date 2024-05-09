@@ -2,6 +2,7 @@ package lk.ijse.cocothumb.controller;
 
 import com.jfoenix.controls.JFXComboBox;
 import com.jfoenix.controls.JFXRadioButton;
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -11,6 +12,7 @@ import javafx.scene.layout.AnchorPane;
 import lk.ijse.cocothumb.model.Payment;
 import lk.ijse.cocothumb.repository.CustPaymentRepo;
 import lk.ijse.cocothumb.repository.CustomerRepo;
+import lk.ijse.cocothumb.repository.OrderRepo;
 import lk.ijse.cocothumb.repository.PlaceOrderRepo;
 
 import java.sql.Date;
@@ -33,25 +35,16 @@ public class CustPaymentController {
     private Label lblNetTotal;
 
     @FXML
-    private JFXRadioButton rButtonAmex;
-
-    @FXML
-    private JFXRadioButton rButtonMaster;
-
-    @FXML
-    private JFXRadioButton rButtonVisa;
-
-    @FXML
     private AnchorPane rootNodePayment;
 
     @FXML
-    private TextField txtCustId;
+    private JFXTextField txtCustId;
 
     @FXML
-    private TextField txtEmail;
+    private JFXTextField  txtEmail;
 
     @FXML
-    private TextField txtPayId;
+    private JFXTextField  txtPayId;
 
     @FXML
     private JFXComboBox<PayMethod> cmbMethod;
@@ -63,9 +56,9 @@ public class CustPaymentController {
     }
 
     @FXML
-    void btnSave(ActionEvent event) {
+    void btnSave(ActionEvent event) throws SQLException {
     String pay_id = txtPayId.getText();
-    String cust_id = CustomerOrderFormController.getCust_id();
+    String cust_id = txtCustId.getText();
     String pay_method = cmbMethod.getValue().toString();
     double t_price = Double.parseDouble(lbNetTotal.getText());
     Date date = java.sql.Date.valueOf(LocalDate.now());
@@ -118,9 +111,9 @@ public class CustPaymentController {
 
 
     public void initialize() {
+       // loadNextPayId();
         setdate();
         settime();
-        loadNextPayId();
         comboMethod();
     }
 

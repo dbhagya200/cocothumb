@@ -15,7 +15,7 @@ public class Regex {
             break;
 
             case contact :
-                field = "^([+]94{1,3}|[0])([1-9]{2})([0-9]){7}$";
+                field = "([0-9]{10})$";
             break;
             case qty :
                 field = "^([0-9]{1,3})$";

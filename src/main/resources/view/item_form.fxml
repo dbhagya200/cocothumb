@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -32,20 +32,16 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtCode" layoutX="165.0" layoutY="142.0" onAction="#SearchCode" prefHeight="26.0" prefWidth="256.0" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="156.0" />
-      <TextField fx:id="txtUnitPrice" layoutX="167.0" layoutY="249.0" prefHeight="26.0" prefWidth="256.0" promptText="enter unit price here" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="265.0" />
       <Label layoutX="824.0" layoutY="234.0" text="Qty On Hand:" AnchorPane.leftAnchor="824.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="234.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQtyOnHand" layoutX="751.0" layoutY="262.0" prefHeight="26.0" prefWidth="256.0" promptText="enter qty on hand here" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="291.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="265.0" />
       <Label layoutX="478.0" layoutY="128.0" text="Item Type:" AnchorPane.leftAnchor="478.0" AnchorPane.rightAnchor="553.0" AnchorPane.topAnchor="128.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtItemType" layoutX="476.0" layoutY="156.0" prefHeight="26.0" prefWidth="256.0" promptText="enter item type here" style="-fx-background-radius: 10;" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="156.0" />
       <TableView fx:id="tblItem" layoutX="159.0" layoutY="339.0" prefHeight="164.0" prefWidth="1057.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="353.0">
          <columns>
             <TableColumn fx:id="colCode" prefWidth="244.0" text="Code" />
@@ -63,6 +59,10 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtQtyOnHandCompany" layoutX="445.0" layoutY="265.0" prefHeight="26.0" prefWidth="256.0" promptText="enter unit price here" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="476.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtCode" editable="false" layoutX="79.0" layoutY="157.0" onAction="#SearchCode" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtItemType" layoutX="476.0" layoutY="157.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtUnitPrice" layoutX="80.0" layoutY="266.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtQtyOnHandCompany" layoutX="476.0" layoutY="266.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtQtyOnHand" layoutX="820.0" layoutY="266.0" prefHeight="24.0" prefWidth="256.0" />
    </children>
 </AnchorPane>

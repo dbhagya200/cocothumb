@@ -1,5 +1,6 @@
 package lk.ijse.cocothumb.controller;
 
+import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
@@ -34,10 +35,10 @@ public class AddMachineController {
     private TableView<?> tblMachine;
 
     @FXML
-    private TextField txtBrandName;
+    private JFXTextField txtBrandName;
 
     @FXML
-    private TextField txtId;
+    private JFXTextField  txtId;
 
     private static String machine_id;
 

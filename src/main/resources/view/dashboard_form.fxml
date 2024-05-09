@@ -68,7 +68,7 @@
                   <Image url="@../asserts.icon/d98f5e4432c2c9de5418ed4b668faee5.jpeg" />
                </image>
             </ImageView>
-            <Label fx:id="lbldate1" layoutX="66.0" layoutY="19.0" prefHeight="16.0" prefWidth="95.0" text="Date">
+            <Label fx:id="lbldate1" layoutX="66.0" layoutY="19.0" prefHeight="16.0" prefWidth="132.0" text="Date">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font></Label>
@@ -88,6 +88,11 @@
                </font>
             </JFXButton>
             <Line endX="26.666671752929688" endY="80.0" layoutX="-6.0" startX="26.666671752929688" startY="23.292892456054688" stroke="#294051" strokeWidth="2.0" />
+            <Label fx:id="lblTime" layoutX="65.0" layoutY="50.0" prefHeight="16.0" prefWidth="86.0" text="Time">
+               <font>
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </Label>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="customRoot" layoutX="220.0" layoutY="101.0" prefHeight="582.0" prefWidth="1147.0" style="-fx-background-radius: 30 0 0 30;" AnchorPane.leftAnchor="220.0" AnchorPane.rightAnchor="9.0">
@@ -99,9 +104,9 @@
             </ImageView>
             <AnchorPane fx:id="tabPane1" layoutX="401.0" layoutY="-1.0" prefHeight="579.0" prefWidth="731.0">
                <children>
-                  <JFXTextArea editable="false" focusColor="#253b7c" layoutX="-5.0" layoutY="93.0" prefHeight="388.0" prefWidth="717.0" text="&#10;Introducing Coco Thumb! &#10;&#10;With just one press, you can enjoy a delicious, nutritious and additive-free drink made from 100% Fresh without the hassle!" unFocusColor="BLACK">
+                  <JFXTextArea editable="false" focusColor="#253b7c" layoutX="8.0" layoutY="93.0" prefHeight="388.0" prefWidth="717.0" text="&#10;Introducing Coco Thumb! &#10;&#10;With just one press, you can enjoy a delicious, nutritious and additive-free drink made from 100% Fresh without the hassle!" unFocusColor="BLACK">
                      <font>
-                        <Font name="FreeSerif Bold Italic" size="38.0" />
+                        <Font name="FreeSerif Bold Italic" size="32.0" />
                      </font>
                   </JFXTextArea>
                   <Label layoutX="169.0" layoutY="36.0" prefHeight="55.0" prefWidth="464.0" text="Easy to Drink Coconut" textFill="#2d4054" underline="true">

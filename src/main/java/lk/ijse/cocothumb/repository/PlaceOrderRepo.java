@@ -1,6 +1,7 @@
 package lk.ijse.cocothumb.repository;
 
 import lk.ijse.cocothumb.database.dbConnection;
+import lk.ijse.cocothumb.model.Payment;
 import lk.ijse.cocothumb.model.PlaceOrder;
 
 import java.sql.Connection;
@@ -11,7 +12,7 @@ public class PlaceOrderRepo {
     public static boolean placeOrder(PlaceOrder PO) throws SQLException {
         Connection connection = dbConnection.getInstance().getConnection();
         connection.setAutoCommit(false);
-
+        Payment payment = new Payment();
         try {
             boolean isOrderSaved = OrderRepo.save(PO.getOrders());
             System.out.println("1");
@@ -19,10 +20,10 @@ public class PlaceOrderRepo {
                 boolean isOrderDetailSaved = OrderDetailsRepo.save(PO.getOdList());
                 System.out.println("2");
                 if (isOrderDetailSaved) {
-                    boolean isItemQtyUpdate = ItemRepo.updateQty(PO.getOdList());
+                    boolean isItemQtyUpdate = ItemRepo. updateQty(PO.getOdList());
                     System.out.println("3");
                     if (isItemQtyUpdate) {
-                       // boolean isPaymentSaved = CustPaymentRepo.save(PO.getPayment());
+                        //boolean isPaymentSaved = CustPaymentRepo.save(payment);
                         System.out.println("4");
                         if (isItemQtyUpdate) {
                             connection.commit();

@@ -1,5 +1,6 @@
 package lk.ijse.cocothumb.controller;
 
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -29,7 +30,7 @@ import java.util.List;
 public class ItemFormController {
 
     @FXML
-    private TextField txtCode;
+    private JFXTextField txtCode;
 
     @FXML
     private TableColumn<?, ?> colAction;
@@ -53,16 +54,16 @@ public class ItemFormController {
     private TableView<ItemTm> tblItem;
 
     @FXML
-    private TextField txtItemType;
+    private JFXTextField txtItemType;
 
     @FXML
-    private TextField txtQtyOnHand;
+    private JFXTextField txtQtyOnHand;
 
     @FXML
-    private TextField txtQtyOnHandCompany;
+    private JFXTextField txtQtyOnHandCompany;
 
     @FXML
-    private TextField txtUnitPrice;
+    private JFXTextField txtUnitPrice;
     private List<Item> itemList = new ArrayList<>();
 
 

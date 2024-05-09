@@ -1,6 +1,7 @@
 package lk.ijse.cocothumb.controller;
 
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -52,19 +53,19 @@ public class EmployeeFormController {
     private TableView<EmployeeTm> tblEmployee;
 
     @FXML
-    private TextField txtAddress;
+    private JFXTextField txtAddress;
 
     @FXML
-    private TextField txtContact;
+    private JFXTextField txtContact;
 
     @FXML
-    private TextField txtId;
+    private JFXTextField txtId;
 
     @FXML
-    private TextField txtName;
+    private JFXTextField txtName;
 
     @FXML
-    private TextField txtSalary;
+    private JFXTextField txtSalary;
 
     @FXML
     private JFXComboBox<JobRole> cmbjobrole;

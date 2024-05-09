@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
-<?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
@@ -32,8 +32,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtId" layoutX="83.0" layoutY="156.0" onAction="#idSearch" prefHeight="26.0" prefWidth="256.0" promptText="enter supplier id here" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="808.0" AnchorPane.topAnchor="156.0" />
-      <TextField fx:id="txtName" layoutX="476.0" layoutY="156.0" prefHeight="26.0" prefWidth="256.0" promptText="enter supplier name here" style="-fx-background-radius: 10;" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="156.0" />
       <Label layoutX="135.0" layoutY="235.0" text=" Address:" AnchorPane.leftAnchor="83.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
@@ -44,8 +42,6 @@
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <TextField fx:id="txtAddress" layoutX="93.0" layoutY="268.0" prefHeight="26.0" prefWidth="256.0" promptText="enter address here" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="808.0" AnchorPane.topAnchor="265.0" />
-      <TextField fx:id="txtContact" layoutX="484.0" layoutY="266.0" prefHeight="26.0" prefWidth="256.0" promptText="enter valid contact number here" style="-fx-background-radius: 10;" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="265.0" />
       <TableView fx:id="tblSupplier" layoutX="45.0" layoutY="353.0" prefHeight="164.0" prefWidth="1057.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="353.0">
          <columns>
             <TableColumn fx:id="colid" prefWidth="216.0" text="Supplier Id" />
@@ -58,5 +54,9 @@
       <JFXButton buttonType="RAISED" layoutX="956.0" layoutY="23.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.rightAnchor="112.0" />
       <JFXButton buttonType="RAISED" layoutX="868.0" layoutY="23.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" />
       <JFXButton buttonType="RAISED" layoutX="1042.0" layoutY="23.0" onAction="#btnDelete" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fab1a0;" text="Delete" />
+      <JFXTextField fx:id="txtId" editable="false" layoutX="83.0" layoutY="157.0" onAction="#idSearch" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtName" layoutX="446.0" layoutY="157.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtContact" layoutX="447.0" layoutY="266.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtAddress" layoutX="83.0" layoutY="266.0" prefHeight="24.0" prefWidth="256.0" />
    </children>
 </AnchorPane>

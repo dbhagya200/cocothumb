@@ -10,24 +10,28 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
-import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.*;
 import lk.ijse.cocothumb.model.tModel.CartTm;
-import lk.ijse.cocothumb.repository.*;
+import lk.ijse.cocothumb.repository.CustomerRepo;
+import lk.ijse.cocothumb.repository.ItemRepo;
+import lk.ijse.cocothumb.repository.OrderRepo;
+import lk.ijse.cocothumb.repository.PlaceOrderRepo;
+import net.sf.jasperreports.engine.*;
+import net.sf.jasperreports.engine.design.JasperDesign;
+import net.sf.jasperreports.engine.xml.JRXmlLoader;
+import net.sf.jasperreports.view.JasperViewer;
 
-import java.sql.Date;
-import java.util.ArrayList;
 import java.io.IOException;
+import java.sql.Date;
 import java.sql.SQLException;
 import java.time.LocalDate;
-import java.util.List;
-import java.util.Optional;
+import java.util.*;
 
 public class CustomerOrderFormController {
 
@@ -103,13 +107,7 @@ public class CustomerOrderFormController {
 
     @FXML
     void btnShowTable(ActionEvent event) throws IOException {
-        AnchorPane rootNodeCart = FXMLLoader.load(getClass().getResource("/view/cust_payment.fxml"));
 
-        Stage popupStage = new Stage();
-        popupStage.initModality(Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Popup Window");
-        popupStage.setScene(new Scene(rootNodeCart));
-        popupStage.showAndWait();
     }
 
 
@@ -170,7 +168,8 @@ public class CustomerOrderFormController {
         cartList.add(cartTm);
 
         tblOrderCart.setItems(cartList);
-        txtQty.setText("");
+        txtQty.setText(null);
+        txtItemType.setText(null);
         calculateNetTotal();
     }
 
@@ -187,9 +186,6 @@ public class CustomerOrderFormController {
 
         var orders = new Orders(order_id, cust_NIC,cust_id, user_id, date);
 
-      /*  String pay_id = CustPaymentRepo.currentId();
-        String cust_id = CustomerOrderFormController.getCust_id();
-        String pay_method = CustPaymentController.lblMethod.getText();*/
 
         List<OrderDetails> odList = new ArrayList<>();
         for (int i = 0; i < tblOrderCart.getItems().size(); i++) {
@@ -343,5 +339,27 @@ public class CustomerOrderFormController {
 
 
     public void btnaddtocart(MouseEvent mouseEvent) {
+    }
+
+
+    @FXML
+    void btnPrintBill(ActionEvent event) throws SQLException, JRException {
+        JasperDesign jasperDesign =
+                JRXmlLoader.load("src/main/resources/Report/coco_report.jrxml");
+        JasperReport jasperReport =
+                JasperCompileManager.compileReport(jasperDesign);
+
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("OrderID",txtOrderId.getText());
+        data.put("NetTotal",txtNetTotal.getText());
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        data,
+                        dbConnection.getInstance().getConnection());
+
+        JasperViewer.viewReport(jasperPrint,false);
     }
 }

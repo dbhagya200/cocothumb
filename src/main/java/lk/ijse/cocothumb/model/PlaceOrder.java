@@ -11,6 +11,5 @@ import java.util.List;
 public class PlaceOrder {
     private Orders orders;
     private List<OrderDetails> odList;
-   // private Payment payment;
 
 }

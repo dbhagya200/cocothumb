@@ -11,11 +11,10 @@ import javafx.stage.Stage;
 import lk.ijse.cocothumb.database.dbConnection;
 
 import java.io.IOException;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
-import java.sql.SQLException;
+import java.sql.*;
 import java.time.LocalDate;
+import java.time.LocalDateTime;
+import java.time.LocalTime;
 
 public class DashboardFormController {
 
@@ -43,6 +42,9 @@ public class DashboardFormController {
     private int ordersCount;
     @FXML
     private AnchorPane tabPane;
+
+    @FXML
+    private Label lblTime;
 
     @FXML
     private Label lblOrdersCount;
@@ -106,6 +108,7 @@ public class DashboardFormController {
 
         public void initialize(){
        setdate();
+       settime();
             try {
                 customerCount = getCustomerCount();
                 employeeCount = getEmployeeCount();
@@ -203,6 +206,10 @@ public class DashboardFormController {
     private void setdate() {
         LocalDate localDate = LocalDate.now();
         lbldate1.setText(localDate.toString());
+    }
+    private void settime() {
+        LocalTime localTime = LocalTime.now();
+        lblTime.setText(localTime.toString());
     }
 
 
