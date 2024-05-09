@@ -10,14 +10,17 @@ public class Regex {
     public static boolean isValidTextField(TextField textField, String text){
         String field = "";
         switch (textField){
-            case txtNIC -> {
+            case NIC :
                 field = "^([0-9]{9}[x|X|v|V]|[0-9]{12})$";
-                break;
-            }
-            case txtContact -> {
-                field = "^([0-9]{10})$";
-                break;
-            }
+            break;
+
+            case contact :
+                field = "^([+]94{1,3}|[0])([1-9]{2})([0-9]){7}$";
+            break;
+            case qty :
+                field = "^([0-9]{1,3})$";
+
+
         }
         Pattern pattern = Pattern.compile(field);
 

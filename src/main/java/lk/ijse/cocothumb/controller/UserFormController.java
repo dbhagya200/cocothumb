@@ -6,7 +6,7 @@ import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
-import jdk.internal.icu.lang.UCharacterDirection;
+
 import lk.ijse.cocothumb.model.User;
 import lk.ijse.cocothumb.repository.EmployeeRepo;
 import lk.ijse.cocothumb.repository.UserRepo;

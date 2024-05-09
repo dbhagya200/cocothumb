@@ -58,7 +58,8 @@ public class CustPaymentController {
 
     @FXML
     void btnClear(ActionEvent event) {
-    txtEmail.setText("");
+        cmbMethod.setValue(null);
+        txtEmail.setText("");
     }
 
     @FXML
