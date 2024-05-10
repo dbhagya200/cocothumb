@@ -274,7 +274,7 @@ public class CustomerFormController {
 
     public boolean isValid(){
         if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.NIC,txtNIC)) return false;
-        if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact,txtContact)) return false;
+        else if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact,txtContact)) return false;
         return true;
     }
 

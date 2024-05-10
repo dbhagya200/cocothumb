@@ -72,7 +72,7 @@
          </font>
       </JFXButton>
       <JFXComboBox fx:id="cmbjobrole" layoutX="817.0" layoutY="155.0" onAction="#cmbjobroleOnAction" prefHeight="26.0" prefWidth="256.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="156.0" />
-      <JFXTextField fx:id="txtId" editable="false" layoutX="83.0" layoutY="157.0" onAction="#idSearch" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtId" layoutX="83.0" layoutY="157.0" onAction="#idSearch" prefHeight="24.0" prefWidth="256.0" />
       <JFXTextField fx:id="txtName" layoutX="480.0" layoutY="155.0" prefHeight="24.0" prefWidth="256.0" />
       <JFXTextField fx:id="txtAddress" layoutX="87.0" layoutY="276.0" prefHeight="24.0" prefWidth="256.0" />
       <JFXTextField fx:id="txtContact" layoutX="468.0" layoutY="278.0" prefHeight="24.0" prefWidth="256.0" />

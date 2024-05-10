@@ -19,6 +19,10 @@ public class Regex {
             break;
             case qty :
                 field = "^([0-9]{1,3})$";
+            break;
+            case salary :
+                field = "^([0-9]{1,}[.]([0-9]){1,})$";
+            break;
 
 
         }

@@ -13,6 +13,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lk.ijse.cocothumb.controller.Util.Regex;
+import lk.ijse.cocothumb.controller.Util.TextField;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Employee;
 import lk.ijse.cocothumb.model.Job;
@@ -112,18 +114,24 @@ public class EmployeeFormController {
         double e_salary = Double.parseDouble(txtSalary.getText());
         String machine_id = AddMachineController.getMachineId();
 
-        Employee employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact,e_salary,machine_id);
-        System.out.println(employee);
-        try {
-            boolean isSaved = EmployeeRepo.save(employee);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "machine saved!").show();
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+       // if (isValid()) {
 
-        }
-        btnClear(event);
+
+            Employee employee = new Employee(e_id, e_name, e_jobrole, e_address, e_contact, e_salary, machine_id);
+            System.out.println(employee);
+            try {
+                boolean isSaved = EmployeeRepo.save(employee);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "machine saved!").show();
+                    initialize();
+                    btnClear(event);
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+
+            }
+            btnClear(event);
+       // }
     }
 
     @FXML
@@ -258,5 +266,19 @@ public class EmployeeFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
+    public void txtEmployeeContactOnKeyReleased(ActionEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact.contact,txtContact);
+    }
+
+    public void txtEmployeeSalaryOnKeyReleased(ActionEvent keyEvent) {
+        Regex.setTextColor(TextField.salary.salary,txtSalary);
+    }
+
+    public boolean isValid(){
+         if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact,txtContact)) return false;
+         else if (!Regex.setTextColor(TextField.salary,txtSalary)) return false;
+        return true;
     }
 }
