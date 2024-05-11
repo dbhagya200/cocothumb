@@ -1,0 +1,23 @@
+/*transparent-button {
+    background-color: transparent;
+    border: 1px solid #0000;
+    color: #0000;
+    padding: 10px 20px;
+    cursor: pointer;
+}*/
+Button{
+    -fx-background-size: 200 40;
+    -fx-background-color:  #fff;
+    -fx-background-radius: 20;
+    -fx-font-size: 10;
+    -fx-text-fill: #05940f;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-font-style: italic;
+    -fx-font-family: "serif";
+    -fx-border-color: #05940f;
+    -fx-border-width: 2;
+    -fx-border-radius: 20;
+    -fx-border-insets: 2;
+
+}

@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="rootNodeHome" prefHeight="699.0" prefWidth="1372.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.HomePageController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1372.0" pickOnBounds="true" AnchorPane.bottomAnchor="0.0">
+         <image>
+            <Image url="@../asserts.icon/360_F_717087301_6J9h0HN1Z4oShYE756K75i0sTOSxfsXC.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane layoutX="40.0" layoutY="96.0" prefHeight="514.0" prefWidth="631.0" style="-fx-background-radius: 30;">
+         <children>
+            <ImageView fitHeight="525.0" fitWidth="633.0" layoutX="-2.0" layoutY="-5.0" opacity="0.34" pickOnBounds="true">
+               <image>
+                  <Image url="@../asserts.icon/Frame%201.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="38.0" layoutY="23.0" prefHeight="110.0" prefWidth="297.0" text="COCO " textFill="#ffffffe0" underline="true">
+               <font>
+                  <Font name="FreeSerif Bold Italic" size="96.0" />
+               </font>
+            </Label>
+            <Label layoutX="65.0" layoutY="233.0" prefHeight="26.0" prefWidth="370.0" text="Ice - cold Coconut,Summer's" textFill="WHITE">
+               <font>
+                  <Font name="Potti Sreeramulu" size="26.0" />
+               </font>
+            </Label>
+            <Label layoutX="64.0" layoutY="258.0" prefHeight="26.0" prefWidth="303.0" text="Perfect Mascot." textFill="WHITE">
+               <font>
+                  <Font name="Potti Sreeramulu" size="26.0" />
+               </font>
+            </Label>
+            <JFXButton buttonType="RAISED" layoutX="176.0" layoutY="375.0" onAction="#btnSignup" prefHeight="40.0" prefWidth="285.0" style="-fx-background-color: #ffff; -fx-background-radius: 30;" stylesheets="@../Style/transparentButton.css" text="Sign up" />
+            <JFXButton buttonType="RAISED" layoutX="176.0" layoutY="431.0" onAction="#btnLogin" prefHeight="40.0" prefWidth="285.0" style="-fx-background-color: #ffff; -fx-background-radius: 30;" stylesheets="@../Style/transparentButton.css" text="Login" />
+            <Label layoutX="61.0" layoutY="302.0" prefHeight="27.0" prefWidth="539.0" text="Drink Fresh coconut water,to keep yourself Hydrated in summers." textFill="WHITE">
+               <font>
+                  <Font name="FreeSerif Italic" size="20.0" />
+               </font>
+            </Label>
+            <Label layoutX="203.0" layoutY="113.0" prefHeight="110.0" prefWidth="360.0" text="THUMB" textFill="#ffffffe0" underline="true">
+               <font>
+                  <Font name="FreeSerif Bold Italic" size="96.0" />
+               </font>
+            </Label>
+            <AnchorPane layoutX="552.0" layoutY="113.0" opacity="0.7" prefHeight="34.0" prefWidth="27.0" style="-fx-background-color: 3461111; -fx-background-radius: 60;" AnchorPane.bottomAnchor="373.0" AnchorPane.rightAnchor="44.0">
+               <children>
+                  <ImageView fitHeight="34.0" fitWidth="34.0" layoutX="1.0" layoutY="-1.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asserts.icon/icons8-like-50.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </AnchorPane>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1289.0" layoutY="337.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #ffff; -fx-background-radius: 30;" AnchorPane.bottomAnchor="265.0" AnchorPane.leftAnchor="1227.0">
+         <children>
+            <ImageView fitHeight="62.0" fitWidth="36.0" layoutX="5.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts.icon/icons8-facebook-50(1).png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1282.0" layoutY="400.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #ffff; -fx-background-radius: 35;" AnchorPane.bottomAnchor="205.0" AnchorPane.leftAnchor="1227.0">
+         <children>
+            <ImageView fitHeight="62.0" fitWidth="36.0" layoutX="5.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts.icon/icons8-instagram-50.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1284.0" layoutY="453.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #ffff; -fx-background-radius: 35;" AnchorPane.bottomAnchor="145.0" AnchorPane.leftAnchor="1227.0">
+         <children>
+            <ImageView fitHeight="62.0" fitWidth="36.0" layoutX="6.0" layoutY="5.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts.icon/icons8-twitter-50.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <AnchorPane layoutX="1227.0" layoutY="570.0" prefHeight="45.0" prefWidth="45.0" style="-fx-background-color: #ffff; -fx-background-radius: 35;" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="1227.0">
+         <children>
+            <ImageView fitHeight="62.0" fitWidth="36.0" layoutX="6.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../asserts.icon/icons8-whatsapp-50.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>

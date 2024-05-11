@@ -20,32 +20,32 @@
                </image>
             </ImageView>
             <ImageView fitHeight="150.0" fitWidth="200.0" pickOnBounds="true" preserveRatio="true" />
-            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="12.0" layoutY="195.0" onAction="#btncustomer" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Add Customer" textFill="#07060d">
+            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="12.0" layoutY="195.0" onAction="#btncustomer" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Add Customer" textFill="WHITE">
                <font>
                   <Font name="Ubuntu Bold Italic" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="12.0" layoutY="457.0" onAction="#btnsupplierorders" prefHeight="45.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Supplier Orders" textFill="#07060d">
+            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="12.0" layoutY="457.0" onAction="#btnsupplierorders" prefHeight="45.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Supplier Orders" textFill="WHITE">
                <font>
                   <Font name="Ubuntu Bold Italic" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="13.0" layoutY="329.0" onAction="#btnaddsupplier" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Add Supplier" textFill="#07060d" AnchorPane.leftAnchor="13.0">
+            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="13.0" layoutY="329.0" onAction="#btnaddsupplier" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Add Supplier" textFill="WHITE" AnchorPane.leftAnchor="13.0">
                <font>
                   <Font name="Ubuntu Bold" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="12.0" layoutY="261.0" onAction="#btnaddItems" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Add items" textFill="#07060d">
+            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="12.0" layoutY="261.0" onAction="#btnaddItems" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Add items" textFill="WHITE">
                <font>
                   <Font name="Ubuntu Bold Italic" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="12.0" layoutY="395.0" onAction="#btncustomerorders" prefHeight="45.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Customer Orders" textFill="#07060d">
+            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="12.0" layoutY="395.0" onAction="#btncustomerorders" prefHeight="45.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Customer Orders" textFill="WHITE">
                <font>
                   <Font name="Ubuntu Bold Italic" size="15.0" />
                </font>
             </JFXButton>
-            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="13.0" layoutY="129.0" onAction="#btnemployee" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Add Employee" textFill="#07060d" AnchorPane.leftAnchor="13.0">
+            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="13.0" layoutY="129.0" onAction="#btnemployee" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" stylesheets="@../Style/ButtonChange.css" text="Add Employee" textFill="WHITE" AnchorPane.leftAnchor="13.0">
                <font>
                   <Font name="Ubuntu Bold Italic" size="15.0" />
                </font>
