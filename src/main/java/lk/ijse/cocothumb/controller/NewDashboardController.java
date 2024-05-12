@@ -5,6 +5,7 @@ import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
+import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.cocothumb.database.dbConnection;
@@ -14,7 +15,7 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 
-public class DashboardFormController {
+public class NewDashboardController {
 
     public AnchorPane customRoot;
     @FXML
@@ -83,7 +84,7 @@ public class DashboardFormController {
     }
 
     @FXML
-        void btnexit(ActionEvent event) throws IOException {
+    void btnexit(ActionEvent event) throws IOException {
         AnchorPane rootNode = FXMLLoader.load(getClass().getResource("/view/login_form_old.fxml"));
         Stage stage = (Stage) rootNode1.getScene().getWindow();
 
@@ -104,22 +105,22 @@ public class DashboardFormController {
 
     }
 
-        public void initialize(){
-       setdate();
-       settime();
-            try {
-                customerCount = getCustomerCount();
-                employeeCount = getEmployeeCount();
-                itemCount = getItemCount();
-                ordersCount = getOrdersCount();
+    public void initialize(){
+        setdate();
+        settime();
+        try {
+            customerCount = getCustomerCount();
+            employeeCount = getEmployeeCount();
+            itemCount = getItemCount();
+            ordersCount = getOrdersCount();
 
-            } catch (SQLException e) {
-                throw new RuntimeException(e);
-            }
-            setCustomerCount(customerCount);
-            setEmployeeCount(employeeCount);
-            setItemCount(itemCount);
-            setOrdersCount(ordersCount);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        setCustomerCount(customerCount);
+        setEmployeeCount(employeeCount);
+        setItemCount(itemCount);
+        setOrdersCount(ordersCount);
 
 
 
@@ -248,5 +249,23 @@ public class DashboardFormController {
         stage.setTitle("Change Password Form");
         stage.centerOnScreen();
 
+    }
+
+    public void btnlogout(ActionEvent actionEvent) throws IOException {
+        AnchorPane rootNode = FXMLLoader.load(getClass().getResource("/view/login_form_old.fxml"));
+        Stage stage = (Stage) rootNode1.getScene().getWindow();
+
+        stage.setScene(new Scene(rootNode));
+        stage.setTitle("Login Form");
+        stage.centerOnScreen();
+    }
+
+    public void actionchange(MouseEvent mouseEvent) throws IOException {
+        AnchorPane rootNodePassword = FXMLLoader.load(this.getClass().getResource("/view/change_password.fxml"));
+        Stage stage = (Stage) customRoot.getScene().getWindow();
+        customRoot.getChildren().clear();
+        customRoot.getChildren().add(rootNodePassword);
+        stage.setTitle("Change Password Form");
+        stage.centerOnScreen();
     }
 }

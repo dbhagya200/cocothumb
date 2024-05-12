@@ -24,12 +24,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.time.LocalDate;
 
-public class LoginFormController {
+public class NewLoginController {
 
     @FXML
     private AnchorPane rootNodeLogin;
-    @FXML
-    private Label lbldate;
 
     @FXML
     private ImageView rootNode;
@@ -52,6 +50,10 @@ public class LoginFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, "OOPS! something went wrong").show();
         }
+
+    }
+    @FXML
+    void actionFpassword(ActionEvent event) {
 
     }
 
@@ -95,25 +97,6 @@ public class LoginFormController {
     }
 
 
-
-    private void setdate() {
-        LocalDate localDate = LocalDate.now();
-        lbldate.setText(localDate.toString());
-    }
-
-
-    @FXML
-    void signUp(ActionEvent event) throws IOException {
-
-
-        AnchorPane rootNodeUserForm = FXMLLoader.load(getClass().getResource("/view/user_form.fxml"));
-
-        Stage popupStage = new Stage();
-        popupStage.initModality(Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Popup Window");
-        popupStage.setScene(new Scene(rootNodeUserForm));
-        popupStage.showAndWait();
-    }
 
 }
 

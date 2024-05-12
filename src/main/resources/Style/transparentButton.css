@@ -1,11 +1,11 @@
-/*transparent-button {
+.transparent-button {
     background-color: transparent;
     border: 1px solid #0000;
     color: #0000;
     padding: 10px 20px;
     cursor: pointer;
-}*/
-Button{
+}
+.Button{
     -fx-background-size: 200 40;
     -fx-background-color:  #fff;
     -fx-background-radius: 20;

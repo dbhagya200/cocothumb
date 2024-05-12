@@ -10,16 +10,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.cocothumb.controller.Util.Regex;
-import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Supplier;
-import lk.ijse.cocothumb.model.tModel.CustomerTm;
 import lk.ijse.cocothumb.model.tModel.SupplierTm;
-import lk.ijse.cocothumb.repository.CustomerRepo;
 import lk.ijse.cocothumb.repository.SupplierRepo;
 
 import java.io.IOException;
@@ -72,7 +68,7 @@ public class AddSuppFormController {
 
     @FXML
     void btnExit(ActionEvent event) throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/login_form.fxml"));
+        AnchorPane rootNode = FXMLLoader.load(this.getClass().getResource("/view/login_form_old.fxml"));
 
         Scene scene = new Scene(rootNode);
 

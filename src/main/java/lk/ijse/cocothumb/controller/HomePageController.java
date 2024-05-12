@@ -25,7 +25,7 @@ public class HomePageController {
     }
 
     public void btnLogin(ActionEvent actionEvent) throws IOException {
-        AnchorPane rootNodeLogin = FXMLLoader.load(this.getClass().getResource("/view/login_form.fxml"));
+        AnchorPane rootNodeLogin = FXMLLoader.load(this.getClass().getResource("/view/new_login.fxml"));
 
         Scene scene = new Scene(rootNodeLogin);
 

@@ -1,0 +1,118 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import com.jfoenix.controls.JFXButton?>
+<?import javafx.scene.control.Hyperlink?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.Light.Distant?>
+<?import javafx.scene.effect.Lighting?>
+<?import javafx.scene.effect.SepiaTone?>
+<?import javafx.scene.effect.Shadow?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="rootNodeLogin" prefHeight="699.0" prefWidth="1372.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.NewLoginController">
+   <children>
+      <ImageView fitHeight="700.0" fitWidth="1379.0" pickOnBounds="true">
+         <image>
+            <Image url="@../asserts.icon/desktop-wallpaper-landscape-nature-sunset-sky-sea-clouds-waves-patterns-colors-color.jpg" />
+         </image>
+      </ImageView>
+      <AnchorPane opacity="0.53" prefHeight="698.0" prefWidth="1376.0" style="-fx-background-color: #000;">
+         <children>
+            <Label layoutX="895.0" layoutY="139.0" prefHeight="55.0" prefWidth="179.0" text=" Coconut" textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Ubuntu Bold Italic" size="40.0" />
+               </font>
+            </Label>
+            <Label layoutX="676.0" layoutY="230.0" prefHeight="37.0" prefWidth="357.0" text="Introducing Coco Thumb! " textFill="WHITE">
+               <font>
+                  <Font name="FreeSerif Bold Italic" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="664.0" layoutY="296.0" prefHeight="39.0" prefWidth="640.0" text="With just one press, you can enjoy a delicious," textFill="WHITE">
+               <font>
+                  <Font name="FreeSerif Bold Italic" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="668.0" layoutY="338.0" prefHeight="39.0" prefWidth="647.0" text="nutritious and additive-free drink made from" textFill="WHITE">
+               <font>
+                  <Font name="FreeSerif Bold Italic" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="663.0" layoutY="378.0" prefHeight="39.0" prefWidth="451.0" text="100% Fresh without the hassle!" textFill="WHITE">
+               <font>
+                  <Font name="FreeSerif Bold Italic" size="28.0" />
+               </font>
+            </Label>
+            <Label layoutX="689.0" layoutY="86.0" prefHeight="55.0" prefWidth="464.0" text="Easy to Drink " textFill="WHITE" underline="true">
+               <font>
+                  <Font name="Ubuntu Bold Italic" size="40.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+      <AnchorPane layoutX="87.0" layoutY="96.0" prefHeight="475.0" prefWidth="490.0">
+         <children>
+            <ImageView fitHeight="477.0" fitWidth="431.0" layoutX="23.0" opacity="0.48" pickOnBounds="true">
+               <image>
+                  <Image url="@../asserts.icon/Frame%201.jpg" />
+               </image>
+            </ImageView>
+            <Label layoutX="187.0" layoutY="27.0" opacity="0.64" prefHeight="54.0" prefWidth="119.0" text="Login" textFill="WHITE">
+               <font>
+                  <Font name="FreeSerif Bold Italic" size="47.0" />
+               </font>
+            </Label>
+            <Text fill="WHITE" layoutX="87.0" layoutY="180.0" strokeType="OUTSIDE" strokeWidth="0.0" text="User ID:" wrappingWidth="63.7294921875">
+               <font>
+                  <Font name="Noto Serif CJK HK Bold" size="15.0" />
+               </font>
+            </Text>
+            <TextField fx:id="txtUserId" layoutX="188.0" layoutY="162.0" prefHeight="24.0" prefWidth="219.0" promptText="user Id" style="-fx-background-radius: 5;">
+               <effect>
+                  <SepiaTone level="0.0">
+                     <input>
+                        <Lighting diffuseConstant="1.37" specularConstant="0.0">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </input>
+                  </SepiaTone>
+               </effect>
+            </TextField>
+            <Text fill="WHITE" layoutX="84.0" layoutY="233.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Password:" wrappingWidth="85.06282043457031">
+               <font>
+                  <Font name="Noto Serif CJK HK Bold" size="15.0" />
+               </font>
+            </Text>
+            <JFXButton layoutX="190.0" layoutY="272.0" onAction="#btnlogin" prefHeight="24.0" prefWidth="215.0" style="-fx-background-color: #8C6A5D;" text="Login" textFill="WHITE" />
+            <Label layoutX="193.0" layoutY="299.0" prefHeight="16.0" prefWidth="130.0" text="Forgot password ?" textFill="WHITE" />
+            <Hyperlink layoutX="317.0" layoutY="296.0" onAction="#actionFpassword" text="click here" />
+            <PasswordField fx:id="txtPassword" layoutX="188.0" layoutY="215.0" prefHeight="24.0" prefWidth="219.0" promptText="password" style="-fx-background-radius: 5;">
+               <effect>
+                  <SepiaTone level="0.0">
+                     <input>
+                        <Lighting diffuseConstant="1.35" specularConstant="0.0">
+                           <bumpInput>
+                              <Shadow />
+                           </bumpInput>
+                           <light>
+                              <Light.Distant />
+                           </light>
+                        </Lighting>
+                     </input>
+                  </SepiaTone>
+               </effect>
+            </PasswordField>
+         </children>
+      </AnchorPane>
+   </children>
+</AnchorPane>
