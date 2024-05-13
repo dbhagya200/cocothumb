@@ -24,40 +24,40 @@
       </ImageView>
       <AnchorPane opacity="0.53" prefHeight="698.0" prefWidth="1376.0" style="-fx-background-color: #000;">
          <children>
-            <Label layoutX="895.0" layoutY="139.0" prefHeight="55.0" prefWidth="179.0" text=" Coconut" textFill="WHITE" underline="true">
+            <Label layoutX="895.0" layoutY="203.0" prefHeight="59.0" prefWidth="226.0" text=" Coconut" textFill="WHITE" underline="true">
                <font>
-                  <Font name="Ubuntu Bold Italic" size="40.0" />
+                  <Font name="Ubuntu Bold Italic" size="50.0" />
                </font>
             </Label>
-            <Label layoutX="676.0" layoutY="230.0" prefHeight="37.0" prefWidth="357.0" text="Introducing Coco Thumb! " textFill="WHITE">
+            <Label layoutX="676.0" layoutY="294.0" prefHeight="37.0" prefWidth="357.0" text="Introducing Coco Thumb! " textFill="WHITE">
                <font>
-                  <Font name="FreeSerif Bold Italic" size="28.0" />
+                  <Font name="FreeSerif Bold Italic" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="664.0" layoutY="296.0" prefHeight="39.0" prefWidth="640.0" text="With just one press, you can enjoy a delicious," textFill="WHITE">
+            <Label layoutX="664.0" layoutY="360.0" prefHeight="39.0" prefWidth="640.0" text="With just one press, you can enjoy a delicious," textFill="WHITE">
                <font>
-                  <Font name="FreeSerif Bold Italic" size="28.0" />
+                  <Font name="FreeSerif Bold Italic" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="668.0" layoutY="338.0" prefHeight="39.0" prefWidth="647.0" text="nutritious and additive-free drink made from" textFill="WHITE">
+            <Label layoutX="668.0" layoutY="402.0" prefHeight="39.0" prefWidth="647.0" text="nutritious and additive-free drink made from" textFill="WHITE">
                <font>
-                  <Font name="FreeSerif Bold Italic" size="28.0" />
+                  <Font name="FreeSerif Bold Italic" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="663.0" layoutY="378.0" prefHeight="39.0" prefWidth="451.0" text="100% Fresh without the hassle!" textFill="WHITE">
+            <Label layoutX="663.0" layoutY="442.0" prefHeight="39.0" prefWidth="451.0" text="100% Fresh without the hassle!" textFill="WHITE">
                <font>
-                  <Font name="FreeSerif Bold Italic" size="28.0" />
+                  <Font name="FreeSerif Bold Italic" size="25.0" />
                </font>
             </Label>
-            <Label layoutX="689.0" layoutY="86.0" prefHeight="55.0" prefWidth="464.0" text="Easy to Drink " textFill="WHITE" underline="true">
+            <Label layoutX="689.0" layoutY="150.0" prefHeight="59.0" prefWidth="338.0" text="Easy to Drink " textFill="WHITE" underline="true">
                <font>
-                  <Font name="Ubuntu Bold Italic" size="40.0" />
+                  <Font name="Ubuntu Bold Italic" size="50.0" />
                </font>
             </Label>
          </children></AnchorPane>
       <AnchorPane layoutX="87.0" layoutY="96.0" prefHeight="475.0" prefWidth="490.0">
          <children>
-            <ImageView fitHeight="477.0" fitWidth="431.0" layoutX="23.0" opacity="0.48" pickOnBounds="true">
+            <ImageView fitHeight="477.0" fitWidth="431.0" layoutX="23.0" opacity="0.37" pickOnBounds="true">
                <image>
                   <Image url="@../asserts.icon/Frame%201.jpg" />
                </image>

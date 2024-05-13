@@ -10,59 +10,80 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="1147.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.ItemFormController">
+<AnchorPane fx:id="rootNode7" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.ItemFormController">
    <children>
-      <ImageView fitHeight="582.0" fitWidth="1135.0" opacity="0.35" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="12.0">
-         <image>
-            <Image url="@../asserts.icon/Thai%20Food%20and%20Travel%20-%20Deep%20Knowledge(1).jpeg" />
-         </image>
-      </ImageView>
       <Label layoutX="137.0" layoutY="20.0" prefHeight="60.0" prefWidth="417.0" text="Add Items.....  " AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="8.0">
          <font>
             <Font name="Ubuntu Medium Italic" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="85.0" layoutY="240.0" text="Unit Price:" AnchorPane.leftAnchor="85.0" AnchorPane.rightAnchor="846.0" AnchorPane.topAnchor="234.0">
+      <Label layoutX="85.0" layoutY="240.0" text="Unit Price:" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="846.0" AnchorPane.topAnchor="234.0">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="85.0" layoutY="128.0" text="Item Code:" AnchorPane.leftAnchor="85.0" AnchorPane.topAnchor="128.0">
+      <Label layoutX="85.0" layoutY="128.0" text="Item Code:" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="128.0">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="824.0" layoutY="234.0" text="Qty On Hand:" AnchorPane.leftAnchor="824.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="234.0">
+      <Label layoutX="824.0" layoutY="234.0" prefHeight="18.0" prefWidth="114.0" text="Qty On Hand:" AnchorPane.leftAnchor="829.0" AnchorPane.rightAnchor="160.0" AnchorPane.topAnchor="234.0">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="478.0" layoutY="128.0" text="Item Type:" AnchorPane.leftAnchor="478.0" AnchorPane.rightAnchor="553.0" AnchorPane.topAnchor="128.0">
+      <Label layoutX="453.0" layoutY="128.0" prefHeight="18.0" prefWidth="91.0" text="Item Type:" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="554.0" AnchorPane.topAnchor="128.0">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TableView fx:id="tblItem" layoutX="159.0" layoutY="339.0" prefHeight="164.0" prefWidth="1057.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="353.0">
+      <TableView fx:id="tblItem" layoutX="159.0" layoutY="339.0" prefHeight="164.0" prefWidth="1057.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="353.0">
          <columns>
             <TableColumn fx:id="colCode" prefWidth="244.0" text="Code" />
-            <TableColumn fx:id="colitemType" prefWidth="282.0" text="Item Type" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="335.0" text="Unit Price" />
-            <TableColumn fx:id="colQtyOnHand" prefWidth="202.0" text="Qty On Hand" />
+            <TableColumn fx:id="colitemType" prefWidth="319.3333740234375" text="Item Type" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="250.0" text="Unit Price" />
+            <TableColumn fx:id="colQtyOnHand" prefWidth="203.0" text="Qty On Hand" />
          </columns>
       </TableView>
-      <JFXButton buttonType="RAISED" layoutX="780.0" layoutY="23.0" onAction="#btnClear" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fad390;" text="Clear" AnchorPane.topAnchor="23.0" />
-      <JFXButton buttonType="RAISED" layoutX="956.0" layoutY="23.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.rightAnchor="112.0" AnchorPane.topAnchor="23.0" />
-      <JFXButton buttonType="RAISED" layoutX="868.0" layoutY="23.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" AnchorPane.topAnchor="23.0" />
-      <JFXButton buttonType="RAISED" layoutX="1042.0" layoutY="23.0" onAction="#btnDelete" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fab1a0;" text="Delete" />
-      <Label layoutX="481.0" layoutY="234.0" prefHeight="19.0" prefWidth="212.0" text="Unit Price for Company:" AnchorPane.leftAnchor="481.0" AnchorPane.rightAnchor="454.0" AnchorPane.topAnchor="234.0">
+      <Label layoutX="457.0" layoutY="234.0" prefHeight="19.0" prefWidth="199.0" text="Unit Price for Company:" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="442.0" AnchorPane.topAnchor="234.0">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <JFXTextField fx:id="txtCode" editable="false" layoutX="79.0" layoutY="157.0" onAction="#SearchCode" prefHeight="24.0" prefWidth="256.0" />
-      <JFXTextField fx:id="txtItemType" layoutX="476.0" layoutY="157.0" prefHeight="24.0" prefWidth="256.0" />
-      <JFXTextField fx:id="txtUnitPrice" layoutX="80.0" layoutY="266.0" prefHeight="24.0" prefWidth="256.0" />
-      <JFXTextField fx:id="txtQtyOnHandCompany" layoutX="476.0" layoutY="266.0" prefHeight="24.0" prefWidth="256.0" />
-      <JFXTextField fx:id="txtQtyOnHand" layoutX="820.0" layoutY="266.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtCode" editable="false" layoutX="79.0" layoutY="157.0" onAction="#SearchCode" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="156.0" />
+      <JFXTextField fx:id="txtItemType" layoutX="451.0" layoutY="156.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="156.0" />
+      <JFXTextField fx:id="txtUnitPrice" layoutX="80.0" layoutY="266.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.leftAnchor="83.0" />
+      <JFXTextField fx:id="txtQtyOnHandCompany" layoutX="451.0" layoutY="266.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="457.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtQtyOnHand" layoutX="820.0" layoutY="266.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="821.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="265.0" />
+      <JFXButton buttonType="RAISED" layoutX="726.0" layoutY="33.0" onAction="#btnClear" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fad390;" text="Clear" AnchorPane.bottomAnchor="528.0" AnchorPane.leftAnchor="716.0" AnchorPane.rightAnchor="302.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="901.0" layoutY="33.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.bottomAnchor="528.0" AnchorPane.leftAnchor="891.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="814.0" layoutY="33.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" AnchorPane.bottomAnchor="528.0" AnchorPane.leftAnchor="804.0" AnchorPane.rightAnchor="214.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="999.0" layoutY="41.0" onAction="#btnDelete" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fab1a0;" text="Delete" AnchorPane.bottomAnchor="528.0" AnchorPane.leftAnchor="979.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font>
+      </JFXButton>
+      <JFXTextField labelFloat="true" layoutX="465.0" layoutY="33.0" onAction="#actionsearch" prefHeight="33.0" prefWidth="236.0" promptText="search" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="452.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="440.0" layoutY="43.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="430.0" AnchorPane.rightAnchor="646.0" AnchorPane.topAnchor="33.0">
+         <image>
+            <Image url="@../asserts.icon/icons8-search-50.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

@@ -36,7 +36,7 @@
                   <Font name="Potti Sreeramulu" size="26.0" />
                </font>
             </Label>
-            <JFXButton id="transparentS" fx:id="transeparentS" buttonType="RAISED" layoutX="176.0" layoutY="375.0" onAction="#btnSignup" prefHeight="40.0" prefWidth="285.0" style="-fx-background-color: #000; -fx-background-radius: 30;" stylesheets="@../Style/transparentButton.css" text="Sign up" textFill="WHITE" />
+            <JFXButton fx:id="transeparentS" buttonType="RAISED" layoutX="176.0" layoutY="375.0" onAction="#btnSignup" prefHeight="40.0" prefWidth="285.0" style="-fx-background-color: #000; -fx-background-radius: 30;" stylesheets="@../Style/transparentButton.css" text="Sign up" textFill="WHITE" />
             <JFXButton buttonType="RAISED" layoutX="176.0" layoutY="431.0" onAction="#btnLogin" prefHeight="40.0" prefWidth="285.0" style="-fx-background-color: #ffff; -fx-background-radius: 30;" stylesheets="@../Style/transparentButton.css" text="Login" />
             <Label layoutX="61.0" layoutY="302.0" prefHeight="27.0" prefWidth="539.0" text="Drink Fresh coconut water,to keep yourself Hydrated in summers." textFill="WHITE">
                <font>

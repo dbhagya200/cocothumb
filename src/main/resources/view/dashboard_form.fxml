@@ -28,7 +28,7 @@
                   <Font name="Ubuntu Bold Italic" size="20.0" />
                </font>
             </JFXButton>
-            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="13.0" layoutY="329.0" onAction="#btnaddsupplier" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Add Supplier" textFill="WHITE" AnchorPane.leftAnchor="13.0">
+            <JFXButton blendMode="COLOR_BURN" buttonType="RAISED" layoutX="-5.0" layoutY="320.0" onAction="#btnaddsupplier" prefHeight="44.0" prefWidth="186.0" ripplerFill="BLACK" style="-fx-background-color: #0A6847; -fx-background-radius: 10;" text="Add Supplier" textFill="WHITE" AnchorPane.leftAnchor="-5.0">
                <font>
                   <Font name="Ubuntu Bold" size="20.0" />
                </font>
@@ -61,7 +61,7 @@
       </AnchorPane>
       <AnchorPane layoutX="207.0" layoutY="-4.0" prefHeight="79.0" prefWidth="1158.0" style="-fx-background-radius: 0 0 0 0;">
          <children>
-            <ImageView fitHeight="86.0" fitWidth="1167.0" opacity="0.9" pickOnBounds="true">
+            <ImageView fitHeight="86.0" fitWidth="1167.0" opacity="0.29" pickOnBounds="true">
                <image>
                   <Image url="@../asserts.icon/d98f5e4432c2c9de5418ed4b668faee5.jpeg" />
                </image>

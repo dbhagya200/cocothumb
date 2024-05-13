@@ -281,4 +281,7 @@ public class EmployeeFormController {
          else if (!Regex.setTextColor(TextField.salary,txtSalary)) return false;
         return true;
     }
+
+    public void actionsearch(ActionEvent actionEvent) {
+    }
 }

@@ -10,62 +10,79 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNode3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="1147.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.CustomerFormController">
+<AnchorPane fx:id="rootNode3" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="582.0" prefWidth="1098.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.CustomerFormController">
    <children>
-      <ImageView fitHeight="582.0" fitWidth="1135.0" opacity="0.35" pickOnBounds="true" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="12.0">
-         <image>
-            <Image url="@../asserts.icon/Thai%20Food%20and%20Travel%20-%20Deep%20Knowledge(1).jpeg" />
-         </image>
-      </ImageView>
-      <Label layoutX="29.0" layoutY="8.0" prefHeight="60.0" prefWidth="417.0" text="Add Customer  Form" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="8.0">
+      <Label layoutX="29.0" layoutY="8.0" prefHeight="60.0" prefWidth="380.0" text="Add Customer  Form" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="8.0">
          <font>
             <Font name="Ubuntu Medium Italic" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="99.0" layoutY="124.0" text="Customer Id:" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="750.0" AnchorPane.topAnchor="123.0">
+      <Label layoutX="99.0" layoutY="124.0" prefHeight="18.0" prefWidth="154.0" text="Customer Id:" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="861.0" AnchorPane.topAnchor="123.0">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="135.0" layoutY="235.0" text=" Name:" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="750.0" AnchorPane.topAnchor="234.0">
+      <Label layoutX="135.0" layoutY="235.0" prefHeight="18.0" prefWidth="99.0" text=" Name:" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="916.0" AnchorPane.topAnchor="234.0">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="478.0" layoutY="234.0" text=" Address:" AnchorPane.leftAnchor="478.0" AnchorPane.rightAnchor="589.0" AnchorPane.topAnchor="234.0">
+      <Label layoutX="459.0" layoutY="234.0" prefHeight="18.0" prefWidth="91.0" text=" Address:" AnchorPane.bottomAnchor="330.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="548.0" AnchorPane.topAnchor="234.0">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="830.0" layoutY="124.0" text="Contact Number:" AnchorPane.leftAnchor="823.0" AnchorPane.rightAnchor="180.0" AnchorPane.topAnchor="123.0">
+      <Label layoutX="830.0" layoutY="124.0" prefHeight="18.0" prefWidth="144.0" text="Contact Number:" AnchorPane.bottomAnchor="441.0" AnchorPane.leftAnchor="823.0" AnchorPane.rightAnchor="131.0" AnchorPane.topAnchor="123.0">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="780.0" layoutY="23.0" onAction="#btnClear" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fad390;" text="Clear" AnchorPane.topAnchor="23.0" />
-      <JFXButton buttonType="RAISED" layoutX="955.0" layoutY="23.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.rightAnchor="112.0" />
-      <JFXButton buttonType="RAISED" layoutX="868.0" layoutY="23.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" />
-      <TableView fx:id="tblCustomer" layoutX="86.0" layoutY="366.0" prefHeight="164.0" prefWidth="1057.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="45.0" AnchorPane.rightAnchor="45.0" AnchorPane.topAnchor="353.0">
+      <JFXButton buttonType="RAISED" layoutX="716.0" layoutY="23.0" onAction="#btnClear" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fad390;" text="Clear" AnchorPane.bottomAnchor="528.0" AnchorPane.leftAnchor="716.0" AnchorPane.rightAnchor="302.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="891.0" layoutY="23.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" AnchorPane.bottomAnchor="528.0" AnchorPane.leftAnchor="891.0" AnchorPane.rightAnchor="127.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></JFXButton>
+      <JFXButton buttonType="RAISED" layoutX="804.0" layoutY="23.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" AnchorPane.bottomAnchor="528.0" AnchorPane.leftAnchor="804.0" AnchorPane.rightAnchor="214.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></JFXButton>
+      <TableView fx:id="tblCustomer" layoutX="25.0" layoutY="338.0" prefHeight="164.0" prefWidth="1057.0" AnchorPane.bottomAnchor="65.0" AnchorPane.leftAnchor="40.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="353.0">
          <columns>
-            <TableColumn fx:id="colid" prefWidth="187.3333282470703" text="Customer Id" />
+            <TableColumn fx:id="colid" editable="false" prefWidth="146.66665649414062" text="Customer Id" />
 <!--            <TableColumn fx:id="colNIC" prefWidth="260.0" text="NIC" />-->
 <!--            <TableColumn fx:id="colName" prefWidth="160.0" text="Name" />-->
-            <TableColumn fx:id="colNIC" minWidth="0.0" prefWidth="237.6666717529297" text="NIC " />
-            <TableColumn fx:id="colName" minWidth="0.0" prefWidth="221.0" text="Name" />
-            <TableColumn fx:id="colAddress" minWidth="0.0" prefWidth="221.0" text="Address" />
-            <TableColumn fx:id="colContact" minWidth="0.0" prefWidth="188.0" text="Contact" />
+            <TableColumn fx:id="colNIC" editable="false" minWidth="0.0" prefWidth="258.66668701171875" text="NIC " />
+            <TableColumn fx:id="colName" editable="false" minWidth="0.0" prefWidth="242.33331298828125" text="Name" />
+            <TableColumn fx:id="colAddress" editable="false" minWidth="0.0" prefWidth="177.33331298828125" resizable="false" text="Address" />
+            <TableColumn fx:id="colContact" editable="false" minWidth="0.0" prefWidth="190.0" text="Contact" />
          </columns>
       </TableView>
-      <Label layoutX="486.0" layoutY="123.0" prefHeight="18.0" prefWidth="122.0" text="Customer NIC:" AnchorPane.leftAnchor="479.0" AnchorPane.rightAnchor="546.0" AnchorPane.topAnchor="123.0">
+      <Label layoutX="457.0" layoutY="123.0" prefHeight="18.0" prefWidth="132.0" text="Customer NIC:" AnchorPane.bottomAnchor="441.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="123.0">
          <font>
-            <Font name="System Bold Italic" size="15.0" />
+            <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="1042.0" layoutY="23.0" onAction="#btnDelete" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fab1a0;" text="Delete" />
-      <JFXTextField fx:id="txtId" layoutX="83.0" layoutY="156.0" onAction="#idSearch" prefHeight="26.0" prefWidth="256.0" AnchorPane.leftAnchor="83.0" />
-      <JFXTextField fx:id="txtNIC" layoutX="476.0" layoutY="156.0" onAction="#NICSearch" prefHeight="26.0" prefWidth="256.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="476.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="156.0" />
-      <JFXTextField fx:id="txtContact" layoutX="786.0" layoutY="169.0" prefHeight="26.0" prefWidth="256.0" AnchorPane.rightAnchor="70.0" AnchorPane.topAnchor="156.0" />
-      <JFXTextField fx:id="txtName" layoutX="83.0" layoutY="265.0" prefHeight="26.0" prefWidth="256.0" AnchorPane.leftAnchor="83.0" />
-      <JFXTextField fx:id="txtAddress" layoutX="446.0" layoutY="278.0" prefHeight="26.0" prefWidth="256.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="476.0" AnchorPane.rightAnchor="415.0" AnchorPane.topAnchor="265.0" />
+      <JFXButton buttonType="RAISED" layoutX="979.0" layoutY="21.0" onAction="#btnDelete" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fab1a0;" text="Delete" AnchorPane.bottomAnchor="528.0" AnchorPane.leftAnchor="979.0" AnchorPane.rightAnchor="40.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font name="System Bold Italic" size="13.0" />
+         </font></JFXButton>
+      <JFXTextField fx:id="txtId" editable="false" layoutX="83.0" layoutY="156.0" onAction="#idSearch" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="156.0" />
+      <JFXTextField fx:id="txtNIC" layoutX="457.0" layoutY="156.0" onAction="#NICSearch" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="156.0" />
+      <JFXTextField fx:id="txtContact" layoutX="786.0" layoutY="169.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="821.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="156.0" />
+      <JFXTextField fx:id="txtName" layoutX="83.0" layoutY="265.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtAddress" layoutX="457.0" layoutY="265.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField labelFloat="true" layoutX="452.0" layoutY="23.0" onAction="#actionsearch" prefHeight="33.0" prefWidth="236.0" promptText="search" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="526.0" AnchorPane.leftAnchor="452.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="23.0">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="427.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="524.0" AnchorPane.leftAnchor="430.0" AnchorPane.rightAnchor="646.0" AnchorPane.topAnchor="33.0">
+         <image>
+            <Image url="@../asserts.icon/icons8-search-50.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

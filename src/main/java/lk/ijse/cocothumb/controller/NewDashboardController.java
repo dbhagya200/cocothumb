@@ -268,4 +268,23 @@ public class NewDashboardController {
         stage.setTitle("Change Password Form");
         stage.centerOnScreen();
     }
+
+    public void actionsearch(ActionEvent actionEvent) {
+    }
+
+
+    @FXML
+    void onsetting(MouseEvent event) {
+
+    }
+    @FXML
+    void onlogout(MouseEvent event) throws IOException {
+        AnchorPane rootNode = FXMLLoader.load(getClass().getResource("/view/new_login.fxml"));
+        Stage stage = (Stage) rootNode1.getScene().getWindow();
+
+        stage.setScene(new Scene(rootNode));
+        stage.setTitle("Login Form");
+        stage.centerOnScreen();
+    }
+
 }

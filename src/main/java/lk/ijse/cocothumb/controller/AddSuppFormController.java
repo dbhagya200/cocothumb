@@ -242,4 +242,6 @@ public class AddSuppFormController {
         return true;
     }
 
+    public void actionsearch(ActionEvent actionEvent) {
+    }
 }

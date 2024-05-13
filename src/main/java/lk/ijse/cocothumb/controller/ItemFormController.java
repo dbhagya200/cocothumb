@@ -218,5 +218,8 @@ public class ItemFormController {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
+
+    public void actionsearch(ActionEvent actionEvent) {
     }
+}
 

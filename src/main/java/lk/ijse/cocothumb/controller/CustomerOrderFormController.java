@@ -64,10 +64,10 @@ public class CustomerOrderFormController {
     private JFXButton btnAddToCart;
 
     @FXML
-    private JFXComboBox<String> cmbCustomerNIC;
+    private ComboBox<String> cmbCustomerNIC;
 
     @FXML
-    private JFXComboBox<String> cmbItemCode;
+    private ComboBox<String> cmbItemCode;
 
     @FXML
     private TableColumn<?, ?> colAction;

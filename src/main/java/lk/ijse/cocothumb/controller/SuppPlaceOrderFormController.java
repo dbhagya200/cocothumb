@@ -33,10 +33,10 @@ public class SuppPlaceOrderFormController {
     private JFXButton AddToCart;
 
     @FXML
-    private JFXComboBox<String> cmbItemCode;
+    private ComboBox<String> cmbItemCode;
 
     @FXML
-    private JFXComboBox<String> cmbSupplierId;
+    private ComboBox<String> cmbSupplierId;
 
     @FXML
     private TableColumn<?, ?> colAction;
@@ -297,4 +297,6 @@ public class SuppPlaceOrderFormController {
     }
 
 
+    public void btnPrintBill(ActionEvent actionEvent) {
+    }
 }
