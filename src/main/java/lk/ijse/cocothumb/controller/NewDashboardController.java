@@ -14,6 +14,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class NewDashboardController {
 
@@ -106,8 +107,19 @@ public class NewDashboardController {
     }
 
     public void initialize(){
-        setdate();
-        settime();
+
+        LocalTime time = LocalTime.now();
+        LocalDate date = LocalDate.now();
+
+        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
+        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("EEEE, MMM dd");
+
+        String formattedTime = time.format(timeFormatter);
+        String formattedDate = date.format(dateFormatter);
+
+        lblTime.setText(formattedTime);
+        lbldate1.setText(formattedDate);
+
         try {
             customerCount = getCustomerCount();
             employeeCount = getEmployeeCount();
@@ -200,15 +212,6 @@ public class NewDashboardController {
             customerCount = resultSet.getInt("customer_count");
         }
         return customerCount;
-    }
-
-    private void setdate() {
-        LocalDate localDate = LocalDate.now();
-        lbldate1.setText(localDate.toString());
-    }
-    private void settime() {
-        LocalTime localTime = LocalTime.now();
-        lblTime.setText(localTime.toString());
     }
 
 

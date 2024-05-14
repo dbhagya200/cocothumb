@@ -74,7 +74,7 @@
       <JFXTextField fx:id="txtContact" layoutX="786.0" layoutY="169.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="821.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="156.0" />
       <JFXTextField fx:id="txtName" layoutX="83.0" layoutY="265.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="265.0" />
       <JFXTextField fx:id="txtAddress" layoutX="457.0" layoutY="265.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="265.0" />
-      <JFXTextField labelFloat="true" layoutX="452.0" layoutY="23.0" onAction="#actionsearch" prefHeight="33.0" prefWidth="236.0" promptText="search" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="526.0" AnchorPane.leftAnchor="452.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="23.0">
+      <JFXTextField fx:id="txtId1" labelFloat="true" layoutX="452.0" layoutY="23.0" onAction="#actionsearch" prefHeight="33.0" prefWidth="236.0" promptText="search" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="526.0" AnchorPane.leftAnchor="452.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="23.0">
          <font>
             <Font size="14.0" />
          </font>

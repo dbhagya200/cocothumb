@@ -19,10 +19,10 @@
    <children>
       <ImageView fitHeight="700.0" fitWidth="1379.0" pickOnBounds="true">
          <image>
-            <Image url="@../asserts.icon/desktop-wallpaper-landscape-nature-sunset-sky-sea-clouds-waves-patterns-colors-color.jpg" />
+            <Image url="@../asserts.icon/360_F_717087301_6J9h0HN1Z4oShYE756K75i0sTOSxfsXC.jpg" />
          </image>
       </ImageView>
-      <AnchorPane opacity="0.53" prefHeight="698.0" prefWidth="1376.0" style="-fx-background-color: #000;">
+      <AnchorPane prefHeight="698.0" prefWidth="1376.0">
          <children>
             <Label layoutX="895.0" layoutY="203.0" prefHeight="59.0" prefWidth="226.0" text=" Coconut" textFill="WHITE" underline="true">
                <font>
@@ -57,7 +57,7 @@
          </children></AnchorPane>
       <AnchorPane layoutX="87.0" layoutY="96.0" prefHeight="475.0" prefWidth="490.0">
          <children>
-            <ImageView fitHeight="477.0" fitWidth="431.0" layoutX="23.0" opacity="0.37" pickOnBounds="true">
+            <ImageView fitHeight="477.0" fitWidth="431.0" layoutX="23.0" opacity="0.59" pickOnBounds="true">
                <image>
                   <Image url="@../asserts.icon/Frame%201.jpg" />
                </image>
@@ -93,7 +93,7 @@
                   <Font name="Noto Serif CJK HK Bold" size="15.0" />
                </font>
             </Text>
-            <JFXButton layoutX="190.0" layoutY="272.0" onAction="#btnlogin" prefHeight="24.0" prefWidth="215.0" style="-fx-background-color: #8C6A5D;" text="Login" textFill="WHITE" />
+            <JFXButton fx:id="Button" layoutX="190.0" layoutY="272.0" onAction="#btnlogin" prefHeight="24.0" prefWidth="215.0" style="-fx-background-color: #8C6A5D;" text="Login" textFill="WHITE" />
             <Label layoutX="193.0" layoutY="299.0" prefHeight="16.0" prefWidth="130.0" text="Forgot password ?" textFill="WHITE" />
             <Hyperlink layoutX="317.0" layoutY="296.0" onAction="#actionFpassword" text="click here" />
             <PasswordField fx:id="txtPassword" layoutX="188.0" layoutY="215.0" prefHeight="24.0" prefWidth="219.0" promptText="password" style="-fx-background-radius: 5;">

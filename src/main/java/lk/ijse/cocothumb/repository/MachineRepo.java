@@ -9,6 +9,8 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class MachineRepo {
 
@@ -68,5 +70,23 @@ public class MachineRepo {
             return resultSet.getString(1);
         }
         return null;
+    }
+
+    public static List<Machine> getAll() throws SQLException {
+        String sql = "SELECT * FROM machine";
+        PreparedStatement pstm = dbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        ResultSet resultSet = pstm.executeQuery();
+
+        List<Machine> machineList = new ArrayList<>();
+        while (resultSet.next()) {
+            String machine_id = resultSet.getString(1);
+            String brand = resultSet.getString(2);
+
+            Machine machine = new Machine(machine_id,brand);
+            machineList.add(machine);
+        }
+        return machineList;
     }
 }

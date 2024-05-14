@@ -5,36 +5,48 @@
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.TableColumn?>
 <?import javafx.scene.control.TableView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-<AnchorPane fx:id="rootNodeMachine" prefHeight="405.0" prefWidth="680.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.AddMachineController">
+<AnchorPane fx:id="rootNodeMachine" prefHeight="475.0" prefWidth="655.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.AddMachineController">
    <children>
       <Label layoutX="39.0" layoutY="18.0" prefHeight="60.0" prefWidth="349.0" text="Add New Machine  " AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="8.0">
          <font>
             <Font name="Ubuntu Medium Italic" size="40.0" />
          </font>
       </Label>
-      <Label layoutX="68.0" layoutY="102.0" text="Machine Id:">
+      <Label layoutX="57.0" layoutY="164.0" text="Machine Id:">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <Label layoutX="375.0" layoutY="101.0" text="Brabnd Name:">
+      <Label layoutX="364.0" layoutY="163.0" text="Brabnd Name:">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
       <JFXButton buttonType="RAISED" layoutX="525.0" layoutY="33.0" onAction="#btnUpdate" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #82ccdd;" text="Update" />
       <JFXButton buttonType="RAISED" layoutX="437.0" layoutY="33.0" onAction="#btnSave" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #b8e994;" text="Save" />
-      <TableView fx:id="tblMachine" layoutX="94.0" layoutY="191.0" prefHeight="162.0" prefWidth="507.0">
+      <TableView fx:id="tblMachine" layoutX="83.0" layoutY="253.0" prefHeight="162.0" prefWidth="507.0">
          <columns>
             <TableColumn fx:id="colid" prefWidth="104.0" text="Machine Id" />
             <TableColumn fx:id="colName" prefWidth="312.0" text="Brand Name" />
             <TableColumn fx:id="colAction" prefWidth="90.0" text="Action" />
          </columns>
       </TableView>
-      <JFXTextField fx:id="txtId" layoutX="68.0" layoutY="135.0" onAction="#idSearch" prefHeight="24.0" prefWidth="256.0" />
-      <JFXTextField fx:id="txtBrandName" layoutX="369.0" layoutY="135.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtId" layoutX="57.0" layoutY="197.0" onAction="#idSearch" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtBrandName" layoutX="358.0" layoutY="197.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField labelFloat="true" layoutX="70.0" layoutY="103.0" onAction="#actionsearch" prefHeight="33.0" prefWidth="236.0" promptText="search" style="-fx-background-radius: 10;">
+         <font>
+            <Font size="14.0" />
+         </font>
+      </JFXTextField>
+      <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="45.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/icons8-search-50.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

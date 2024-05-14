@@ -1,20 +1,27 @@
 package lk.ijse.cocothumb.controller;
 
 import com.jfoenix.controls.JFXTextField;
+import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
+import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Machine;
+import lk.ijse.cocothumb.model.tModel.CustomerTm;
+import lk.ijse.cocothumb.model.tModel.MachineTm;
 import lk.ijse.cocothumb.repository.CustomerRepo;
 import lk.ijse.cocothumb.repository.EmployeeRepo;
 import lk.ijse.cocothumb.repository.MachineRepo;
 
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 public class AddMachineController {
 
@@ -32,7 +39,7 @@ public class AddMachineController {
     private AnchorPane rootNodeMachine;
 
     @FXML
-    private TableView<?> tblMachine;
+    private TableView<MachineTm> tblMachine;
 
     @FXML
     private JFXTextField txtBrandName;
@@ -45,6 +52,7 @@ public class AddMachineController {
     public static String getMachineId() {
         return machine_id;
     }
+    private List<Machine> machineList = new ArrayList<>();
 
     @FXML
     void btnSave(ActionEvent event) {
@@ -95,8 +103,44 @@ public class AddMachineController {
     }
 
     public void initialize() {
+        this.machineList = getAllMachines();
+        setMachineValue();
+        loadMachineTable();
         loadNextMachineId();
     }
+
+    private List<Machine> getAllMachines() {
+        List<Machine> machineList = null;
+        try {
+            machineList = MachineRepo.getAll();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+        return machineList;
+    }
+
+    private void setMachineValue() {
+        colid.setCellValueFactory(new PropertyValueFactory<>("machine_id"));
+        colName.setCellValueFactory(new PropertyValueFactory<>("brand"));
+    }
+
+    private void loadMachineTable() {
+        ObservableList<MachineTm> tmList = FXCollections.observableArrayList();
+
+        for (Machine machine : machineList) {
+            MachineTm machineTm = new MachineTm(
+                    machine.getMachine_id(),
+                    machine.getBrand()
+
+            );
+
+            tmList.add(machineTm);
+        }
+        tblMachine.setItems(tmList);
+        MachineTm selectedItem = tblMachine.getSelectionModel().getSelectedItem();
+        System.out.println("selectedItem = " + selectedItem);
+    }
+
     private void loadNextMachineId() {
         try {
             String currentId = MachineRepo.currentId();
@@ -116,5 +160,9 @@ public class AddMachineController {
 
         }
         return "m001";
+    }
+
+    public void actionsearch(ActionEvent actionEvent) {
+
     }
 }

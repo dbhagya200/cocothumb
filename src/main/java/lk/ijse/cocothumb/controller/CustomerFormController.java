@@ -54,6 +54,9 @@ public class CustomerFormController {
     private JFXTextField txtId;
 
     @FXML
+    private JFXTextField txtId1;
+
+    @FXML
     private JFXTextField txtNIC;
 
     @FXML
@@ -63,6 +66,7 @@ public class CustomerFormController {
 
     @FXML
     void btnClear(ActionEvent event) {
+        txtId1.setText("");
         txtNIC.setText("");
         txtName.setText("");
         txtAddress.setText("");
@@ -166,7 +170,7 @@ public class CustomerFormController {
     }
     public void idSearch(ActionEvent actionEvent) {
 
-        String cust_id = txtId.getText();
+       /* String cust_id = txtId.getText();
 
         try {
             Customer customer = CustomerRepo.searchById(cust_id);
@@ -180,7 +184,7 @@ public class CustomerFormController {
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }
+        }*/
     }
 
     @FXML
@@ -280,6 +284,21 @@ public class CustomerFormController {
 
 
     public void actionsearch(ActionEvent actionEvent) {
+        String cust_id = txtId1.getText();
+
+        try {
+            Customer customer = CustomerRepo.searchById(cust_id);
+
+            if (customer != null) {
+                txtId.setText(customer.getCust_id());
+                txtNIC.setText(customer.getCust_NIC());
+                txtName.setText(customer.getCust_name());
+                txtAddress.setText(customer.getCust_address());
+                txtContact.setText(customer.getCust_contact());
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 }
 

@@ -66,7 +66,7 @@
                   <Image url="@../asserts.icon/d98f5e4432c2c9de5418ed4b668faee5.jpeg" />
                </image>
             </ImageView>
-            <Label fx:id="lbldate1" layoutX="66.0" layoutY="19.0" prefHeight="16.0" prefWidth="132.0" text="Date">
+            <Label fx:id="lbldate1" layoutX="66.0" layoutY="19.0" prefHeight="16.0" prefWidth="211.0" text="Date">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
                </font></Label>
@@ -81,7 +81,7 @@
                </font>
             </JFXButton>
             <Line endX="26.666671752929688" endY="80.0" layoutX="-6.0" startX="26.666671752929688" startY="23.292892456054688" stroke="#294051" strokeWidth="2.0" />
-            <Label fx:id="lblTime" layoutX="65.0" layoutY="50.0" prefHeight="16.0" prefWidth="86.0" text="Time">
+            <Label fx:id="lblTime" layoutX="65.0" layoutY="50.0" prefHeight="16.0" prefWidth="257.0" text="Time">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>

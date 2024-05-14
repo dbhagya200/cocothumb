@@ -13,7 +13,7 @@
 
 <AnchorPane fx:id="rootNode1" prefHeight="699.0" prefWidth="1394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.NewDashboardController">
    <children>
-      <AnchorPane layoutX="-25.0" prefHeight="699.0" prefWidth="271.0" style="-fx-background-color: #2D3250; -fx-background-radius: 30;">
+      <AnchorPane layoutX="-25.0" prefHeight="699.0" prefWidth="276.0" style="-fx-background-color: #2D3250; -fx-background-radius: 30;">
          <children>
             <AnchorPane layoutX="61.0" layoutY="6.0" prefHeight="96.0" prefWidth="158.0" style="-fx-background-color: #76ABAE; -fx-background-radius: 20;">
                <children>
@@ -24,7 +24,7 @@
                   </ImageView>
                </children>
             </AnchorPane>
-            <JFXButton buttonType="RAISED" layoutX="60.0" layoutY="136.0" onAction="#btnemployee" prefHeight="48.0" prefWidth="210.0" style="-fx-background-radius: 30;" text="Add Employee" textFill="WHITE" AnchorPane.leftAnchor="60.0">
+            <JFXButton fx:id="Button" buttonType="RAISED" layoutX="60.0" layoutY="136.0" onAction="#btnemployee" prefHeight="48.0" prefWidth="200.0" style="-fx-background-radius: 30;" styleClass="Button" stylesheets="@../Style/ButtonChange.css" text="Add Employee" textFill="WHITE" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="16.0">
                <font>
                   <Font size="16.0" />
                </font>
@@ -38,7 +38,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <JFXButton buttonType="RAISED" layoutX="58.0" layoutY="205.0" onAction="#btncustomer" prefHeight="48.0" prefWidth="213.0" style="-fx-background-radius: 30;" text="Add Customer" textFill="WHITE" AnchorPane.leftAnchor="58.0">
+            <JFXButton fx:id="Button" buttonType="RAISED" layoutX="58.0" layoutY="205.0" onAction="#btncustomer" prefHeight="48.0" prefWidth="201.0" style="-fx-background-radius: 30;" styleClass="Button" stylesheets="@../Style/ButtonChange.css" text="Add Customer" textFill="WHITE" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="16.0">
                <font>
                   <Font size="16.0" />
                </font>
@@ -52,7 +52,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <JFXButton buttonType="RAISED" layoutX="50.0" layoutY="276.0" onAction="#btnaddsupplier" prefHeight="48.0" prefWidth="221.0" style="-fx-background-radius: 30;" text="Add Supplier" textFill="WHITE" AnchorPane.leftAnchor="50.0">
+            <JFXButton fx:id="Button" buttonType="RAISED" layoutX="61.0" layoutY="276.0" onAction="#btnaddsupplier" prefHeight="48.0" prefWidth="200.0" style="-fx-background-radius: 30;" styleClass="Button" stylesheets="@../Style/ButtonChange.css" text="Add Supplier" textFill="WHITE" AnchorPane.leftAnchor="61.0" AnchorPane.rightAnchor="16.0">
                <font>
                   <Font size="16.0" />
                </font>
@@ -66,7 +66,7 @@
                   </ImageView>
                </children>
             </Pane>
-            <JFXButton buttonType="RAISED" layoutX="53.0" layoutY="350.0" onAction="#btnaddItems" prefHeight="48.0" prefWidth="194.0" style="-fx-background-radius: 30;" text="Add Items" textFill="WHITE" AnchorPane.leftAnchor="53.0">
+            <JFXButton fx:id="Button" buttonType="RAISED" layoutX="62.0" layoutY="350.0" onAction="#btnaddItems" prefHeight="48.0" prefWidth="200.0" style="-fx-background-radius: 30;" styleClass="Button" stylesheets="@../Style/ButtonChange.css" text="Add Items" textFill="WHITE" AnchorPane.leftAnchor="62.0" AnchorPane.rightAnchor="16.0">
                <font>
                   <Font size="16.0" />
                </font>
@@ -80,12 +80,12 @@
                   </ImageView>
                </children>
             </Pane>
-            <JFXButton buttonType="RAISED" layoutX="68.0" layoutY="419.0" onAction="#btncustomerorders" prefHeight="48.0" prefWidth="203.0" style="-fx-background-radius: 30;" text="Customer Orders" textFill="WHITE" AnchorPane.leftAnchor="68.0">
+            <JFXButton fx:id="Button" buttonType="RAISED" layoutX="60.0" layoutY="419.0" onAction="#btncustomerorders" prefHeight="48.0" prefWidth="200.0" style="-fx-background-radius: 30;" styleClass="Button" stylesheets="@../Style/ButtonChange.css" text="Customer Orders" textFill="WHITE" AnchorPane.leftAnchor="60.0" AnchorPane.rightAnchor="16.0">
                <font>
-                  <Font size="16.0" />
+                  <Font size="15.0" />
                </font>
             </JFXButton>
-            <Pane layoutX="44.0" layoutY="418.0" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;" AnchorPane.leftAnchor="44.0">
+            <Pane layoutX="35.0" layoutY="418.0" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;" AnchorPane.leftAnchor="35.0">
                <children>
                   <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -94,12 +94,12 @@
                   </ImageView>
                </children>
             </Pane>
-            <JFXButton buttonType="RAISED" layoutX="58.0" layoutY="489.0" onAction="#btnsupplierorders" prefHeight="48.0" prefWidth="213.0" style="-fx-background-radius: 30;" text="Supplier Orders" textFill="WHITE" AnchorPane.leftAnchor="58.0">
+            <JFXButton fx:id="Button" buttonType="RAISED" layoutX="58.0" layoutY="489.0" onAction="#btnsupplierorders" prefHeight="48.0" prefWidth="200.0" style="-fx-background-radius: 30;" styleClass="Button" stylesheets="@../Style/ButtonChange.css" text="Supplier Orders" textFill="WHITE" AnchorPane.leftAnchor="58.0" AnchorPane.rightAnchor="16.0">
                <font>
                   <Font size="16.0" />
                </font>
             </JFXButton>
-            <Pane layoutX="44.0" layoutY="488.0" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;" AnchorPane.leftAnchor="44.0">
+            <Pane layoutX="37.0" layoutY="488.0" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;" AnchorPane.leftAnchor="37.0">
                <children>
                   <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
@@ -126,11 +126,6 @@
                   <Image url="@../asserts.icon/d98f5e4432c2c9de5418ed4b668faee5.jpeg" />
                </image>
             </ImageView>
-            <Label fx:id="lbldate1" layoutX="66.0" layoutY="19.0" prefHeight="16.0" prefWidth="132.0" text="Date">
-               <font>
-                  <Font name="System Bold Italic" size="13.0" />
-               </font>
-            </Label>
             <JFXButton buttonType="RAISED" layoutX="248.0" layoutY="27.0" onAction="#btnHome" prefHeight="33.0" prefWidth="66.0" style="-fx-background-color: #95a5a6; -fx-background-radius: 10 0 10 0;" text="Home">
                <cursor>
                   <Cursor fx:constant="HAND" />
@@ -142,11 +137,6 @@
                </font>
             </JFXButton>
             <Line endX="26.666671752929688" endY="80.0" layoutX="-6.0" startX="26.666671752929688" startY="23.292892456054688" stroke="#294051" strokeWidth="2.0" />
-            <Label fx:id="lblTime" layoutX="65.0" layoutY="50.0" prefHeight="16.0" prefWidth="86.0" text="Time">
-               <font>
-                  <Font name="System Bold" size="13.0" />
-               </font>
-            </Label>
             <JFXButton buttonType="RAISED" layoutX="345.0" layoutY="22.0" onAction="#btnchangePassword" prefHeight="44.0" prefWidth="71.0" style="-fx-background-color: #76ABAE; -fx-background-radius: 10;" text="Button">
                <font>
                   <Font name="System Bold Italic" size="13.0" />
@@ -174,10 +164,15 @@
             </ImageView>
          </children>
       </AnchorPane>
-      <AnchorPane fx:id="customRoot" layoutX="256.0" layoutY="105.0" prefHeight="570.0" prefWidth="978.0" style="-fx-background-radius: 30 0 0 30; -fx-background-color: #5C8374;">
+      <AnchorPane fx:id="customRoot" layoutX="256.0" layoutY="105.0" prefHeight="570.0" prefWidth="978.0" style="-fx-background-radius: 30 0 0 30;">
          <children>
-            <AnchorPane fx:id="tabPane" prefHeight="554.0" prefWidth="1096.0">
+            <AnchorPane fx:id="tabPane" layoutX="9.0" prefHeight="576.0" prefWidth="1094.0">
                <children>
+                  <ImageView fitHeight="576.0" fitWidth="1098.0" layoutX="1.0" opacity="0.83" pickOnBounds="true">
+                     <image>
+                        <Image url="@../asserts.icon/earth-sunset-ocean-palm-tree-wallpaper-preview.jpg" />
+                     </image>
+                  </ImageView>
                   <AnchorPane layoutX="207.0" layoutY="104.0" prefHeight="201.0" prefWidth="119.0" style="-fx-background-color: #ffff; -fx-background-radius: 25;">
                      <children>
                         <Label layoutX="5.0" layoutY="53.0" prefHeight="21.0" prefWidth="106.0" text="Employee " AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="8.0">
@@ -277,11 +272,24 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <Label layoutX="34.0" layoutY="26.0" prefHeight="49.0" prefWidth="576.0" text="Hello ! Welcome to CoCo Thumb !!!">
+                  <Label layoutX="239.0" layoutY="17.0" prefHeight="49.0" prefWidth="656.0" text="Welcome to CoCo Thumb !!!" textFill="WHITE" underline="true">
                      <font>
-                        <Font name="System Bold" size="29.0" />
+                        <Font name="System Bold Italic" size="36.0" />
                      </font>
                   </Label>
+                  <Pane layoutX="375.0" layoutY="80.0" prefHeight="463.0" prefWidth="721.0" style="-fx-background-color: #0000;">
+                     <children>
+                        <Label fx:id="lblTime" layoutX="46.0" layoutY="196.0" opacity="0.71" prefHeight="119.0" prefWidth="616.0" text="Time" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold" size="70.0" />
+                           </font>
+                        </Label>
+                        <Label fx:id="lbldate1" layoutX="35.0" layoutY="30.0" opacity="0.7" prefHeight="144.0" prefWidth="680.0" text="Date" textFill="WHITE">
+                           <font>
+                              <Font name="System Bold Italic" size="61.0" />
+                           </font>
+                        </Label>
+                     </children></Pane>
                </children>
             </AnchorPane>
          </children>

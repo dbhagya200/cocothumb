@@ -13,6 +13,7 @@ import java.io.IOException;
 import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeFormatter;
 
 public class DashboardFormController {
 
@@ -105,8 +106,7 @@ public class DashboardFormController {
     }
 
         public void initialize(){
-       setdate();
-       settime();
+
             try {
                 customerCount = getCustomerCount();
                 employeeCount = getEmployeeCount();
@@ -200,16 +200,6 @@ public class DashboardFormController {
         }
         return customerCount;
     }
-
-    private void setdate() {
-        LocalDate localDate = LocalDate.now();
-        lbldate1.setText(localDate.toString());
-    }
-    private void settime() {
-        LocalTime localTime = LocalTime.now();
-        lblTime.setText(localTime.toString());
-    }
-
 
     public void btnaddsupplier(ActionEvent actionEvent) throws IOException {
         AnchorPane rootNode8 = FXMLLoader.load(getClass().getResource("/view/add_supp_form.fxml"));

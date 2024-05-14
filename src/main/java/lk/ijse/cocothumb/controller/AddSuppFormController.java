@@ -51,6 +51,8 @@ public class AddSuppFormController {
 
     @FXML
     private JFXTextField txtId;
+    @FXML
+    private JFXTextField txtId1;
 
     @FXML
     private JFXTextField txtName;
@@ -59,6 +61,7 @@ public class AddSuppFormController {
 
     @FXML
     void btnClear(ActionEvent event) {
+        txtId1.setText("");
         txtName.setText("");
         txtAddress.setText("");
         txtContact.setText("");
@@ -243,5 +246,19 @@ public class AddSuppFormController {
     }
 
     public void actionsearch(ActionEvent actionEvent) {
+        String supp_id = txtId1.getText();
+
+        try {
+            Supplier supplier = SupplierRepo.searchById(supp_id);
+
+            if (supplier != null) {
+                txtId.setText(supplier.getSupp_id());
+                txtName.setText(supplier.getSupp_name());
+                txtAddress.setText(supplier.getSupp_address());
+                txtContact.setText(supplier.getSupp_contact());
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 }

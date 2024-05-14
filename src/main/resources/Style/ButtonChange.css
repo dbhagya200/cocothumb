@@ -1,27 +1,27 @@
-Button{
+.Button{
     -fx-background-size: 200 40;
     -fx-background-color:  #fff;
     -fx-background-radius: 20;
-    -fx-font-size: 10;
-    -fx-text-fill: #05940f;
+    -fx-font-size: 16;
+    -fx-text-fill: #2D3250;
     -fx-cursor: hand;
     -fx-font-weight: bold;
     -fx-font-style: italic;
     -fx-font-family: "serif";
-    -fx-border-color: #05940f;
+    -fx-border-color: #1C82AD;
     -fx-border-width: 2;
     -fx-border-radius: 20;
     -fx-border-insets: 2;
 
 }
-Button:hover{
-    -fx-background-color: #275D36;
+.Button:hover{
+    -fx-background-color: #5B8FB9;
     -fx-text-fill: #c5c6c5;
 }
 
-Button:pressed {
-    -fx-background-color: #05940f;
-    -fx-text-fill: #c5c6c5;
+.Button:pressed {
+    -fx-background-color: #1C82AD;
+    -fx-text-fill: #FFF7FC;
     -fx-opacity: 60%;
 
 }
