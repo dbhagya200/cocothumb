@@ -98,7 +98,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </JFXButton>
-      <JFXTextField labelFloat="true" layoutX="455.0" layoutY="23.0" onAction="#actionsearch" prefHeight="33.0" prefWidth="236.0" promptText="search" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="526.0" AnchorPane.leftAnchor="452.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="23.0">
+      <JFXTextField fx:id="txtId1" labelFloat="true" layoutX="455.0" layoutY="23.0" onAction="#actionsearch" prefHeight="33.0" prefWidth="236.0" promptText="search" style="-fx-background-radius: 10;" AnchorPane.bottomAnchor="526.0" AnchorPane.leftAnchor="452.0" AnchorPane.rightAnchor="410.0" AnchorPane.topAnchor="23.0">
          <font>
             <Font size="14.0" />
          </font>

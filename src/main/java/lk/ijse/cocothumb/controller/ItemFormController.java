@@ -31,7 +31,8 @@ public class ItemFormController {
 
     @FXML
     private JFXTextField txtCode;
-
+    @FXML
+    private JFXTextField txtCode1;
     @FXML
     private TableColumn<?, ?> colAction;
 
@@ -70,11 +71,13 @@ public class ItemFormController {
 
     @FXML
     void btnClear(ActionEvent event) {
+        txtCode1.setText("");
         txtCode.setText("");
         txtItemType.setText("");
         txtUnitPrice.setText("");
         txtQtyOnHandCompany.setText("");
         txtQtyOnHand.setText("");
+        loadNextItemId();
 
     }
 
@@ -97,7 +100,8 @@ public class ItemFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-
+        initialize();
+        btnClear(event);
 
     }
 
@@ -120,6 +124,8 @@ public class ItemFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        initialize();
+        btnClear(event);
     }
 
 
@@ -217,9 +223,26 @@ public class ItemFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        initialize();
+        btnClear(actionEvent);
     }
 
     public void actionsearch(ActionEvent actionEvent) {
+        String item_code = txtCode1.getText();
+
+        try {
+            Item item = ItemRepo.searchByCode(item_code);
+
+            if (item != null) {
+                txtCode.setText(item.getItem_code());
+                txtItemType.setText(item.getItem_type());
+                txtUnitPrice.setText(String.valueOf(item.getUnit_price()));
+                txtQtyOnHandCompany.setText(String.valueOf(item.getUnit_price_forCompany()));
+                txtQtyOnHand.setText(item.getStock_qty());
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 }
 

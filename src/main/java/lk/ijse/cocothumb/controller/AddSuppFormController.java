@@ -65,7 +65,7 @@ public class AddSuppFormController {
         txtName.setText("");
         txtAddress.setText("");
         txtContact.setText("");
-
+        loadNextSupplierId();
 
     }
 
@@ -109,6 +109,8 @@ public class AddSuppFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        initialize();
+        btnClear(event);
 
     }
 
@@ -132,6 +134,8 @@ public class AddSuppFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        initialize();
+        btnClear(event);
 
     }
 
@@ -149,6 +153,8 @@ public class AddSuppFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        initialize();
+        btnClear(event);
     }
 
     @FXML

@@ -5,6 +5,7 @@ import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.User;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -100,6 +101,16 @@ public class UserRepo {
             user = new User(user_id, u_name, u_password, u_email, u_role, e_id);
         }
         return user;
+    }
+    private void checkUser(String userId) throws SQLException, IOException {
+        String sql = "SELECT user_id, u_password FROM user WHERE user_id = ?";
+
+        Connection connection = dbConnection.getInstance().getConnection();
+        PreparedStatement pstm = connection.prepareStatement(sql);
+        pstm.setObject(1, userId);
+        System.out.println(userId);
+
+
     }
 
 

@@ -23,6 +23,8 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
+import static com.jfoenix.svg.SVGGlyphLoader.clear;
+
 public class AddMachineController {
 
 
@@ -46,6 +48,8 @@ public class AddMachineController {
 
     @FXML
     private JFXTextField  txtId;
+    @FXML
+    private JFXTextField  txtId1;
 
     private static String machine_id;
 
@@ -53,6 +57,13 @@ public class AddMachineController {
         return machine_id;
     }
     private List<Machine> machineList = new ArrayList<>();
+
+    public void clearData(){
+        txtId.setText("");
+        txtBrandName.setText("");
+        loadNextMachineId();
+    }
+
 
     @FXML
     void btnSave(ActionEvent event) {
@@ -68,6 +79,8 @@ public class AddMachineController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        initialize();
+        clearData();
     }
 
     @FXML
@@ -84,6 +97,8 @@ public class AddMachineController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        initialize();
+        clearData();
     }
 
     @FXML
@@ -163,6 +178,17 @@ public class AddMachineController {
     }
 
     public void actionsearch(ActionEvent actionEvent) {
+        String machine_id = txtId1.getText();
 
+        try {
+            Machine machine = MachineRepo.searchById(machine_id);
+
+            if (machine != null) {
+                txtId.setText(machine.getMachine_id());
+                txtBrandName.setText(machine.getBrand());
+            }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
     }
 }

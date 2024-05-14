@@ -71,8 +71,7 @@ public class CustomerFormController {
         txtName.setText("");
         txtAddress.setText("");
         txtContact.setText("");
-
-
+        loadNextCustomerId();
     }
 
     @FXML
@@ -99,7 +98,8 @@ public class CustomerFormController {
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-            loadCustomerTable();
+            initialize();
+            btnClear(event);
         }
 
 
@@ -146,6 +146,8 @@ public class CustomerFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        initialize();
+        btnClear(event);
 
     }
 
@@ -202,6 +204,8 @@ public class CustomerFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        initialize();
+        btnClear(event);
     }
     public void initialize() {
         this.customerList = getAllCustomers();
@@ -300,6 +304,7 @@ public class CustomerFormController {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
+
 }
 
 

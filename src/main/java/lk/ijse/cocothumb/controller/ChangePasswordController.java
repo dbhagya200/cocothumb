@@ -8,6 +8,7 @@ import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.User;
+import lk.ijse.cocothumb.repository.CustomerRepo;
 import lk.ijse.cocothumb.repository.UserRepo;
 
 import java.io.IOException;
@@ -38,36 +39,48 @@ public class ChangePasswordController {
     @FXML
     void btnChangePassword(ActionEvent event) {
 
-        //String userId = LoginFormController.getUserId();
+      if (LoginFormController.getUserId().equals(txtConfirmPassword)) {
+          String sql = "UPDATE user SET u_password = ? WHERE user_id = ?";
+          try {
+              Connection connection = dbConnection.getInstance().getConnection();
+              PreparedStatement pstm = connection.prepareStatement(sql);
+              pstm.setObject(1, txtNewPassword.getText());
+              pstm.setObject(2, LoginFormController.getUserId());
+              if (pstm.executeUpdate() > 0) {
+                  new Alert(Alert.AlertType.CONFIRMATION, "Password changed!").show();
+              }
+          } catch (SQLException e) {
+              new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+          }
+      }
 
 
     }
-    private void checkUser(String userId) throws SQLException, IOException {
+    /*private void checkUser(String userId) throws SQLException, IOException {
         String sql = "SELECT user_id, u_password FROM user WHERE user_id = ?";
 
         Connection connection = dbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
         pstm.setObject(1, userId);
-        if (txtUserId.getText().equals(userId)) {
+        System.out.println(userId);
             idSearch();
+        System.out.println(userId);
 
 
-        }
-    }
+    }*/
 
     public void initialize() throws SQLException, IOException {
-        checkUser(LoginFormController.getUserId());
-
+        //checkUser(LoginFormController.getUserId());
     }
     public void idSearch() {
 
-        String userId = txtUserId.getText();
+       String userId = LoginFormController.getUserId();
 
         try {
             User user= UserRepo.searchById(userId);
 
             if (user != null) {
-                txtUserId.setText(user.getUser_id());
+                txtUserId.setText(LoginFormController.getUserId());
                 txtUserName.setText(user.getU_name());
                 txtOldPassword.setText(user.getU_password());
             }
@@ -75,7 +88,11 @@ public class ChangePasswordController {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
+    private void loadId() {
+        String currentId = LoginFormController.getUserId();
+        // String nextId = nextId(currentId);
 
-
+        txtUserId.setText(currentId);
+    }
 
 }

@@ -62,6 +62,9 @@ public class EmployeeFormController {
 
     @FXML
     private JFXTextField txtId;
+    @FXML
+    private JFXTextField txtId1;
+
 
     @FXML
     private JFXTextField txtName;
@@ -86,10 +89,12 @@ public class EmployeeFormController {
 
     @FXML
     void btnClear(ActionEvent event) {
+        txtId1.setText("");
         txtName.setText("");
         txtAddress.setText("");
         txtContact.setText("");
         txtSalary.setText("");
+        loadNextEmployeeId();
 
     }
 
@@ -130,6 +135,7 @@ public class EmployeeFormController {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
 
             }
+            initialize();
             btnClear(event);
        // }
     }
@@ -150,6 +156,8 @@ public class EmployeeFormController {
         if (isUpdated) {
             new Alert(Alert.AlertType.CONFIRMATION, "employee updated!").show();
         }
+        initialize();
+        btnClear(event);
     }
 
     @FXML
@@ -266,6 +274,8 @@ public class EmployeeFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        initialize();
+        btnClear(actionEvent);
     }
 
     public void txtEmployeeContactOnKeyReleased(ActionEvent keyEvent) {
@@ -282,6 +292,17 @@ public class EmployeeFormController {
         return true;
     }
 
-    public void actionsearch(ActionEvent actionEvent) {
+    public void actionsearch(ActionEvent actionEvent) throws SQLException {
+        String id = txtId1.getText();
+
+        Employee employee = EmployeeRepo.searchById(id);
+
+        if (employee != null) {
+            txtId.setText(employee.getE_Id());
+            txtName.setText(employee.getE_Name());
+            txtAddress.setText(employee.getE_Address());
+            txtContact.setText(employee.getE_Contact());
+            txtSalary.setText(String.valueOf(employee.getE_Salary()));
+        }
     }
 }
