@@ -279,12 +279,11 @@ public class SuppPlaceOrderFormController {
 
     private String nextId(String currentId) {
         if (currentId != null) {
-            String[] split = currentId.split("SO");
-            int id = Integer.parseInt(split[1]);
-            return "SO" + ++id;
-
+            String[] split = currentId.split("#");
+            int id = Integer.parseInt(split[1],10);
+            return "#" + String.format("%04d", ++id);
         }
-        return "SO1";
+        return "#0001";
     }
 
     private void setCellValueFactory() {

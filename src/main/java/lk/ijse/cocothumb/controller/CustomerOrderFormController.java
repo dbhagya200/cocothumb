@@ -18,10 +18,7 @@ import javafx.stage.Stage;
 import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.*;
 import lk.ijse.cocothumb.model.tModel.CartTm;
-import lk.ijse.cocothumb.repository.CustomerRepo;
-import lk.ijse.cocothumb.repository.ItemRepo;
-import lk.ijse.cocothumb.repository.OrderRepo;
-import lk.ijse.cocothumb.repository.PlaceOrderRepo;
+import lk.ijse.cocothumb.repository.*;
 import net.sf.jasperreports.engine.*;
 import net.sf.jasperreports.engine.design.JasperDesign;
 import net.sf.jasperreports.engine.xml.JRXmlLoader;
@@ -36,9 +33,13 @@ import java.util.*;
 public class CustomerOrderFormController {
 
 
-
+    public AnchorPane rootNode4;
+    public TableColumn colMethod;
+    public JFXComboBox cmbMethod;
+    public TextField txtEmail;
     @FXML
-    private TextField txtCustId;
+    private  TextField txtCustId;
+    public Label lblNetTotal;
 
     @FXML
     private TextField txtCustName;
@@ -50,7 +51,7 @@ public class CustomerOrderFormController {
     private TextField txtNetTotal;
 
     @FXML
-    private TextField txtOrderId;
+    private  TextField txtOrderId;
 
     @FXML
     private TextField txtQty;
@@ -64,7 +65,7 @@ public class CustomerOrderFormController {
     private JFXButton btnAddToCart;
 
     @FXML
-    private ComboBox<String> cmbCustomerNIC;
+    private  ComboBox<String> cmbCustomerNIC;
 
     @FXML
     private ComboBox<String> cmbItemCode;
@@ -90,14 +91,13 @@ public class CustomerOrderFormController {
     @FXML
     private DatePicker lblOrderDate;
     @FXML
-    private AnchorPane rootNode4;
+    private AnchorPane rootNodePayment;
 
     @FXML
-    private TableView<CartTm> tblOrderCart;
-
+    private  TableView<CartTm> tblOrderCart;
 
     public AnchorPane customRoot;
-    private ObservableList<CartTm> cartList = FXCollections.observableArrayList();
+    private static ObservableList<CartTm> cartList = FXCollections.observableArrayList();
     private  double netTotal = 0;
     private static String cust_id;
 
@@ -111,16 +111,6 @@ public class CustomerOrderFormController {
     }
 
 
-    @FXML
-    void btnAddNewCustomer(ActionEvent event) throws IOException {
-        AnchorPane rootNode3 = FXMLLoader.load(getClass().getResource("/view/customer_form.fxml"));
-        Stage stage = (Stage) rootNode4.getScene().getWindow();
-        rootNode4.getChildren().clear();
-        rootNode4.getChildren().add(rootNode3);
-        stage.setTitle("Customer Form");
-        stage.centerOnScreen();
-
-    }
 
     @FXML
     void btnAddToCartOnAction(ActionEvent event) {
@@ -129,6 +119,8 @@ public class CustomerOrderFormController {
         String description = txtItemType.getText();
         double unitPrice = Double.parseDouble(txtUnitPrice.getText());
         double amount = qty * unitPrice;
+        String pay_method = String.valueOf(cmbMethod.getValue());
+        String email = txtEmail.getText();
         JFXButton btnRemove = new JFXButton("remove");
         btnRemove.setCursor(Cursor.HAND);
 
@@ -163,20 +155,21 @@ public class CustomerOrderFormController {
             }
             System.out.println("alutin ekam item damma");
         }
-        CartTm cartTm = new CartTm(item_code,  qty,description, unitPrice, amount, btnRemove);
+        CartTm cartTm = new CartTm(item_code,  qty,description, unitPrice, amount,pay_method,email, btnRemove);
 
         cartList.add(cartTm);
 
         tblOrderCart.setItems(cartList);
         txtQty.setText(null);
         txtItemType.setText(null);
+        //cmbItemCode.getValue();
         calculateNetTotal();
     }
 
 
 
     @FXML
-    void btnPlaceOrder(ActionEvent event) throws IOException, SQLException {
+    void btnPlaceOrder(ActionEvent event) throws IOException {
         String order_id = txtOrderId.getText();
         String cust_NIC = cmbCustomerNIC.getValue();
          cust_id = txtCustId.getText();
@@ -198,7 +191,9 @@ public class CustomerOrderFormController {
                     tm.getQty(),
                     tm.getDescription(),
                     tm.getUnit_price(),
-                    tm.getAmount()
+                    tm.getAmount(),
+                    tm.getPay_method(),
+                    tm.getEmail()
             );
             odList.add(OD);
         }
@@ -209,13 +204,6 @@ public class CustomerOrderFormController {
             if(isPlaced) {
                 new Alert(Alert.AlertType.CONFIRMATION, "order placed!").show();
 
-                AnchorPane rootNodePayment = FXMLLoader.load(getClass().getResource("/view/cust_payment.fxml"));
-
-                Stage popupStage = new Stage();
-                popupStage.initModality(Modality.APPLICATION_MODAL);
-                popupStage.setTitle("Popup Window");
-                popupStage.setScene(new Scene(rootNodePayment));
-                popupStage.showAndWait();
 
             } else {
                 new Alert(Alert.AlertType.WARNING, "order not placed!").show();
@@ -223,8 +211,8 @@ public class CustomerOrderFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
-    }
 
+    }
 
     private void calculateNetTotal() {
         netTotal = 0;
@@ -240,6 +228,7 @@ public class CustomerOrderFormController {
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unit_price"));
         colTotal.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        colMethod.setCellValueFactory(new PropertyValueFactory<>("pay_method"));
         colAction.setCellValueFactory(new PropertyValueFactory<>("btnRemove"));
     }
     @FXML
@@ -272,21 +261,31 @@ public class CustomerOrderFormController {
     txtQty.requestFocus();
     }
 
+    public void comboMethod() {
+        cmbMethod.getItems().addAll(PayMethod.values());
+
+        cmbMethod.setOnAction(Event -> {
+            PayMethod selected = (PayMethod) cmbMethod.getSelectionModel().getSelectedItem();
+            System.out.println("Selected item: " + selected);
+        });
+    }
+
     @FXML
     void txtQtyOnAction(ActionEvent event) {
         btnAddToCartOnAction(event);
     }
     public void initialize() {
-        setCellValueFactory();
         loadNextOrderId();
+        setCellValueFactory();
         getCustomerNIC();
         getItemCodes();
+        comboMethod();
     }
 
-    private void loadNextOrderId() {
+    private  void loadNextOrderId() {
+
         try {
-            String currentId;
-            currentId = OrderRepo.currentId();
+            String currentId = OrderRepo.currentId();
             String nextId = nextId(currentId);
 
             txtOrderId.setText(nextId);
@@ -295,14 +294,13 @@ public class CustomerOrderFormController {
         }
     }
 
-    private String nextId(String currentId) {
+    private static String nextId(String currentId) {
         if (currentId != null) {
             String[] split = currentId.split("O");
-            int id = Integer.parseInt(split[1]);
-            return "O" + ++id;
-
+            int id = Integer.parseInt(split[1],10);
+            return "O" + String.format("%04d", ++id);
         }
-        return "O1";
+        return "O0001";
     }
 
 

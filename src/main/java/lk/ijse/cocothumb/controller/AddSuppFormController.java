@@ -199,12 +199,11 @@ public class AddSuppFormController {
 
     private String nextId(String currentId) {
         if (currentId != null) {
-            String[] split = currentId.split("s00");
-            int id = Integer.parseInt(split[1]);
-            return "s00" + ++id;
-
+            String[] split = currentId.split("#");
+            int id = Integer.parseInt(split[1],10);
+            return "#" + String.format("%04d", ++id);
         }
-        return "s001";
+        return "#0001";
     }
 
     private void setSupplierValue() {

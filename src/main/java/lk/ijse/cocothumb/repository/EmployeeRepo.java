@@ -100,7 +100,7 @@ public class EmployeeRepo {
     }
 
     public static String currentId() throws SQLException {
-        String sql = "SELECT e_id FROM employee ORDER BY e_id desc LIMIT 1";
+        String sql = "SELECT e_id FROM employee ORDER BY CAST(SUBSTRING(e_id, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = dbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);

@@ -169,12 +169,11 @@ public class AddMachineController {
 
     private String nextId(String currentId) {
         if (currentId != null) {
-            String[] split = currentId.split("m00");
-            int id = Integer.parseInt(split[1]);
-            return "m00" + ++id;
-
+            String[] split = currentId.split("#");
+            int id = Integer.parseInt(split[1],10);
+            return "#" + String.format("%04d", ++id);
         }
-        return "m001";
+        return "#0001";
     }
 
     public void actionsearch(ActionEvent actionEvent) {

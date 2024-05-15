@@ -83,6 +83,11 @@ public class CustomerFormController {
         String cust_contact = txtContact.getText();
         String user_id = LoginFormController.getUserId();
 
+
+        if (cust_name.equals("")){
+            txtName.setStyle("-fx-border-color: red");
+        }
+
         if (isValid()){
 
             Customer customer = new Customer(cust_id,cust_NIC, cust_name, cust_address, cust_contact,user_id);
@@ -100,7 +105,7 @@ public class CustomerFormController {
             }
             initialize();
             btnClear(event);
-        }
+         }
 
 
 
@@ -227,12 +232,11 @@ public class CustomerFormController {
 
     private String nextId(String currentId) {
         if (currentId != null) {
-            String[] split = currentId.split("c00");
-            int id = Integer.parseInt(split[1]);
-            return "c00" + ++id;
-
+            String[] split = currentId.split("c");
+            int id = Integer.parseInt(split[1],10);
+            return "c" + String.format("%04d", ++id);
         }
-        return "c001";
+        return "c0001";
     }
 
 

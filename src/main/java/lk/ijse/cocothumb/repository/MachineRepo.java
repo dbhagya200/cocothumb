@@ -60,7 +60,7 @@ public class MachineRepo {
     }
 
     public static String currentId() throws SQLException {
-        String sql = "SELECT machine_id FROM machine ORDER BY machine_id desc LIMIT 1";
+        String sql = "SELECT machine_id FROM machine ORDER BY CAST(SUBSTRING(machine_id, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = dbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);

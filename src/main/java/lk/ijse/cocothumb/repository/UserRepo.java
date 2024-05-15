@@ -2,7 +2,6 @@ package lk.ijse.cocothumb.repository;
 
 import lk.ijse.cocothumb.controller.EmployeeFormController;
 import lk.ijse.cocothumb.database.dbConnection;
-import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.User;
 
 import java.io.IOException;
@@ -31,7 +30,7 @@ public class UserRepo {
     }
 
     public static String currentUserId() throws SQLException {
-        String sql = "SELECT user_id FROM user ORDER BY user_id desc LIMIT 1";
+        String sql = "SELECT user_id FROM user ORDER BY CAST(SUBSTRING(user_id, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = dbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);
@@ -102,6 +101,24 @@ public class UserRepo {
         }
         return user;
     }
+
+    public static boolean update(User user) throws SQLException {
+
+        String sql = "UPDATE user SET u_password = ? WHERE user_id= ?";
+
+        PreparedStatement pstm = dbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        //pstm.setObject(1, user.getU_name());
+        pstm.setObject(1, user.getU_password());
+        //pstm.setObject(3, user.getU_email());
+        //pstm.setObject(4, user.getU_role());
+        pstm.setObject(2, user.getUser_id());
+
+        return pstm.executeUpdate() > 0;
+
+    }
+
     private void checkUser(String userId) throws SQLException, IOException {
         String sql = "SELECT user_id, u_password FROM user WHERE user_id = ?";
 

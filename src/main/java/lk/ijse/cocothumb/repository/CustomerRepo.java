@@ -154,7 +154,7 @@ public static boolean save(Customer customer) throws SQLException {
     }
 
     public static String currentId() throws SQLException {
-        String sql = "SELECT cust_id FROM customer ORDER BY cust_id desc LIMIT 1";
+        String sql = "SELECT cust_id FROM customer ORDER BY CAST(SUBSTRING(cust_id, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = dbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);

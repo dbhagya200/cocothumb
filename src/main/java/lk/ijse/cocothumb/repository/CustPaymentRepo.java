@@ -12,7 +12,7 @@ import java.sql.SQLException;
 public class CustPaymentRepo {
 
     public static String currentId() throws SQLException {
-        String sql = "SELECT pay_id FROM cust_payment ORDER BY pay_id desc LIMIT 1";
+        String sql = "SELECT pay_id FROM cust_payment ORDER BY CAST(SUBSTRING(pay_id, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = dbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);

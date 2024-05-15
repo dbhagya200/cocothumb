@@ -194,12 +194,11 @@ public class ItemFormController {
 
     private String nextId(String currentId) {
         if (currentId != null) {
-            String[] split = currentId.split("i00");
-            int id = Integer.parseInt(split[1]);
-            return "i00" + ++id;
-
+            String[] split = currentId.split("i");
+            int id = Integer.parseInt(split[1],10);
+            return "i" + String.format("%04d", ++id);
         }
-        return "i001";
+        return "i0001";
     }
 
     private List<Item> getAllItems() {

@@ -53,7 +53,7 @@ public class ItemRepo {
     }
 
     public static String currentId() throws SQLException {
-        String sql = "SELECT item_code FROM item ORDER BY item_code desc LIMIT 1";
+        String sql = "SELECT item_code FROM item ORDER BY CAST(SUBSTRING(item_code, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = dbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);

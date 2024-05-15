@@ -8,6 +8,7 @@ import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 import lk.ijse.cocothumb.database.dbConnection;
 
 import java.io.IOException;
@@ -15,7 +16,9 @@ import java.sql.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.time.format.DateTimeFormatter;
-
+import javafx.animation.Animation;
+import javafx.animation.KeyFrame;
+import javafx.animation.Timeline;
 public class NewDashboardController {
 
     public AnchorPane customRoot;
@@ -107,19 +110,20 @@ public class NewDashboardController {
     }
 
     public void initialize(){
-
-        LocalTime time = LocalTime.now();
-        LocalDate date = LocalDate.now();
-
-        DateTimeFormatter timeFormatter = DateTimeFormatter.ofPattern("hh:mm a");
-        DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("EEEE, MMM dd");
-
-        String formattedTime = time.format(timeFormatter);
-        String formattedDate = date.format(dateFormatter);
-
-        lblTime.setText(formattedTime);
-        lbldate1.setText(formattedDate);
-
+        Timeline timeline = new Timeline(
+                new KeyFrame(Duration.seconds(1), event -> {
+                    LocalTime currentTime = LocalTime.now();
+                    LocalDate date = LocalDate.now();
+                    DateTimeFormatter formatter = DateTimeFormatter.ofPattern("HH:mm:ss a");
+                    DateTimeFormatter dateFormatter = DateTimeFormatter.ofPattern("yyyy, MMM dd");
+                    String formattedDate = date.format(dateFormatter);
+                    String formattedTime = currentTime.format(formatter);
+                    lblTime.setText(formattedTime);
+                    lbldate1.setText(formattedDate);
+                })
+        );
+        timeline.setCycleCount(Animation.INDEFINITE);
+        timeline.play();
         try {
             customerCount = getCustomerCount();
             employeeCount = getEmployeeCount();

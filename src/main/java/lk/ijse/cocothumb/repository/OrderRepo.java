@@ -8,7 +8,7 @@ import java.sql.*;
 
 public class OrderRepo {
     public static String currentId() throws SQLException {
-        String sql = "SELECT order_id FROM orders ORDER BY order_id desc LIMIT 1";
+        String sql = "SELECT order_id FROM orders ORDER BY CAST(SUBSTRING(order_id, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = dbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);

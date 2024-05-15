@@ -106,14 +106,13 @@ public class UserFormController {
         }
     }
 
-    private String nextUId(String currentUserId) {
-        if (currentUserId != null) {
-            String[] split = currentUserId.split("u00");
-            int id = Integer.parseInt(split[1]);
-            return "u00" + ++id;
-
+    private String nextUId(String currentId) {
+        if (currentId != null) {
+            String[] split = currentId.split("e");
+            int id = Integer.parseInt(split[1],10);
+            return "e" + String.format("%04d", ++id);
         }
-        return "u001";
+        return "e0001";
     }
 
 

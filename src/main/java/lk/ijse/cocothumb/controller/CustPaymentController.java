@@ -1,19 +1,15 @@
 package lk.ijse.cocothumb.controller;
 
 import com.jfoenix.controls.JFXComboBox;
-import com.jfoenix.controls.JFXRadioButton;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Alert;
 import javafx.scene.control.Label;
-import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import lk.ijse.cocothumb.model.Payment;
 import lk.ijse.cocothumb.repository.CustPaymentRepo;
-import lk.ijse.cocothumb.repository.CustomerRepo;
 import lk.ijse.cocothumb.repository.OrderRepo;
-import lk.ijse.cocothumb.repository.PlaceOrderRepo;
 
 import java.sql.Date;
 import java.sql.SQLException;
@@ -29,7 +25,7 @@ public class CustPaymentController {
     private Label Time;
 
     @FXML
-    private Label lbNetTotal;
+    private static Label lbNetTotal;
 
     @FXML
     private Label lblNetTotal;
@@ -38,7 +34,7 @@ public class CustPaymentController {
     private AnchorPane rootNodePayment;
 
     @FXML
-    private JFXTextField txtCustId;
+    private static JFXTextField txtCustId;
 
     @FXML
     private JFXTextField  txtEmail;
@@ -56,7 +52,7 @@ public class CustPaymentController {
     }
 
     @FXML
-    void btnSave(ActionEvent event) throws SQLException {
+    public  void  btnSave() throws SQLException {
     String pay_id = txtPayId.getText();
     String cust_id = txtCustId.getText();
     String pay_method = cmbMethod.getValue().toString();
@@ -70,8 +66,8 @@ public class CustPaymentController {
             if (isSaved) {
                 new Alert(Alert.AlertType.CONFIRMATION, "Your payment saved!").show();
             }
-            initialize();
-            btnClear(event);
+            //initialize();
+            //btnClear(event);
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
@@ -88,7 +84,8 @@ public class CustPaymentController {
             System.out.println("Selected item: " + selected);
         });
     }
-    private void loadNextPayId() {
+    private  void loadNextId() {
+
         try {
             String currentId = CustPaymentRepo.currentId();
             String nextId = nextId(currentId);
@@ -101,17 +98,16 @@ public class CustPaymentController {
 
     private String nextId(String currentId) {
         if (currentId != null) {
-            String[] split = currentId.split("p00");
-            int id = Integer.parseInt(split[1]);
-            return "p00" + ++id;
-
+            String[] split = currentId.split("p");
+            int id = Integer.parseInt(split[1],10);
+            return "p" + String.format("%04d", ++id);
         }
-        return "p001";
+        return "p0001";
     }
 
 
     public void initialize() {
-       // loadNextPayId();
+        loadNextId();
         setdate();
         settime();
         comboMethod();
@@ -128,4 +124,9 @@ public class CustPaymentController {
     }
 
 
-}
+    public void btnSave(ActionEvent actionEvent) {
+    }
+
+
+    }
+

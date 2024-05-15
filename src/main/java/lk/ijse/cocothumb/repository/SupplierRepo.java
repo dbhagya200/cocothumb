@@ -72,7 +72,7 @@ public class SupplierRepo {
     }
 
     public static String currentId() throws SQLException {
-        String sql = "SELECT supp_id FROM supplier ORDER BY supp_id desc LIMIT 1";
+        String sql = "SELECT supp_id FROM supplier ORDER BY CAST(SUBSTRING(supp_id, 2) AS UNSIGNED) DESC LIMIT 1";
 
         Connection connection = dbConnection.getInstance().getConnection();
         PreparedStatement pstm = connection.prepareStatement(sql);

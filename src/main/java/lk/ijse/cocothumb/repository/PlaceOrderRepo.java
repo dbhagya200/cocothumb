@@ -22,14 +22,11 @@ public class PlaceOrderRepo {
                 if (isOrderDetailSaved) {
                     boolean isItemQtyUpdate = ItemRepo. updateQty(PO.getOdList());
                     System.out.println("3");
-                    if (isItemQtyUpdate) {
-                        //boolean isPaymentSaved = CustPaymentRepo.save(payment);
                         System.out.println("4");
                         if (isItemQtyUpdate) {
                             connection.commit();
                             return true;
                         }
-                    }
                 }
             }
             connection.rollback();

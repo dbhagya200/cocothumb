@@ -15,6 +15,7 @@ import javafx.stage.Modality;
 import javafx.stage.Stage;
 import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.User;
+import lk.ijse.cocothumb.repository.UserRepo;
 
 
 import java.io.IOException;
@@ -42,7 +43,7 @@ public class NewLoginController {
     @FXML
     void btnlogin(ActionEvent event) throws IOException {
 
-        userId = txtUserId.getText();
+         userId = txtUserId.getText();
         String pw = txtPassword.getText();
 
         try {
@@ -59,23 +60,18 @@ public class NewLoginController {
 
 
 
-    public static String getUserId() {
+   public static String getUserId() {
         return userId;
     }
 
     private void checkCredential(String userId, String pw) throws SQLException, IOException {
-        String sql = "SELECT user_id, u_password FROM user WHERE user_id = ?";
-
-        Connection connection = dbConnection.getInstance().getConnection();
-        PreparedStatement pstm = connection.prepareStatement(sql);
-        pstm.setObject(1, userId);
-
-        ResultSet resultSet = pstm.executeQuery();
-        if(resultSet.next()) {
-            String dbPw = resultSet.getString(2);
-
-            if(dbPw.equals(pw)) {
+        User user = UserRepo.searchById(userId);
+        System.out.println("user = " + user);
+        if (user != null) {
+            if (user.getU_password().equals(pw)) {
+                System.out.println("pw = " + pw);
                 navigateToTheDashboard();
+                System.out.println("done");
             } else {
                 new Alert(Alert.AlertType.ERROR, "Password is incorrect!").show();
             }

@@ -209,12 +209,11 @@ public class EmployeeFormController {
 
     private String nextId(String currentId) {
         if (currentId != null) {
-            String[] split = currentId.split("e00");
-            int id = Integer.parseInt(split[1]);
-            return "e00" + ++id;
-
+            String[] split = currentId.split("e");
+            int id = Integer.parseInt(split[1],10);
+            return "e" + String.format("%04d", ++id);
         }
-        return "e001";
+        return "e0001";
     }
 
     private void loadEmployeeTable() {
