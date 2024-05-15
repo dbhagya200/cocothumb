@@ -28,7 +28,10 @@ import java.util.Optional;
 public class SuppPlaceOrderFormController {
 
 
-
+    public TableView tblOrderCart;
+    public TableColumn colMethod;
+    public JFXComboBox cmbMethod;
+    public TextField txtEmail;
     @FXML
     private JFXButton AddToCart;
 

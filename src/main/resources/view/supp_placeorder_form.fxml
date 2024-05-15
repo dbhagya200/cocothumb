@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
+<?import com.jfoenix.controls.JFXComboBox?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.ComboBox?>
 <?import javafx.scene.control.DatePicker?>
@@ -27,12 +28,12 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="294.0" layoutY="121.0" prefHeight="19.0" prefWidth="151.0" text="Supplier Name:" AnchorPane.topAnchor="132.0">
+      <Label layoutX="245.0" layoutY="132.0" prefHeight="19.0" prefWidth="151.0" text="Supplier Name:" AnchorPane.topAnchor="132.0">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="260.0" layoutY="221.0" prefHeight="18.0" prefWidth="90.0" text="Item type:" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="224.0">
+      <Label layoutX="240.0" layoutY="224.0" prefHeight="18.0" prefWidth="90.0" text="Item type:" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="224.0">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
@@ -42,12 +43,12 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="179.0" layoutY="313.0" prefHeight="20.0" prefWidth="101.0" text="Stock qty:" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="320.0">
+      <Label layoutX="240.0" layoutY="320.0" prefHeight="20.0" prefWidth="101.0" text="Stock qty:" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="320.0">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="291.0" layoutY="408.0" prefHeight="19.0" prefWidth="90.0" text="Want Qty:" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="419.0">
+      <Label layoutX="240.0" layoutY="419.0" prefHeight="19.0" prefWidth="90.0" text="Want Qty:" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="419.0">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
@@ -76,45 +77,29 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <DatePicker layoutX="22.0" layoutY="425.0" prefHeight="35.0" prefWidth="220.0" promptText="date" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="450.0" />
-      <Label layoutX="506.0" layoutY="479.0" text="Net Total:" AnchorPane.leftAnchor="514.0" AnchorPane.topAnchor="484.0">
-         <font>
-            <Font name="System Bold Italic" size="14.0" />
-         </font>
-      </Label>
-      <TableView fx:id="tblSuppOrderCart" layoutX="495.0" layoutY="278.0" prefHeight="178.0" prefWidth="583.0" AnchorPane.bottomAnchor="114.0" AnchorPane.leftAnchor="497.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="290.0">
-         <columns>
-            <TableColumn fx:id="colItemCode" prefWidth="71.66668701171875" text="Code" />
-            <TableColumn fx:id="colDescription" prefWidth="131.33331298828125" text="Description" />
-            <TableColumn fx:id="colQty" prefWidth="95.66668701171875" text="Qty" />
-            <TableColumn fx:id="colUnitPrice" prefWidth="90.0" text="Unit Price" />
-            <TableColumn fx:id="colTotal" minWidth="0.0" prefWidth="104.0" text="Total" />
-            <TableColumn fx:id="colAction" prefWidth="92.66668701171875" text="Action" />
-         </columns>
-      </TableView>
-      <TextField fx:id="txtQty" layoutX="294.0" layoutY="439.0" prefHeight="33.0" prefWidth="132.0" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="450.0">
+      <DatePicker layoutX="22.0" layoutY="425.0" prefHeight="35.0" prefWidth="200.0" promptText="date" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="450.0" />
+      <TextField fx:id="txtQty" layoutX="238.0" layoutY="450.0" prefHeight="33.0" prefWidth="132.0" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="238.0" AnchorPane.topAnchor="450.0">
          <font>
             <Font size="15.0" />
          </font></TextField>
       <Label fx:id="lblNetTotal" layoutX="143.0" layoutY="524.0" prefHeight="16.0" prefWidth="0.0" AnchorPane.bottomAnchor="42.0" AnchorPane.leftAnchor="143.0" />
       <TextField fx:id="txtOrderId" editable="false" layoutX="110.0" layoutY="80.0" prefHeight="30.0" prefWidth="82.0" style="-fx-background-radius: 10;" AnchorPane.topAnchor="80.0" />
-      <TextField fx:id="txtItemType" editable="false" layoutX="258.0" layoutY="252.0" prefHeight="35.0" prefWidth="220.0" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="255.0" />
-      <TextField fx:id="txtUnitPrice" editable="false" layoutX="30.0" layoutY="347.0" prefHeight="35.0" prefWidth="220.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="351.0" />
-      <TextField fx:id="txtSuppName" editable="false" layoutX="258.0" layoutY="152.0" prefHeight="35.0" prefWidth="220.0" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="163.0" />
-      <TextField fx:id="txtStockQty" editable="false" layoutX="259.0" layoutY="348.0" prefHeight="35.0" prefWidth="220.0" AnchorPane.leftAnchor="258.0" AnchorPane.topAnchor="351.0" />
+      <TextField fx:id="txtItemType" editable="false" layoutX="238.0" layoutY="255.0" prefHeight="35.0" prefWidth="200.0" AnchorPane.leftAnchor="238.0" AnchorPane.topAnchor="255.0" />
+      <TextField fx:id="txtUnitPrice" editable="false" layoutX="30.0" layoutY="347.0" prefHeight="35.0" prefWidth="200.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="351.0" />
+      <TextField fx:id="txtSuppName" editable="false" layoutX="238.0" layoutY="163.0" prefHeight="35.0" prefWidth="200.0" AnchorPane.leftAnchor="238.0" AnchorPane.topAnchor="163.0" />
+      <TextField fx:id="txtStockQty" editable="false" layoutX="238.0" layoutY="351.0" prefHeight="35.0" prefWidth="200.0" AnchorPane.leftAnchor="238.0" AnchorPane.topAnchor="351.0" />
       <Label layoutX="378.0" layoutY="113.0" prefHeight="19.0" prefWidth="64.0" text=" Date: " AnchorPane.bottomAnchor="450.0" AnchorPane.leftAnchor="378.0" AnchorPane.rightAnchor="705.0" AnchorPane.topAnchor="113.0">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtNetTotal" editable="false" layoutX="590.0" layoutY="473.0" prefHeight="35.0" prefWidth="82.0" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="604.0" AnchorPane.topAnchor="474.0" />
-      <ComboBox fx:id="cmbSupplierId" layoutX="47.0" layoutY="156.0" onAction="#cmbSupplier" prefHeight="35.0" prefWidth="220.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="163.0" />
+      <ComboBox fx:id="cmbSupplierId" layoutX="47.0" layoutY="156.0" onAction="#cmbSupplier" prefHeight="35.0" prefWidth="200.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="163.0" />
       <Label layoutX="67.0" layoutY="132.0" text="Supplier ID:" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="132.0">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <ComboBox fx:id="cmbItemCode" layoutX="37.0" layoutY="254.0" onAction="#cmbItemOnAction" prefHeight="35.0" prefWidth="220.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="255.0" />
+      <ComboBox fx:id="cmbItemCode" layoutX="37.0" layoutY="254.0" onAction="#cmbItemOnAction" prefHeight="35.0" prefWidth="200.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="255.0" />
       <Label layoutX="105.0" layoutY="219.0" text="Item Code:" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="224.0">
          <font>
             <Font name="System Bold Italic" size="14.0" />
@@ -125,5 +110,29 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </JFXButton>
+      <TableView fx:id="tblOrderCart" layoutX="445.0" layoutY="335.0" prefHeight="139.0" prefWidth="648.0">
+         <columns>
+            <TableColumn fx:id="colItemCode" prefWidth="76.66668701171875" text="Code" />
+            <TableColumn fx:id="colDescription" prefWidth="115.0" text="Description" />
+            <TableColumn fx:id="colQty" prefWidth="93.0" text="Qty" />
+            <TableColumn fx:id="colUnitPrice" prefWidth="99.0" text="Unit Price" />
+            <TableColumn fx:id="colTotal" minWidth="0.0" prefWidth="92.66668701171875" text="Total" />
+            <TableColumn fx:id="colMethod" minWidth="0.0" prefWidth="102.0" text="Method" />
+            <TableColumn fx:id="colAction" minWidth="0.0" prefWidth="68.0" text="Action" />
+         </columns>
+      </TableView>
+      <Label layoutX="656.0" layoutY="144.0" text="Email Address:">
+         <font>
+            <Font name="System Bold Italic" size="15.0" />
+         </font>
+      </Label>
+      <JFXComboBox fx:id="cmbMethod" layoutX="654.0" layoutY="262.0" prefHeight="35.0" prefWidth="377.0" promptText="Payment Type" />
+      <TextField fx:id="txtEmail" layoutX="652.0" layoutY="177.0" prefHeight="35.0" prefWidth="377.0" />
+      <Label layoutX="524.0" layoutY="494.0" text="Net Total:">
+         <font>
+            <Font name="System Bold Italic" size="14.0" />
+         </font>
+      </Label>
+      <TextField fx:id="txtNetTotal" editable="false" layoutX="614.0" layoutY="484.0" prefHeight="35.0" prefWidth="82.0" style="-fx-background-radius: 10;" />
    </children>
 </AnchorPane>

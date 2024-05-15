@@ -342,7 +342,7 @@ public class CustomerOrderFormController {
 
     @FXML
     void btnPrintBill(ActionEvent event) throws SQLException, JRException {
-        JasperDesign jasperDesign =
+       /* JasperDesign jasperDesign =
                 JRXmlLoader.load("src/main/resources/Report/coco_report.jrxml");
         JasperReport jasperReport =
                 JasperCompileManager.compileReport(jasperDesign);
@@ -358,6 +358,29 @@ public class CustomerOrderFormController {
                         data,
                         dbConnection.getInstance().getConnection());
 
+        JasperViewer.viewReport(jasperPrint,false);*/
+        JasperDesign jasperDesign =
+                JRXmlLoader.load("src/main/resources/Report/coco_bill.jrxml");
+        JasperReport jasperReport =
+                JasperCompileManager.compileReport(jasperDesign);
+
+
+        Map<String, Object> data = new HashMap<>();
+        data.put("Order ID",txtOrderId.getText());
+        data.put("Net Total",txtNetTotal.getText());
+        data.put("custId",txtCustId.getText());
+        data.put("description",txtItemType.getText());
+        data.put("unitPrice",txtUnitPrice.getText());
+        data.put("qty",txtQty.getText());
+        data.put("amount",txtNetTotal.getText());
+
+        JasperPrint jasperPrint =
+                JasperFillManager.fillReport(
+                        jasperReport,
+                        data,
+                        dbConnection.getInstance().getConnection());
+
         JasperViewer.viewReport(jasperPrint,false);
+
     }
 }
