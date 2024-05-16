@@ -46,9 +46,9 @@
          </columns>
       </TableView>
       <JFXTextField fx:id="txtId" layoutX="83.0" layoutY="157.0" onAction="#idSearch" prefHeight="24.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="156.0" />
-      <JFXTextField fx:id="txtName" layoutX="446.0" layoutY="157.0" prefHeight="24.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="156.0" />
-      <JFXTextField fx:id="txtContact" layoutX="447.0" layoutY="266.0" prefHeight="24.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="265.0" />
-      <JFXTextField fx:id="txtAddress" layoutX="83.0" layoutY="266.0" prefHeight="24.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtName" layoutX="446.0" layoutY="157.0" onKeyReleased="#txtNameOnKeyReleased" prefHeight="24.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="156.0" />
+      <JFXTextField fx:id="txtContact" layoutX="447.0" layoutY="266.0" onKeyReleased="#txtContactOnKeyReleased" prefHeight="24.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtAddress" layoutX="83.0" layoutY="266.0" onKeyReleased="#txtAddressOnKeyReleased" prefHeight="24.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="83.0" AnchorPane.topAnchor="265.0" />
       <JFXButton buttonType="RAISED" layoutX="726.0" layoutY="33.0" onAction="#btnClear" prefHeight="31.0" prefWidth="80.0" style="-fx-background-color: #fad390;" text="Clear" AnchorPane.bottomAnchor="528.0" AnchorPane.leftAnchor="716.0" AnchorPane.topAnchor="23.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />

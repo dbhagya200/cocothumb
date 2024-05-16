@@ -1,4 +1,5 @@
 package lk.ijse.cocothumb.controller;
+import javafx.scene.input.KeyEvent;
 import lk.ijse.cocothumb.controller.Util.Regex;
 import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
@@ -103,31 +104,10 @@ public class CustomerFormController {
             } catch (SQLException e) {
                 new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-            initialize();
-            btnClear(event);
+
          }
-
-
-
-        //boolean isValidNIC = Regex.isValidTextField(txtNIC, cust_NIC);
-
-       /* if (isValidNIC) {
-            try {
-                boolean isSaved = CustomerRepo.save(customer);
-                if (isSaved) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "Customer saved successfully").show();
-                } else {
-                    new Alert(Alert.AlertType.ERROR, "Error saving customer").show();
-                }
-            } catch (SQLException e) {
-                new Alert(Alert.AlertType.ERROR, "Database error: " + e.getMessage()).show();
-            }
-        } else {
-            new Alert(Alert.AlertType.ERROR, "Invalid NIC format").show();
-        }*/
-
-
-
+        initialize();
+        btnClear(event);
     }
 
     @FXML
@@ -139,18 +119,21 @@ public class CustomerFormController {
         String cust_contact = txtContact.getText();
         String user_id = LoginFormController.getUserId();
 
-        Customer customer = new Customer(cust_id,cust_NIC, cust_name, cust_address, cust_contact,user_id);
+        if (isValid()){
+            Customer customer = new Customer(cust_id,cust_NIC, cust_name, cust_address, cust_contact,user_id);
 
-        try {
-            boolean isUpdated = CustomerRepo.update(customer);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
+            try {
+                boolean isUpdated = CustomerRepo.update(customer);
+                if (isUpdated) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "customer updated!").show();
+                }
+                initialize();
+                btnClear(event);
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-            initialize();
-            btnClear(event);
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+
         initialize();
         btnClear(event);
 
@@ -175,24 +158,7 @@ public class CustomerFormController {
         }
 
     }
-    public void idSearch(ActionEvent actionEvent) {
 
-       /* String cust_id = txtId.getText();
-
-        try {
-            Customer customer = CustomerRepo.searchById(cust_id);
-
-            if (customer != null) {
-                txtId.setText(customer.getCust_id());
-                txtNIC.setText(customer.getCust_NIC());
-                txtName.setText(customer.getCust_name());
-                txtAddress.setText(customer.getCust_address());
-                txtContact.setText(customer.getCust_contact());
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-        }*/
-    }
 
     @FXML
     void btnDelete(ActionEvent event) {
@@ -277,10 +243,10 @@ public class CustomerFormController {
         return customerList;
     }
 
-    public void txtCustomerNICOnKeyReleased(ActionEvent keyEvent) {
+    public void txtCustomerNICOnKeyReleased(KeyEvent keyEvent) {
         Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.NIC.NIC,txtNIC);
     }
-    public void txtEmployeeContactOnKeyReleased(ActionEvent keyEvent) {
+    public void txtContactOnKeyReleased(KeyEvent keyEvent) {
         Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact.contact,txtContact);
     }
 
@@ -290,7 +256,12 @@ public class CustomerFormController {
         return true;
     }
 
-
+    public void txtNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.name.name,txtName);
+    }
+    public void txtAddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.address.address,txtAddress);
+    }
     public void actionsearch(ActionEvent actionEvent) {
         String cust_id = txtId1.getText();
 
@@ -309,6 +280,8 @@ public class CustomerFormController {
         }
     }
 
+    public void idSearch(ActionEvent actionEvent) {
+    }
 }
 
 

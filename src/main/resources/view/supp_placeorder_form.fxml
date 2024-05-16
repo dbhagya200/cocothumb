@@ -110,7 +110,7 @@
             <Font name="System Bold Italic" size="13.0" />
          </font>
       </JFXButton>
-      <TableView fx:id="tblOrderCart" layoutX="445.0" layoutY="335.0" prefHeight="139.0" prefWidth="648.0">
+      <TableView fx:id="tblSuppOrderCart" layoutX="445.0" layoutY="335.0" prefHeight="139.0" prefWidth="648.0">
          <columns>
             <TableColumn fx:id="colItemCode" prefWidth="76.66668701171875" text="Code" />
             <TableColumn fx:id="colDescription" prefWidth="115.0" text="Description" />

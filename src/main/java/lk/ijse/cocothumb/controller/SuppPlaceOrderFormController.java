@@ -17,6 +17,7 @@ import lk.ijse.cocothumb.model.*;
 import lk.ijse.cocothumb.model.tModel.CartTms;
 import lk.ijse.cocothumb.repository.*;
 
+
 import java.io.IOException;
 import java.sql.Date;
 import java.sql.SQLException;
@@ -90,6 +91,7 @@ public class SuppPlaceOrderFormController {
     private TextField txtUnitPrice;
 
     private ObservableList<CartTms> cartList = FXCollections.observableArrayList();
+     int itemq;
 
     @FXML
     void btnAddNewSupplier(ActionEvent event) throws IOException {
@@ -100,14 +102,31 @@ public class SuppPlaceOrderFormController {
         stage.setTitle("Customer Form");
         stage.centerOnScreen();
     }
+    private void clear(){
+        txtSuppName.setText("");
+        txtEmail.setText("");
+        txtNetTotal.setText("");
+        cmbSupplierId.setValue("");
+        cmbItemCode.setValue("");
+        txtStockQty.setText("");
+        txtUnitPrice.setText("");
+        txtQty.setText("");
+        txtItemType.setText("");
+        //cmbMethod.setValue("");
+        cartList.clear();
+        tblSuppOrderCart.refresh();
+        loadNextOrderId();
+    }
 
     @FXML
-    void btnAddToCart(ActionEvent event) {
+    void btnAddToCart(ActionEvent event) throws SQLException {
         String item_code = (String) cmbItemCode.getValue();
         int qty = Integer.parseInt(txtQty.getText());
         String description = txtItemType.getText();
         double unitPriceForCompany = Double.parseDouble(txtUnitPrice.getText());
         double amount = qty * unitPriceForCompany;
+        String pay_method = String.valueOf(cmbMethod.getValue());
+        String email = txtEmail.getText();
         JFXButton btnRemove = new JFXButton("remove");
         btnRemove.setCursor(Cursor.HAND);
 
@@ -125,13 +144,14 @@ public class SuppPlaceOrderFormController {
                 calculateNetTotal();
             }
         });
+
         for (int i = 0; i < tblSuppOrderCart.getItems().size(); i++) {
             if (item_code.equals(colItemCode.getCellData(i))) {
                 qty += cartList.get(i).getQty();
                 amount = unitPriceForCompany * qty;
 
                 cartList.get(i).setQty(qty);
-                cartList.get(i).setTotal(amount);
+                cartList.get(i).setAmount(amount);
 
                 tblSuppOrderCart.refresh();
                 calculateNetTotal();
@@ -139,12 +159,18 @@ public class SuppPlaceOrderFormController {
                 return;
             }
         }
-        CartTms cartTms = new CartTms(item_code,  qty,description, unitPriceForCompany, amount, btnRemove);
+
+
+        CartTms cartTms = new CartTms(item_code,  qty,description, unitPriceForCompany, amount,pay_method,email, btnRemove);
 
         cartList.add(cartTms);
 
         tblSuppOrderCart.setItems(cartList);
         txtQty.setText("");
+        txtItemType.setText("");
+       cmbItemCode.setValue("");
+        txtUnitPrice.setText("");
+        txtStockQty.setText("");
         calculateNetTotal();
     }
 
@@ -186,7 +212,9 @@ public class SuppPlaceOrderFormController {
                     tms.getQty(),
                     tms.getDescription(),
                     tms.getUnit_price_forCompany(),
-                    tms.getAmount()
+                    tms.getAmount(),
+                    tms.getPay_method(),
+                    tms.getEmail()
             );
             sodList.add(SD);
         }
@@ -202,6 +230,7 @@ public class SuppPlaceOrderFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+        clear();
     }
 
     @FXML
@@ -211,7 +240,7 @@ public class SuppPlaceOrderFormController {
         try {
             Item item = ItemRepo.searchByCode(code);
             txtItemType.setText(item.getItem_type());
-            txtUnitPrice.setText(String.valueOf(item.getUnit_price()));
+            txtUnitPrice.setText(String.valueOf(item.getUnit_price_forCompany()));
             txtStockQty.setText(item.getStock_qty());
         } catch (SQLException e) {
             throw new RuntimeException(e);
@@ -232,12 +261,21 @@ public class SuppPlaceOrderFormController {
             throw new RuntimeException(e);
         }
     }
+    public void comboMethod() {
+        cmbMethod.getItems().addAll(PayMethod.values());
+
+        cmbMethod.setOnAction(Event -> {
+            PayMethod selected = (PayMethod) cmbMethod.getSelectionModel().getSelectedItem();
+            System.out.println("Selected item: " + selected);
+        });
+    }
 
     public void initialize() {
         setCellValueFactory();
         loadNextOrderId();
         getSupplierId();
         getItemCodes();
+        comboMethod();
     }
 
     private void getItemCodes() {
@@ -295,10 +333,12 @@ public class SuppPlaceOrderFormController {
         colQty.setCellValueFactory(new PropertyValueFactory<>("qty"));
         colUnitPrice.setCellValueFactory(new PropertyValueFactory<>("unit_price_forCompany"));
         colTotal.setCellValueFactory(new PropertyValueFactory<>("amount"));
+        colMethod.setCellValueFactory(new PropertyValueFactory<>("pay_method"));
         colAction.setCellValueFactory(new PropertyValueFactory<>("btnRemove"));
     }
 
 
     public void btnPrintBill(ActionEvent actionEvent) {
     }
+
 }

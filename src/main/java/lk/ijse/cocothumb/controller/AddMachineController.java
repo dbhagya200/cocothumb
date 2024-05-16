@@ -10,7 +10,9 @@ import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
+import lk.ijse.cocothumb.controller.Util.Regex;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Machine;
 import lk.ijse.cocothumb.model.tModel.CustomerTm;
@@ -70,6 +72,7 @@ public class AddMachineController {
      machine_id = txtId.getText();
     String brand = txtBrandName.getText();
 
+    if (isValid()) {
         Machine machine = new Machine(machine_id,brand);
         try {
             boolean isSaved = MachineRepo.save(machine);
@@ -79,6 +82,8 @@ public class AddMachineController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
         initialize();
         clearData();
     }
@@ -88,6 +93,7 @@ public class AddMachineController {
     String machine_id = txtId.getText();
     String brand = txtBrandName.getText();
 
+    if (isValid()) {
         Machine machine = new Machine(machine_id,brand);
         try {
             boolean isUpdated = MachineRepo.update(machine);
@@ -97,6 +103,8 @@ public class AddMachineController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
         initialize();
         clearData();
     }
@@ -189,5 +197,13 @@ public class AddMachineController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
+    public void txtNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.name.name,txtBrandName);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.name,txtBrandName)) return false;
+        return true;
     }
 }

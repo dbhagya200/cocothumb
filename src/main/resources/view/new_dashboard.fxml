@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import com.jfoenix.controls.JFXButton?>
-<?import com.jfoenix.controls.JFXTextField?>
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.image.Image?>
@@ -31,9 +30,9 @@
             </JFXButton>
             <Pane layoutX="47.0" layoutY="135.0" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;" AnchorPane.leftAnchor="44.0">
                <children>
-                  <ImageView fitHeight="36.0" fitWidth="37.0" layoutX="8.0" layoutY="4.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="37.0" fitWidth="32.0" layoutX="7.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../asserts.icon/icons8-employee-50.png" />
+                        <Image url="@../asserts.icon/employees.png" />
                      </image>
                   </ImageView>
                </children>
@@ -45,9 +44,9 @@
             </JFXButton>
             <Pane layoutX="44.0" layoutY="204.0" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;" AnchorPane.leftAnchor="44.0">
                <children>
-                  <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="9.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="37.0" fitWidth="37.0" layoutX="7.0" layoutY="6.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../asserts.icon/icons8-customer-50.png" />
+                        <Image url="@../asserts.icon/service.png" />
                      </image>
                   </ImageView>
                </children>
@@ -59,9 +58,9 @@
             </JFXButton>
             <Pane layoutX="44.0" layoutY="275.0" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;" AnchorPane.leftAnchor="44.0">
                <children>
-                  <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="40.0" fitWidth="32.0" layoutX="6.0" layoutY="7.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../asserts.icon/icons8-supplier-48.png" />
+                        <Image url="@../asserts.icon/supplier(1).png" />
                      </image>
                   </ImageView>
                </children>
@@ -75,7 +74,7 @@
                <children>
                   <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../asserts.icon/icons8-open-box-50.png" />
+                        <Image url="@../asserts.icon/shopping-bag.png" />
                      </image>
                   </ImageView>
                </children>
@@ -89,7 +88,7 @@
                <children>
                   <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../asserts.icon/icons8-online-order-48.png" />
+                        <Image url="@../asserts.icon/order.png" />
                      </image>
                   </ImageView>
                </children>
@@ -103,51 +102,43 @@
                <children>
                   <ImageView fitHeight="36.0" fitWidth="32.0" layoutX="7.0" layoutY="8.0" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../asserts.icon/icons8-supplier-32.png" />
+                        <Image url="@../asserts.icon/all-inclusive.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
             <Pane layoutX="107.0" layoutY="612.0" onMouseClicked="#onlogout" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;" AnchorPane.leftAnchor="107.0">
                <children>
-                  <ImageView fitHeight="24.0" fitWidth="27.0" layoutX="13.0" layoutY="9.0" onMouseClicked="#onlogout" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="3.0" layoutY="2.0" onMouseClicked="#onlogout" pickOnBounds="true" preserveRatio="true">
                      <image>
-                        <Image url="@../asserts.icon/icons8-logout-50.png" />
+                        <Image url="@../asserts.icon/switch.png" />
                      </image>
                   </ImageView>
                </children>
             </Pane>
          </children>
       </AnchorPane>
-      <AnchorPane layoutX="244.0" layoutY="-3.0" prefHeight="86.0" prefWidth="1160.0" style="-fx-background-radius: 0 0 0 0;">
+      <AnchorPane layoutX="244.0" layoutY="-3.0" opacity="0.81" prefHeight="86.0" prefWidth="1160.0" style="-fx-background-radius: 0 0 0 0;">
          <children>
-            <ImageView fitHeight="86.0" fitWidth="1149.0" layoutX="-3.0" opacity="0.11" pickOnBounds="true">
+            <ImageView fitHeight="86.0" fitWidth="1140.0" layoutX="6.0" opacity="0.4" pickOnBounds="true">
                <image>
                   <Image url="@../asserts.icon/d98f5e4432c2c9de5418ed4b668faee5.jpeg" />
                </image>
             </ImageView>
-            <JFXButton buttonType="RAISED" layoutX="248.0" layoutY="27.0" onAction="#btnHome" prefHeight="33.0" prefWidth="66.0" style="-fx-background-color: #95a5a6; -fx-background-radius: 10 0 10 0;" text="Home">
+            <JFXButton fx:id="bb" buttonType="RAISED" layoutX="844.0" layoutY="20.0" onAction="#btnHome" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #95a5a6; -fx-background-radius: 10;" styleClass="bb" stylesheets="@../Style/ButtonChange.css" text="Home">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
-            </JFXButton>
-            <JFXButton buttonType="RAISED" layoutX="452.0" layoutY="22.0" onAction="#btnexit" prefHeight="33.0" prefWidth="71.0" style="-fx-background-color: #ED4C67; -fx-background-radius: 10 0 10 0;" text="Exit" AnchorPane.rightAnchor="638.0">
                <font>
-                  <Font name="Pagul" size="13.0" />
+                  <Font name="System Bold" size="13.0" />
+               </font>
+            </JFXButton>
+            <JFXButton fx:id="bb" buttonType="RAISED" layoutX="927.0" layoutY="20.0" onAction="#btnexit" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #ED4C67; -fx-background-radius: 10;" styleClass="bb" stylesheets="@../Style/ButtonChange.css" text="Exit" AnchorPane.rightAnchor="162.0">
+               <font>
+                  <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
             <Line endX="26.666671752929688" endY="80.0" layoutX="-6.0" startX="26.666671752929688" startY="23.292892456054688" stroke="#294051" strokeWidth="2.0" />
-            <JFXButton buttonType="RAISED" layoutX="345.0" layoutY="22.0" onAction="#btnchangePassword" prefHeight="44.0" prefWidth="71.0" style="-fx-background-color: #76ABAE; -fx-background-radius: 10;" text="Button">
-               <font>
-                  <Font name="System Bold Italic" size="13.0" />
-               </font>
-            </JFXButton>
-            <JFXTextField labelFloat="true" layoutX="775.0" layoutY="21.0" onAction="#actionsearch" prefHeight="33.0" prefWidth="192.0" promptText="search" style="-fx-background-radius: 10;" />
-            <ImageView fitHeight="37.0" fitWidth="27.0" layoutX="748.0" layoutY="36.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../asserts.icon/icons8-search-50.png" />
-               </image>
-            </ImageView>
             <Pane layoutX="1022.0" layoutY="18.0" onMouseClicked="#actionchange" prefHeight="37.0" prefWidth="37.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;">
                <children>
                   <ImageView fitHeight="33.0" fitWidth="27.0" layoutX="5.0" layoutY="7.0" onMouseClicked="#actionchange" pickOnBounds="true" preserveRatio="true">
@@ -173,9 +164,9 @@
                         <Image url="@../asserts.icon/earth-sunset-ocean-palm-tree-wallpaper-preview.jpg" />
                      </image>
                   </ImageView>
-                  <AnchorPane layoutX="207.0" layoutY="104.0" prefHeight="201.0" prefWidth="119.0" style="-fx-background-color: #ffff; -fx-background-radius: 25;">
+                  <AnchorPane fx:id="pp" layoutX="207.0" layoutY="104.0" prefHeight="201.0" prefWidth="119.0" style="-fx-background-color: #ffff; -fx-background-radius: 25;" styleClass="pp" stylesheets="@../Style/ButtonChange.css">
                      <children>
-                        <Label layoutX="5.0" layoutY="53.0" prefHeight="21.0" prefWidth="106.0" text="Employee " AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="8.0">
+                        <Label layoutX="9.0" layoutY="53.0" prefHeight="21.0" prefWidth="110.0" text="Employee " AnchorPane.leftAnchor="5.0" AnchorPane.rightAnchor="4.0">
                            <font>
                               <Font name="System Bold" size="17.0" />
                            </font>
@@ -187,7 +178,7 @@
                         </Label>
                         <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="23.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../asserts.icon/icons8-collaborator-male-50.png" />
+                              <Image url="@../asserts.icon/team.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="13.0" layoutY="75.0" prefHeight="21.0" prefWidth="71.0" text="Count">
@@ -197,7 +188,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="19.0" layoutY="101.0" prefHeight="201.0" prefWidth="119.0" style="-fx-background-color: #ffff; -fx-background-radius: 25;">
+                  <AnchorPane fx:id="pp" layoutX="19.0" layoutY="101.0" prefHeight="201.0" prefWidth="119.0" style="-fx-background-color: #ffff; -fx-background-radius: 25;" styleClass="pp" stylesheets="@../Style/ButtonChange.css">
                      <children>
                         <Label layoutX="19.0" layoutY="59.0" prefHeight="21.0" prefWidth="57.0" text="Item ">
                            <font>
@@ -209,9 +200,9 @@
                               <Font name="System Bold" size="32.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="20.0" layoutY="114.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="72.0" fitWidth="72.0" layoutX="20.0" layoutY="113.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../asserts.icon/icons8-sell-stock-100.png" />
+                              <Image url="@../asserts.icon/packaging.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="8.0" layoutY="80.0" prefHeight="21.0" prefWidth="71.0" text=" Count">
@@ -221,7 +212,7 @@
                         </Label>
                      </children>
                   </AnchorPane>
-                  <AnchorPane layoutX="206.0" layoutY="342.0" prefHeight="201.0" prefWidth="119.0" style="-fx-background-color: #ffff; -fx-background-radius: 25;">
+                  <AnchorPane fx:id="pp" layoutX="206.0" layoutY="342.0" prefHeight="201.0" prefWidth="119.0" style="-fx-background-color: #ffff; -fx-background-radius: 25;" styleClass="pp" stylesheets="@../Style/ButtonChange.css">
                      <children>
                         <Label layoutX="19.0" layoutY="60.0" prefHeight="21.0" prefWidth="57.0" text="Total ">
                            <font>
@@ -233,9 +224,9 @@
                               <Font name="System Bold" size="32.0" />
                            </font>
                         </Label>
-                        <ImageView fitHeight="65.0" fitWidth="65.0" layoutX="23.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
+                        <ImageView fitHeight="65.0" fitWidth="71.0" layoutX="23.0" layoutY="117.0" pickOnBounds="true" preserveRatio="true">
                            <image>
-                              <Image url="@../asserts.icon/icons8-logistics-64(1).png" />
+                              <Image url="@../asserts.icon/checklist.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="14.0" layoutY="81.0" prefHeight="21.0" prefWidth="71.0" text="Orders">
@@ -248,7 +239,7 @@
                   <Line endX="86.66665649414062" endY="275.6666564941406" layoutX="84.0" layoutY="19.0" startX="86.66665649414062" startY="95.66667175292969" stroke="#294051" strokeWidth="2.0" />
                   <Line endX="146.0" endY="276.66668701171875" layoutX="26.0" layoutY="67.0" startX="146.0" startY="466.33331298828125" stroke="#294051" strokeWidth="2.0" />
                   <Line endX="-228.66668701171875" endY="423.0" layoutX="547.0" layoutY="-102.0" startX="-522.0" startY="423.0" stroke="#294051" strokeWidth="2.0" />
-                  <AnchorPane layoutX="22.0" layoutY="341.0" prefHeight="201.0" prefWidth="119.0" style="-fx-background-color: #ffff; -fx-background-radius: 25;">
+                  <AnchorPane fx:id="pp" layoutX="22.0" layoutY="341.0" prefHeight="201.0" prefWidth="119.0" style="-fx-background-color: #ffff; -fx-background-radius: 25;" styleClass="pp" stylesheets="@../Style/ButtonChange.css">
                      <children>
                         <Label layoutX="4.0" layoutY="56.0" prefHeight="21.0" prefWidth="110.0" text="Customer " AnchorPane.leftAnchor="4.0" AnchorPane.rightAnchor="-4.0">
                            <font>
@@ -262,7 +253,7 @@
                         </Label>
                         <ImageView fitHeight="72.0" fitWidth="72.0" layoutX="19.0" layoutY="106.0" pickOnBounds="true" preserveRatio="true" AnchorPane.rightAnchor="28.0">
                            <image>
-                              <Image url="@../asserts.icon/icons8-customer-64.png" />
+                              <Image url="@../asserts.icon/customer.png" />
                            </image>
                         </ImageView>
                         <Label layoutX="15.0" layoutY="75.0" prefHeight="21.0" prefWidth="71.0" text="Count">
@@ -279,12 +270,12 @@
                   </Label>
                   <Pane layoutX="375.0" layoutY="80.0" prefHeight="463.0" prefWidth="721.0" style="-fx-background-color: #0000;">
                      <children>
-                        <Label fx:id="lblTime" layoutX="46.0" layoutY="196.0" opacity="0.71" prefHeight="119.0" prefWidth="616.0" text="Time" textFill="WHITE">
+                        <Label fx:id="lblTime" layoutX="46.0" layoutY="196.0" opacity="0.81" prefHeight="119.0" prefWidth="616.0" text="Time" textFill="WHITE">
                            <font>
                               <Font name="System Bold" size="70.0" />
                            </font>
                         </Label>
-                        <Label fx:id="lbldate1" layoutX="35.0" layoutY="30.0" opacity="0.7" prefHeight="144.0" prefWidth="680.0" text="Date" textFill="WHITE">
+                        <Label fx:id="lbldate1" layoutX="35.0" layoutY="30.0" opacity="0.8" prefHeight="144.0" prefWidth="680.0" text="Date" textFill="WHITE">
                            <font>
                               <Font name="System Bold Italic" size="61.0" />
                            </font>

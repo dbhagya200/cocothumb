@@ -15,6 +15,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class ItemRepo {
+    public static Object ItemList;
+
     public static boolean save(Item item) throws SQLException {
         String sql = "INSERT INTO item VALUES (?, ?, ?, ?, ?,?)";
         PreparedStatement pstm = dbConnection.getInstance().getConnection()

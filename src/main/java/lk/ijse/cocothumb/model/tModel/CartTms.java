@@ -14,6 +14,8 @@ public class CartTms {
     private String description;
     private double unit_price_forCompany;
     private double amount;
+    private String pay_method;
+    private String email;
     private JFXButton btnRemove;
 
     public void setTotal(double amount) {

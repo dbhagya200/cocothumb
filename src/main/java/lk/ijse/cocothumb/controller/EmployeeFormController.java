@@ -10,6 +10,7 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
@@ -111,33 +112,34 @@ public class EmployeeFormController {
 
     @FXML
     void btnSave(ActionEvent event) throws IOException {
-         e_id = txtId.getText();
+        e_id = txtId.getText();
         String e_name = txtName.getText();
-        String e_jobrole= cmbjobrole.getValue().toString();
+        String e_jobrole = cmbjobrole.getValue().toString();
         String e_address = txtAddress.getText();
         String e_contact = txtContact.getText();
         double e_salary = Double.parseDouble(txtSalary.getText());
         String machine_id = AddMachineController.getMachineId();
 
-       // if (isValid()) {
+         if (isValid()) {
 
 
-            Employee employee = new Employee(e_id, e_name, e_jobrole, e_address, e_contact, e_salary, machine_id);
-            System.out.println(employee);
-            try {
-                boolean isSaved = EmployeeRepo.save(employee);
-                if (isSaved) {
-                    new Alert(Alert.AlertType.CONFIRMATION, "machine saved!").show();
-                    initialize();
-                    btnClear(event);
-                }
-            } catch (SQLException e) {
-                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
-
+        Employee employee = new Employee(e_id, e_name, e_jobrole, e_address, e_contact, e_salary, machine_id);
+        System.out.println(employee);
+        try {
+            boolean isSaved = EmployeeRepo.save(employee);
+            if (isSaved) {
+                new Alert(Alert.AlertType.CONFIRMATION, "machine saved!").show();
+                initialize();
+                btnClear(event);
             }
+        } catch (SQLException e) {
+            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+
+        }
+    }
             initialize();
             btnClear(event);
-       // }
+
     }
 
     @FXML
@@ -149,13 +151,14 @@ public class EmployeeFormController {
         String e_contact = txtContact.getText();
         double e_salary = Double.parseDouble(txtSalary.getText());
         String machine_id = AddMachineController.getMachineId();
+    if (isValid()) {
+    Employee employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact,e_salary,machine_id);
 
-        Employee employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact,e_salary,machine_id);
-
-        boolean isUpdated = EmployeeRepo.update(employee);
-        if (isUpdated) {
-            new Alert(Alert.AlertType.CONFIRMATION, "employee updated!").show();
-        }
+    boolean isUpdated = EmployeeRepo.update(employee);
+    if (isUpdated) {
+        new Alert(Alert.AlertType.CONFIRMATION, "employee updated!").show();
+         }
+    }
         initialize();
         btnClear(event);
     }
@@ -277,19 +280,6 @@ public class EmployeeFormController {
         btnClear(actionEvent);
     }
 
-    public void txtEmployeeContactOnKeyReleased(ActionEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact.contact,txtContact);
-    }
-
-    public void txtEmployeeSalaryOnKeyReleased(ActionEvent keyEvent) {
-        Regex.setTextColor(TextField.salary.salary,txtSalary);
-    }
-
-    public boolean isValid(){
-         if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact,txtContact)) return false;
-         else if (!Regex.setTextColor(TextField.salary,txtSalary)) return false;
-        return true;
-    }
 
     public void actionsearch(ActionEvent actionEvent) throws SQLException {
         String id = txtId1.getText();
@@ -303,5 +293,27 @@ public class EmployeeFormController {
             txtContact.setText(employee.getE_Contact());
             txtSalary.setText(String.valueOf(employee.getE_Salary()));
         }
+    }
+
+    public void txtNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.name.name,txtName);
+    }
+
+    public void txtAddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.address.address,txtAddress);
+    }
+
+    public void txtContactOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact.contact,txtContact);
+    }
+    public void txtSalaryOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.Double.Double,txtSalary);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.name,txtName)) return false;
+        else if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact,txtContact)) return false;
+        else if (!Regex.setTextColor(TextField.address,txtAddress)) return false;
+        else if (!Regex.setTextColor(TextField.Double,txtSalary)) return false;
+        return true;
     }
 }

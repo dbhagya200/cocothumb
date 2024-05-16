@@ -59,10 +59,10 @@
       </JFXButton>
       <JFXComboBox fx:id="cmbjobrole" layoutX="817.0" layoutY="155.0" onAction="#cmbjobroleOnAction" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="821.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="156.0" />
       <JFXTextField fx:id="txtId" editable="false" layoutX="83.0" layoutY="157.0" onAction="#idSearch" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="156.0" />
-      <JFXTextField fx:id="txtName" layoutX="457.0" layoutY="156.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="156.0" />
-      <JFXTextField fx:id="txtAddress" layoutX="87.0" layoutY="276.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="265.0" />
-      <JFXTextField fx:id="txtContact" layoutX="457.0" layoutY="265.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="265.0" />
-      <JFXTextField fx:id="txtSalary" layoutX="821.0" layoutY="265.0" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="821.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtName" layoutX="457.0" layoutY="156.0" onKeyReleased="#txtNameOnKeyReleased" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="400.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="156.0" />
+      <JFXTextField fx:id="txtAddress" layoutX="87.0" layoutY="276.0" onKeyReleased="#txtAddressOnKeyReleased" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="83.0" AnchorPane.rightAnchor="795.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtContact" layoutX="457.0" layoutY="265.0" onKeyReleased="#txtContactOnKeyReleased" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="421.0" AnchorPane.topAnchor="265.0" />
+      <JFXTextField fx:id="txtSalary" layoutX="821.0" layoutY="265.0" onKeyReleased="#txtSalaryOnKeyReleased" prefHeight="26.0" prefWidth="220.0" AnchorPane.bottomAnchor="291.0" AnchorPane.leftAnchor="821.0" AnchorPane.rightAnchor="57.0" AnchorPane.topAnchor="265.0" />
       <Label layoutX="457.0" layoutY="123.0" text=" Name:" AnchorPane.bottomAnchor="441.0" AnchorPane.leftAnchor="457.0" AnchorPane.rightAnchor="509.0" AnchorPane.topAnchor="123.0">
          <font>
             <Font name="System Bold Italic" size="14.0" />

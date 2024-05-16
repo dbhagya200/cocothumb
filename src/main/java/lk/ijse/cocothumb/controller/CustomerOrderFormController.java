@@ -2,6 +2,7 @@ package lk.ijse.cocothumb.controller;
 
 import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXComboBox;
+import com.jfoenix.controls.JFXTextField;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -11,10 +12,12 @@ import javafx.scene.Cursor;
 import javafx.scene.Scene;
 import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lk.ijse.cocothumb.controller.Util.Regex;
 import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.*;
 import lk.ijse.cocothumb.model.tModel.CartTm;
@@ -139,30 +142,48 @@ public class CustomerOrderFormController {
             }
         });
 
-        for (int i = 0; i < tblOrderCart.getItems().size(); i++) {
-            if (item_code.equals(colItemCode.getCellData(i))) {
-                qty += cartList.get(i).getQty();
-                amount = unitPrice * qty;
+        if (isValid()){
+            if (txtQty.getText().equals(txtStockQty.getText())|| Integer.parseInt(txtQty.getText()) < Integer.parseInt(txtStockQty.getText())) {
 
-                cartList.get(i).setQty(qty);
-                cartList.get(i).setTotal(amount);
+                for (int i = 0; i < tblOrderCart.getItems().size(); i++) {
+                    if (item_code.equals(colItemCode.getCellData(i))) {
+                        qty += cartList.get(i).getQty();
 
-                //initialize();
-                tblOrderCart.refresh();
-                calculateNetTotal();
-                txtQty.setText("");
+                        if (qty > Integer.parseInt(txtStockQty.getText())) {
+                            new Alert(Alert.AlertType.ERROR, "Item is out of stock").show();
+                            return;
+                        }
+
+                        amount = unitPrice * qty;
+
+                        cartList.get(i).setQty(qty);
+                        cartList.get(i).setAmount(amount);
+
+
+                        initialize();
+
+                        tblOrderCart.refresh();
+                        calculateNetTotal();
+                        txtQty.setText("");
+                        txtItemType.setText("");
+                        cmbItemCode.setValue("");
+                        return;
+                    }
+                }
+                CartTm cartTm = new CartTm(item_code,  qty,description, unitPrice, amount,pay_method,email, btnRemove);
+
+                cartList.add(cartTm);
+                tblOrderCart.setItems(cartList);
+
+            }else {
+                new Alert(Alert.AlertType.ERROR, "Item is out of stock").show();
                 return;
             }
-            System.out.println("alutin ekam item damma");
         }
-        CartTm cartTm = new CartTm(item_code,  qty,description, unitPrice, amount,pay_method,email, btnRemove);
 
-        cartList.add(cartTm);
-
-        tblOrderCart.setItems(cartList);
-        txtQty.setText(null);
-        txtItemType.setText(null);
-        //cmbItemCode.getValue();
+        txtQty.setText("");
+        txtItemType.setText("");
+        cmbItemCode.setValue("");
         calculateNetTotal();
     }
 
@@ -220,6 +241,7 @@ public class CustomerOrderFormController {
             netTotal += (double) colTotal.getCellData(i);
         }
         txtNetTotal.setText(String.valueOf(netTotal));
+        System.out.println("net total = " + netTotal);
     }
 
     private void setCellValueFactory() {
@@ -382,5 +404,18 @@ public class CustomerOrderFormController {
 
         JasperViewer.viewReport(jasperPrint,false);
 
+    }
+
+    public void txtQtyOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.INT.INT, (JFXTextField) txtQty);
+    }
+
+    public void txtEmailOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.email.email, (JFXTextField) txtEmail);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.INT, (JFXTextField) txtQty)) return false;
+        else if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.email, (JFXTextField) txtEmail)) return false;
+        return true;
     }
 }

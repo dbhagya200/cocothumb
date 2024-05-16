@@ -11,9 +11,11 @@ import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 import lk.ijse.cocothumb.controller.Util.Regex;
+import lk.ijse.cocothumb.controller.Util.TextField;
 import lk.ijse.cocothumb.model.Supplier;
 import lk.ijse.cocothumb.model.tModel.SupplierTm;
 import lk.ijse.cocothumb.repository.SupplierRepo;
@@ -97,18 +99,20 @@ public class AddSuppFormController {
         String supp_address = txtAddress.getText();
         String supp_contact = txtContact.getText();
 
-
-        Supplier supplier = new Supplier(supp_id, supp_name, supp_address, supp_contact);
-        try {
-            boolean isSaved = SupplierRepo.save(supplier);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "supplier saved!").show();
-                initialize();
-                btnClear(event);
-            }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+    if (isValid()){
+    Supplier supplier = new Supplier(supp_id, supp_name, supp_address, supp_contact);
+    try {
+        boolean isSaved = SupplierRepo.save(supplier);
+        if (isSaved) {
+            new Alert(Alert.AlertType.CONFIRMATION, "supplier saved!").show();
+            initialize();
+            btnClear(event);
         }
+    } catch (SQLException e) {
+        new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+    }
+}
+
         initialize();
         btnClear(event);
 
@@ -122,18 +126,21 @@ public class AddSuppFormController {
         String supp_address = txtAddress.getText();
         String supp_contact = txtContact.getText();
 
-        Supplier supplier = new Supplier(supp_id, supp_name, supp_address, supp_contact);
+if (isValid()){
+    Supplier supplier = new Supplier(supp_id, supp_name, supp_address, supp_contact);
 
-        try {
-            boolean isUpdated = SupplierRepo.update(supplier);
-            if (isUpdated) {
-                new Alert(Alert.AlertType.CONFIRMATION, "supplier updated!").show();
-            }
-            initialize();
-            btnClear(event);
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+    try {
+        boolean isUpdated = SupplierRepo.update(supplier);
+        if (isUpdated) {
+            new Alert(Alert.AlertType.CONFIRMATION, "supplier updated!").show();
         }
+        initialize();
+        btnClear(event);
+    } catch (SQLException e) {
+        new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+    }
+}
+
         initialize();
         btnClear(event);
 
@@ -241,14 +248,6 @@ public class AddSuppFormController {
         return supplierList;
     }
 
-    public void txtEmployeeContactOnKeyReleased(ActionEvent keyEvent) {
-        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact.contact,txtContact);
-    }
-
-    public boolean isValid(){
-        if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact,txtContact)) return false;
-        return true;
-    }
 
     public void actionsearch(ActionEvent actionEvent) {
         String supp_id = txtId1.getText();
@@ -265,5 +264,22 @@ public class AddSuppFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
+    public void txtNameOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.name.name,txtName);
+    }
+    public void txtAddressOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.address.address,txtAddress);
+    }
+    public void txtContactOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact.contact,txtContact);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.name,txtName)) return false;
+        else if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact,txtContact)) return false;
+        else if (!Regex.setTextColor(TextField.address,txtAddress)) return false;
+
+        return true;
     }
 }

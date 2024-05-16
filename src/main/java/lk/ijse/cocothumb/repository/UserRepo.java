@@ -119,6 +119,29 @@ public class UserRepo {
 
     }
 
+    public static User searchByName(String userName) throws SQLException {
+        String sql = "SELECT * FROM user WHERE u_name = ?";
+        PreparedStatement pstm = dbConnection.getInstance().getConnection()
+                .prepareStatement(sql);
+
+        pstm.setObject(1, userName);
+        ResultSet resultSet = pstm.executeQuery();
+
+        User user = null;
+
+        if (resultSet.next()) {
+            String user_id = resultSet.getString(1);
+            String u_name = resultSet.getString(2);
+            String u_password = resultSet.getString(3);
+            String u_email = resultSet.getString(4);
+            String u_role = resultSet.getString(5);
+            String e_id = resultSet.getString(6);
+
+            user = new User(user_id, u_name, u_password, u_email, u_role, e_id);
+        }
+        return user;
+    }
+
     private void checkUser(String userId) throws SQLException, IOException {
         String sql = "SELECT user_id, u_password FROM user WHERE user_id = ?";
 
@@ -129,6 +152,7 @@ public class UserRepo {
 
 
     }
+
 
 
 }

@@ -19,7 +19,7 @@ public class SuppDetailsRepo {
     }
     private static boolean save(SuppDetails sd) throws SQLException {
         System.out.println(sd);
-        String sql = "INSERT INTO supp_details VALUES(?, ?, ?, ?,?,?,?)";
+        String sql = "INSERT INTO supp_details VALUES(?, ?, ?, ?,?,?,?,?,?)";
         PreparedStatement pstm = dbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
 
@@ -30,6 +30,8 @@ public class SuppDetailsRepo {
         pstm.setString(5, sd.getDescription());
         pstm.setDouble(6, sd.getUnit_price_forCompany());
         pstm.setDouble(7, sd.getAmount());
+        pstm.setString(8, sd.getPay_method());
+        pstm.setString(9, sd.getEmail());
 
         return pstm.executeUpdate() > 0;
     }

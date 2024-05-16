@@ -10,10 +10,12 @@ import javafx.scene.Scene;
 import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
 import javafx.scene.control.cell.PropertyValueFactory;
+import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
+import lk.ijse.cocothumb.controller.Util.Regex;
+import lk.ijse.cocothumb.controller.Util.TextField;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Item;
 import lk.ijse.cocothumb.model.tModel.CustomerTm;
@@ -91,15 +93,18 @@ public class ItemFormController {
         String stock_qty = txtQtyOnHand.getText();
         String user_id = LoginFormController.getUserId();
 
-        Item item = new Item(item_code, item_type, unit_price,unit_price_forCompany, stock_qty, user_id);
-        try {
-            boolean isSaved = ItemRepo.save(item);
-            if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "items saved!").show();
+        if (isValid()) {
+            Item item = new Item(item_code, item_type, unit_price,unit_price_forCompany, stock_qty, user_id);
+            try {
+                boolean isSaved = ItemRepo.save(item);
+                if (isSaved) {
+                    new Alert(Alert.AlertType.CONFIRMATION, "items saved!").show();
+                }
+            } catch (SQLException e) {
+                new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
             }
-        } catch (SQLException e) {
-            new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+
         initialize();
         btnClear(event);
 
@@ -113,7 +118,7 @@ public class ItemFormController {
         double unit_price_forCompany = Double.parseDouble(txtQtyOnHandCompany.getText());
         String stock_qty = txtQtyOnHand.getText();
         String user_id = LoginFormController.getUserId();
-
+    if (isValid()){
         Item item = new Item(item_code,item_type, unit_price,unit_price_forCompany, stock_qty, user_id);
 
         try {
@@ -124,6 +129,8 @@ public class ItemFormController {
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
+    }
+
         initialize();
         btnClear(event);
     }
@@ -243,5 +250,27 @@ public class ItemFormController {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
     }
+
+    public void txtItemTypeOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.name.name,txtItemType);
+    }
+
+    public void txtUnitPriceOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.Double.Double,txtUnitPrice);
+    }
+    public void txtUcompanyOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.Double.Double,txtQtyOnHandCompany);
+    }
+    public void txtQtyOnHandOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(TextField.INT.INT,txtQtyOnHand);
+    }
+    public boolean isValid(){
+        if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.name,txtItemType)) return false;
+        else if (!Regex.setTextColor(TextField.Double,txtUnitPrice)) return false;
+        else if (!Regex.setTextColor(TextField.Double,txtQtyOnHandCompany)) return false;
+        else if (!Regex.setTextColor(TextField.INT,txtQtyOnHand)) return false;
+        return true;
+    }
+
 }
 

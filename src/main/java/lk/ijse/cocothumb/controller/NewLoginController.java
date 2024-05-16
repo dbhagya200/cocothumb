@@ -54,8 +54,14 @@ public class NewLoginController {
 
     }
     @FXML
-    void actionFpassword(ActionEvent event) {
+    void actionFpassword(ActionEvent event) throws IOException {
+        AnchorPane rootNodeForgot = FXMLLoader.load(getClass().getResource("/view/forgort_password.fxml"));
 
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setTitle("New Window");
+        popupStage.setScene(new Scene(rootNodeForgot));
+        popupStage.showAndWait();
     }
 
 
@@ -93,7 +99,15 @@ public class NewLoginController {
     }
 
 
+    public void btnSignup(ActionEvent actionEvent) throws IOException {
+        AnchorPane rootNodeUserForm = FXMLLoader.load(getClass().getResource("/view/user_form.fxml"));
 
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setTitle("Popup Window");
+        popupStage.setScene(new Scene(rootNodeUserForm));
+        popupStage.showAndWait();
+    }
 }
 
 

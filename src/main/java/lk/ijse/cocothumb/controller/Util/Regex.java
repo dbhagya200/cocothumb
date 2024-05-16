@@ -23,7 +23,27 @@ public class Regex {
             case salary :
                 field = "^([0-9]{1,}[.]([0-9]){1,})$";
             break;
-
+            case name :
+                field = "^[A-z|\\s]{3,}$";
+            break;
+            case email:
+                field = "^([A-z])([A-z0-9.]){1,}[@]([A-z0-9]){1,10}[.]([A-z]){2,5}$";
+            break;
+            case address :
+                field = "^([A-z0-9]|[-/,.@+]|\\s){4,}$";
+            break;
+            case Double:
+                field = "^([0-9]){1,}[.]([0-9]){1,}$";
+            break;
+            case invoice:
+                field = "^([0-9]){1,}$";
+            break;
+            case NONE_CHARACTER:
+                field = "^[\\W]{1,}$";
+            break;
+            case INT:
+                field = "^\\d+$";
+            break;
 
         }
         Pattern pattern = Pattern.compile(field);

@@ -46,7 +46,7 @@
          </columns>
       </TableView>
       <JFXTextField fx:id="txtId" layoutX="57.0" layoutY="197.0" onAction="#idSearch" prefHeight="24.0" prefWidth="256.0" />
-      <JFXTextField fx:id="txtBrandName" layoutX="358.0" layoutY="197.0" prefHeight="24.0" prefWidth="256.0" />
+      <JFXTextField fx:id="txtBrandName" layoutX="358.0" layoutY="197.0" onKeyReleased="#txtNameOnKeyReleased" prefHeight="24.0" prefWidth="256.0" />
       <JFXTextField fx:id="txtId1" labelFloat="true" layoutX="70.0" layoutY="103.0" onAction="#actionsearch" prefHeight="33.0" prefWidth="236.0" promptText="search" style="-fx-background-radius: 10;">
          <font>
             <Font size="14.0" />

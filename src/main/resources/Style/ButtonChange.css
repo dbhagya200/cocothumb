@@ -7,7 +7,7 @@
     -fx-cursor: hand;
     -fx-font-weight: bold;
     -fx-font-style: italic;
-    -fx-font-family: "serif";
+    -fx-font-family: "system";
     -fx-border-color: #1C82AD;
     -fx-border-width: 2;
     -fx-border-radius: 20;
@@ -24,4 +24,26 @@
     -fx-text-fill: #FFF7FC;
     -fx-opacity: 60%;
 
+}
+.pp:hover{
+    -fx-background-color: #8B93FF;
+    -fx-text-fill: #CDE8E5;
+}
+.pp{
+    -fx-background-color:  #fff;
+    -fx-cursor: hand;
+    -fx-font-weight: bold;
+    -fx-font-family: "system";
+    -fx-border-color: #1C82AD;
+    -fx-border-width: 2;
+    -fx-border-insets: 2;
+    -fx-border-radius: 20;
+    -fx-text-fill: #2D3250;
+    -fx-font-size: 17;
+    -fx-background-radius: 25;
+
+}
+.bb:hover{
+    -fx-background-color: #ffffff;
+    -fx-text-fill: #CDE8E5;
 }

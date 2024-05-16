@@ -57,7 +57,7 @@
          </children></AnchorPane>
       <AnchorPane layoutX="87.0" layoutY="96.0" prefHeight="475.0" prefWidth="490.0">
          <children>
-            <ImageView fitHeight="477.0" fitWidth="431.0" layoutX="23.0" opacity="0.59" pickOnBounds="true">
+            <ImageView fitHeight="477.0" fitWidth="431.0" layoutX="23.0" layoutY="3.0" opacity="0.59" pickOnBounds="true">
                <image>
                   <Image url="@../asserts.icon/Frame%201.jpg" />
                </image>
@@ -72,7 +72,7 @@
                   <Font name="Noto Serif CJK HK Bold" size="15.0" />
                </font>
             </Text>
-            <TextField fx:id="txtUserId" layoutX="188.0" layoutY="162.0" prefHeight="24.0" prefWidth="219.0" promptText="user Id" style="-fx-background-radius: 5;">
+            <TextField fx:id="txtUserId" layoutX="188.0" layoutY="162.0" prefHeight="26.0" prefWidth="219.0" promptText="user Id" style="-fx-background-radius: 5;">
                <effect>
                   <SepiaTone level="0.0">
                      <input>
@@ -93,10 +93,10 @@
                   <Font name="Noto Serif CJK HK Bold" size="15.0" />
                </font>
             </Text>
-            <JFXButton fx:id="Button" layoutX="190.0" layoutY="272.0" onAction="#btnlogin" prefHeight="24.0" prefWidth="215.0" style="-fx-background-color: #8C6A5D;" text="Login" textFill="WHITE" />
-            <Label layoutX="193.0" layoutY="299.0" prefHeight="16.0" prefWidth="130.0" text="Forgot password ?" textFill="WHITE" />
-            <Hyperlink layoutX="317.0" layoutY="296.0" onAction="#actionFpassword" text="click here" />
-            <PasswordField fx:id="txtPassword" layoutX="188.0" layoutY="215.0" prefHeight="24.0" prefWidth="219.0" promptText="password" style="-fx-background-radius: 5;">
+            <JFXButton layoutX="80.0" layoutY="258.0" onAction="#btnlogin" prefHeight="27.0" prefWidth="331.0" style="-fx-background-color: #B19470; -fx-background-radius: 20;" text="Login" textFill="WHITE" />
+            <Label layoutX="162.0" layoutY="290.0" prefHeight="16.0" prefWidth="131.0" text="Forgot password ?" textFill="WHITE" />
+            <Hyperlink layoutX="283.0" layoutY="287.0" onAction="#actionFpassword" prefHeight="22.0" prefWidth="79.0" text="click here" />
+            <PasswordField fx:id="txtPassword" layoutX="188.0" layoutY="215.0" prefHeight="26.0" prefWidth="219.0" promptText="password" style="-fx-background-radius: 5;">
                <effect>
                   <SepiaTone level="0.0">
                      <input>
