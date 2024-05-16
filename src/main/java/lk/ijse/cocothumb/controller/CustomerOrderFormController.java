@@ -142,7 +142,7 @@ public class CustomerOrderFormController {
             }
         });
 
-        if (isValid()){
+
             if (txtQty.getText().equals(txtStockQty.getText())|| Integer.parseInt(txtQty.getText()) < Integer.parseInt(txtStockQty.getText())) {
 
                 for (int i = 0; i < tblOrderCart.getItems().size(); i++) {
@@ -179,7 +179,6 @@ public class CustomerOrderFormController {
                 new Alert(Alert.AlertType.ERROR, "Item is out of stock").show();
                 return;
             }
-        }
 
         txtQty.setText("");
         txtItemType.setText("");
@@ -364,8 +363,8 @@ public class CustomerOrderFormController {
 
     @FXML
     void btnPrintBill(ActionEvent event) throws SQLException, JRException {
-       /* JasperDesign jasperDesign =
-                JRXmlLoader.load("src/main/resources/Report/coco_report.jrxml");
+        JasperDesign jasperDesign =
+                JRXmlLoader.load("src/main/resources/Report/coco_bill.jrxml");
         JasperReport jasperReport =
                 JasperCompileManager.compileReport(jasperDesign);
 
@@ -380,8 +379,8 @@ public class CustomerOrderFormController {
                         data,
                         dbConnection.getInstance().getConnection());
 
-        JasperViewer.viewReport(jasperPrint,false);*/
-        JasperDesign jasperDesign =
+        JasperViewer.viewReport(jasperPrint,false);
+        /*JasperDesign jasperDesign =
                 JRXmlLoader.load("src/main/resources/Report/coco_bill.jrxml");
         JasperReport jasperReport =
                 JasperCompileManager.compileReport(jasperDesign);
@@ -402,7 +401,7 @@ public class CustomerOrderFormController {
                         data,
                         dbConnection.getInstance().getConnection());
 
-        JasperViewer.viewReport(jasperPrint,false);
+        JasperViewer.viewReport(jasperPrint,false);*/
 
     }
 
