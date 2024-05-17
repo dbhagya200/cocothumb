@@ -196,7 +196,7 @@ public class SuppPlaceOrderFormController {
     void btnPlaceOrder(ActionEvent event) {
         String order_id = txtOrderId.getText();
         String supp_id = cmbSupplierId.getValue();
-        String user_id = LoginFormController.getUserId();
+        String user_id = NewLoginController.getUserId();
         Date date = Date.valueOf(LocalDate.now());
 
         var suppOrder = new SuppOrder(order_id, supp_id, user_id, date);

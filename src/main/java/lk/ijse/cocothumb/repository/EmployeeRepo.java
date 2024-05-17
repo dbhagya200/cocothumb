@@ -16,7 +16,7 @@ public class EmployeeRepo {
 
     public static boolean save(Employee employee) throws SQLException {
 
-        String sql = "INSERT INTO employee VALUES (?, ?, ?, ?, ?,?,?)";
+        String sql = "INSERT INTO employee VALUES (?, ?, ?, ?, ?,?,?,?)";
         PreparedStatement pstm = dbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
         pstm.setObject(1, employee.getE_Id());
@@ -25,7 +25,8 @@ public class EmployeeRepo {
         pstm.setObject(4, employee.getE_Address());
         pstm.setObject(5, employee.getE_Contact());
         pstm.setObject(6, employee.getE_Salary());
-        pstm.setObject(7, AddMachineController.getMachineId());
+        pstm.setObject(7, employee.getE_email());
+        pstm.setObject(8, AddMachineController.getMachineId());
 
 
         return pstm.executeUpdate() > 0;
@@ -47,10 +48,11 @@ public class EmployeeRepo {
             String e_address = resultSet.getString(4);
             String e_contact = resultSet.getString(5);
             double e_salary = Double.parseDouble(resultSet.getString(6));
-            String machine_id = resultSet.getString(7);
+            String e_email = resultSet.getString(7);
+            String machine_id = resultSet.getString(8);
 
             System.out.println("bla bla bla bla bla bla bla ");
-            Employee employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact,e_salary,machine_id);
+            Employee employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact,e_salary,e_email,machine_id);
             employeeList.add(employee);
         }
         return employeeList;
@@ -73,16 +75,17 @@ public class EmployeeRepo {
             String e_address = resultSet.getString(4);
             String e_contact = resultSet.getString(5);
             double e_salary = Double.parseDouble(resultSet.getString(6));
-            String machine_id = resultSet.getString(7);
+            String e_email = resultSet.getString(7);
+            String machine_id = resultSet.getString(8);
 
 
-            employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact, e_salary,machine_id);
+            employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact, e_salary,e_email,machine_id);
         }
         return employee;
     }
 
     public static boolean update(Employee employee) throws SQLException {
-        String sql = "UPDATE employee SET e_name = ?,e_jobrole = ?, e_address = ?, e_contact = ?,e_salary = ?,machine_id = ? WHERE e_id = ?";
+        String sql = "UPDATE employee SET e_name = ?,e_jobrole = ?, e_address = ?, e_contact = ?,e_salary = ?,,e_email = ?,machine_id = ? WHERE e_id = ?";
 
         PreparedStatement pstm = dbConnection.getInstance().getConnection()
                 .prepareStatement(sql);
@@ -93,7 +96,8 @@ public class EmployeeRepo {
         pstm.setObject(4, employee.getE_Contact());
         pstm.setObject(5, employee.getE_salary());
         pstm.setObject(6, employee.getE_Id());
-        pstm.setObject(7, employee.getMachine_id());
+        pstm.setObject(7, employee.getE_email());
+        pstm.setObject(8, employee.getMachine_id());
 
 
         return pstm.executeUpdate() > 0;

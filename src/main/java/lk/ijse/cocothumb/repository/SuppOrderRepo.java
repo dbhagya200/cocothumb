@@ -1,6 +1,6 @@
 package lk.ijse.cocothumb.repository;
 
-import lk.ijse.cocothumb.controller.LoginFormController;
+import lk.ijse.cocothumb.controller.NewLoginController;
 import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.SuppOrder;
 
@@ -14,7 +14,7 @@ public class SuppOrderRepo {
                 .prepareStatement(sql);
         pstm.setString(1, suppOrder.getOrder_id());
         pstm.setString(2, suppOrder.getSupp_id());
-        pstm.setString(3, LoginFormController.getUserId());
+        pstm.setString(3, NewLoginController.getUserId());
         pstm.setDate(4, (Date) suppOrder.getDate());
 
         return pstm.executeUpdate() > 0;

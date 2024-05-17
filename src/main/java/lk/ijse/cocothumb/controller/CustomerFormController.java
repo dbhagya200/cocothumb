@@ -82,7 +82,7 @@ public class CustomerFormController {
         String cust_name = txtName.getText();
         String cust_address = txtAddress.getText();
         String cust_contact = txtContact.getText();
-        String user_id = LoginFormController.getUserId();
+        String user_id = NewLoginController.getUserId();
 
 
         if (cust_name.equals("")){
@@ -117,7 +117,7 @@ public class CustomerFormController {
         String cust_name = txtName.getText();
         String cust_address = txtAddress.getText();
         String cust_contact = txtContact.getText();
-        String user_id = LoginFormController.getUserId();
+        String user_id = NewLoginController.getUserId();
 
         if (isValid()){
             Customer customer = new Customer(cust_id,cust_NIC, cust_name, cust_address, cust_contact,user_id);

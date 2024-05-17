@@ -1,6 +1,6 @@
 package lk.ijse.cocothumb.repository;
 
-import lk.ijse.cocothumb.controller.LoginFormController;
+import lk.ijse.cocothumb.controller.NewLoginController;
 import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.Orders;
 
@@ -29,7 +29,7 @@ public class OrderRepo {
         pstm.setString(1, orders.getOrder_id());
         pstm.setString(2, orders.getCust_NIC());
         pstm.setString(3, orders.getCust_id());
-        pstm.setString(4, LoginFormController.getUserId());
+        pstm.setString(4, NewLoginController.getUserId());
         pstm.setDate(5, (Date) orders.getOrder_date());
 
         return pstm.executeUpdate() > 0;

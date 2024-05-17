@@ -15,6 +15,7 @@ public class EmployeeTm {
     private String e_contact;
     private String e_address;
     private double e_salary;
+    private String email;
 
 
 

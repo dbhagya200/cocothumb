@@ -12,13 +12,18 @@
 
 <AnchorPane fx:id="rootNode1" prefHeight="699.0" prefWidth="1394.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="lk.ijse.cocothumb.controller.NewDashboardController">
    <children>
-      <AnchorPane layoutX="-25.0" prefHeight="699.0" prefWidth="276.0" style="-fx-background-color: #2D3250; -fx-background-radius: 30;">
+      <AnchorPane layoutX="-25.0" prefHeight="699.0" prefWidth="276.0" style="-fx-background-color: #2D3250; -fx-background-radius: 30; -fx-border-width: 2;">
          <children>
-            <AnchorPane layoutX="61.0" layoutY="6.0" prefHeight="96.0" prefWidth="158.0" style="-fx-background-color: #76ABAE; -fx-background-radius: 20;">
+            <AnchorPane fx:id="pp" layoutX="61.0" layoutY="6.0" prefHeight="101.0" prefWidth="159.0" style="-fx-background-color: #fff; -fx-background-radius: 20;" styleClass="pp" stylesheets="@../Style/ButtonChange.css">
                <children>
-                  <ImageView fitHeight="114.0" fitWidth="126.0" layoutX="18.0" layoutY="-18.0" pickOnBounds="true">
+                  <ImageView fitHeight="119.0" fitWidth="128.0" layoutX="16.0" layoutY="-21.0" pickOnBounds="true">
                      <image>
                         <Image url="@../asserts.icon/logo-removebg-preview.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fitHeight="32.0" fitWidth="49.0" layoutX="64.0" layoutY="67.0" opacity="0.73" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@../asserts.icon/coconut.png" />
                      </image>
                   </ImageView>
                </children>
@@ -107,9 +112,14 @@
                   </ImageView>
                </children>
             </Pane>
-            <Pane layoutX="107.0" layoutY="612.0" onMouseClicked="#onlogout" prefHeight="48.0" prefWidth="49.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;" AnchorPane.leftAnchor="107.0">
+            <JFXButton fx:id="LL" layoutX="82.0" layoutY="611.0" onAction="#logout" prefHeight="38.0" prefWidth="128.0" style="-fx-background-radius: 20;" styleClass="LL" stylesheets="@../Style/ButtonChange.css" text="Log out">
+               <font>
+                  <Font name="System Bold Italic" size="13.0" />
+               </font>
+            </JFXButton>
+            <Pane layoutX="72.0" layoutY="609.0" onMouseClicked="#onlogout" prefHeight="37.0" prefWidth="37.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;">
                <children>
-                  <ImageView fitHeight="44.0" fitWidth="49.0" layoutX="3.0" layoutY="2.0" onMouseClicked="#onlogout" pickOnBounds="true" preserveRatio="true">
+                  <ImageView fitHeight="32.0" fitWidth="37.0" layoutX="3.0" layoutY="3.0" onMouseClicked="#onlogout" pickOnBounds="true" preserveRatio="true">
                      <image>
                         <Image url="@../asserts.icon/switch.png" />
                      </image>
@@ -125,7 +135,7 @@
                   <Image url="@../asserts.icon/d98f5e4432c2c9de5418ed4b668faee5.jpeg" />
                </image>
             </ImageView>
-            <JFXButton fx:id="bb" buttonType="RAISED" layoutX="844.0" layoutY="20.0" onAction="#btnHome" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #95a5a6; -fx-background-radius: 10;" styleClass="bb" stylesheets="@../Style/ButtonChange.css" text="Home">
+            <JFXButton fx:id="bb" buttonType="RAISED" layoutX="924.0" layoutY="20.0" onAction="#btnHome" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #98DED9; -fx-background-radius: 10;" styleClass="bb" stylesheets="@../Style/ButtonChange.css" text="Home">
                <cursor>
                   <Cursor fx:constant="HAND" />
                </cursor>
@@ -133,33 +143,24 @@
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
-            <JFXButton fx:id="bb" buttonType="RAISED" layoutX="927.0" layoutY="20.0" onAction="#btnexit" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #ED4C67; -fx-background-radius: 10;" styleClass="bb" stylesheets="@../Style/ButtonChange.css" text="Exit" AnchorPane.rightAnchor="162.0">
+            <JFXButton fx:id="bb" buttonType="RAISED" layoutX="1010.0" layoutY="20.0" onAction="#btnexit" prefHeight="35.0" prefWidth="70.0" style="-fx-background-color: #D49A89; -fx-background-radius: 10;" styleClass="bb" stylesheets="@../Style/ButtonChange.css" text="Exit">
                <font>
                   <Font name="System Bold" size="13.0" />
                </font>
             </JFXButton>
             <Line endX="26.666671752929688" endY="80.0" layoutX="-6.0" startX="26.666671752929688" startY="23.292892456054688" stroke="#294051" strokeWidth="2.0" />
-            <Pane layoutX="1022.0" layoutY="18.0" onMouseClicked="#actionchange" prefHeight="37.0" prefWidth="37.0" style="-fx-background-color: #ffff; -fx-background-radius: 70;">
-               <children>
-                  <ImageView fitHeight="33.0" fitWidth="27.0" layoutX="5.0" layoutY="7.0" onMouseClicked="#actionchange" pickOnBounds="true" preserveRatio="true">
-                     <image>
-                        <Image url="@../asserts.icon/icons8-change-password-58.png" />
-                     </image>
-                  </ImageView>
-               </children>
-            </Pane>
-            <ImageView fitHeight="30.0" fitWidth="28.0" layoutX="1075.0" layoutY="22.0" onMouseClicked="#onsetting" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../asserts.icon/icons8-settings-50.png" />
-               </image>
-            </ImageView>
+            <JFXButton fx:id="LL" layoutX="751.0" layoutY="19.0" onAction="#change" prefHeight="38.0" prefWidth="159.0" style="-fx-background-radius: 20; -fx-background-color: #9BE3DE;" styleClass="LL" stylesheets="@../Style/ButtonChange.css" text="Change Password">
+               <font>
+                  <Font name="System Bold Italic" size="12.0" />
+               </font>
+            </JFXButton>
          </children>
       </AnchorPane>
       <AnchorPane fx:id="customRoot" layoutX="256.0" layoutY="105.0" prefHeight="570.0" prefWidth="978.0" style="-fx-background-radius: 30 0 0 30;">
          <children>
             <AnchorPane fx:id="tabPane" layoutX="9.0" prefHeight="576.0" prefWidth="1094.0">
                <children>
-                  <ImageView fitHeight="576.0" fitWidth="1098.0" layoutX="1.0" opacity="0.83" pickOnBounds="true">
+                  <ImageView fitHeight="576.0" fitWidth="1098.0" layoutX="1.0" opacity="0.76" pickOnBounds="true">
                      <image>
                         <Image url="@../asserts.icon/earth-sunset-ocean-palm-tree-wallpaper-preview.jpg" />
                      </image>
@@ -265,7 +266,7 @@
                   </AnchorPane>
                   <Label layoutX="239.0" layoutY="17.0" prefHeight="49.0" prefWidth="656.0" text="Welcome to CoCo Thumb !!!" textFill="WHITE" underline="true">
                      <font>
-                        <Font name="System Bold Italic" size="36.0" />
+                        <Font name="System Bold Italic" size="40.0" />
                      </font>
                   </Label>
                   <Pane layoutX="375.0" layoutY="80.0" prefHeight="463.0" prefWidth="721.0" style="-fx-background-color: #0000;">

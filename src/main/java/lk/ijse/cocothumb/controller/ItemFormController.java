@@ -91,7 +91,7 @@ public class ItemFormController {
         double unit_price = Double.parseDouble(txtUnitPrice.getText());
         double unit_price_forCompany = Double.parseDouble(txtQtyOnHandCompany.getText());
         String stock_qty = txtQtyOnHand.getText();
-        String user_id = LoginFormController.getUserId();
+        String user_id = NewLoginController.getUserId();
 
         if (isValid()) {
             Item item = new Item(item_code, item_type, unit_price,unit_price_forCompany, stock_qty, user_id);
@@ -117,7 +117,7 @@ public class ItemFormController {
         double unit_price = Double.parseDouble(txtUnitPrice.getText());
         double unit_price_forCompany = Double.parseDouble(txtQtyOnHandCompany.getText());
         String stock_qty = txtQtyOnHand.getText();
-        String user_id = LoginFormController.getUserId();
+        String user_id = NewLoginController.getUserId();
     if (isValid()){
         Item item = new Item(item_code,item_type, unit_price,unit_price_forCompany, stock_qty, user_id);
 

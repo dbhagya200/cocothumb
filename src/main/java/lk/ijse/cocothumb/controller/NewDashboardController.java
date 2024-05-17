@@ -7,6 +7,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.input.MouseEvent;
 import javafx.scene.layout.AnchorPane;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 import lk.ijse.cocothumb.database.dbConnection;
@@ -89,12 +90,13 @@ public class NewDashboardController {
 
     @FXML
     void btnexit(ActionEvent event) throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(getClass().getResource("/view/login_form_old.fxml"));
+        /*AnchorPane rootNodeLogin = FXMLLoader.load(getClass().getResource("/view/new_login.fxml"));
         Stage stage = (Stage) rootNode1.getScene().getWindow();
 
-        stage.setScene(new Scene(rootNode));
+        stage.setScene(new Scene(rootNodeLogin));
         stage.setTitle("Login Form");
-        stage.centerOnScreen();
+        stage.centerOnScreen();*/
+        System.exit(0);
 
     }
 
@@ -286,12 +288,30 @@ public class NewDashboardController {
     }
     @FXML
     void onlogout(MouseEvent event) throws IOException {
-        AnchorPane rootNode = FXMLLoader.load(getClass().getResource("/view/new_login.fxml"));
+        AnchorPane rootNodeLogin = FXMLLoader.load(getClass().getResource("/view/new_login.fxml"));
         Stage stage = (Stage) rootNode1.getScene().getWindow();
 
-        stage.setScene(new Scene(rootNode));
+        stage.setScene(new Scene(rootNodeLogin));
         stage.setTitle("Login Form");
         stage.centerOnScreen();
     }
 
+    public void logout(ActionEvent actionEvent) throws IOException {
+        AnchorPane rootNodeLogin = FXMLLoader.load(getClass().getResource("/view/new_login.fxml"));
+        Stage stage = (Stage) rootNode1.getScene().getWindow();
+
+        stage.setScene(new Scene(rootNodeLogin));
+        stage.setTitle("Login Form");
+        stage.centerOnScreen();
+    }
+    @FXML
+    void change(ActionEvent event) throws IOException {
+        AnchorPane rootNodeChange = FXMLLoader.load(getClass().getResource("/view/change_password.fxml"));
+
+        Stage popupStage = new Stage();
+        popupStage.initModality(Modality.APPLICATION_MODAL);
+        popupStage.setTitle("Change Password ");
+        popupStage.setScene(new Scene(rootNodeChange));
+        popupStage.showAndWait();
+    }
 }

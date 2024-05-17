@@ -55,9 +55,9 @@
       </Label>
       <JFXButton fx:id="AddToCart" buttonType="RAISED" layoutX="659.0" layoutY="537.0" onAction="#btnAddToCart" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: #f6b93b;" text="Add to cart" textFill="WHITE" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="690.0" AnchorPane.topAnchor="525.0">
          <graphic>
-            <ImageView fitHeight="16.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="26.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../database-programming/_06-supermarket-mvc/src/main/resources/asserts/icon/cart(2).png" />
+                  <Image url="@../asserts.icon/shopping-cart.png" />
                </image>
             </ImageView>
          </graphic>
@@ -65,11 +65,11 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="921.0" layoutY="537.0" onAction="#btnPlaceOrder" prefHeight="34.0" prefWidth="120.0" style="-fx-background-color: #16a085;" text="Place Order" textFill="WHITE" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="927.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="525.0">
+      <JFXButton buttonType="RAISED" layoutX="817.0" layoutY="525.0" onAction="#btnPlaceOrder" prefHeight="34.0" prefWidth="152.0" style="-fx-background-color: #16a085;" text="Place Order" textFill="WHITE" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="819.0" AnchorPane.rightAnchor="128.0" AnchorPane.topAnchor="525.0">
          <graphic>
-            <ImageView fitHeight="28.0" fitWidth="19.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="41.0" fitWidth="29.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../database-programming/_06-supermarket-mvc/src/main/resources/asserts/icon/make_order.png" />
+                  <Image url="@../asserts.icon/online-shop.png" />
                </image>
             </ImageView>
          </graphic>
@@ -105,12 +105,7 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <JFXButton buttonType="RAISED" layoutX="819.0" layoutY="525.0" onAction="#btnPrintBill" prefHeight="34.0" prefWidth="100.0" style="-fx-background-radius: 10 10 10 10; -fx-background-color: #41B06E;" text="Bill" textFill="#ecf1f5" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="819.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="525.0">
-         <font>
-            <Font name="System Bold Italic" size="13.0" />
-         </font>
-      </JFXButton>
-      <TableView fx:id="tblSuppOrderCart" layoutX="445.0" layoutY="335.0" prefHeight="139.0" prefWidth="648.0">
+      <TableView fx:id="tblSuppOrderCart" layoutX="445.0" layoutY="325.0" prefHeight="139.0" prefWidth="648.0" AnchorPane.bottomAnchor="118.0" AnchorPane.leftAnchor="445.0" AnchorPane.rightAnchor="5.0" AnchorPane.topAnchor="325.0">
          <columns>
             <TableColumn fx:id="colItemCode" prefWidth="76.66668701171875" text="Code" />
             <TableColumn fx:id="colDescription" prefWidth="115.0" text="Description" />
@@ -121,18 +116,18 @@
             <TableColumn fx:id="colAction" minWidth="0.0" prefWidth="68.0" text="Action" />
          </columns>
       </TableView>
-      <Label layoutX="656.0" layoutY="144.0" text="Email Address:">
+      <Label layoutX="656.0" layoutY="134.0" text="Email Address:" AnchorPane.rightAnchor="325.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbMethod" layoutX="654.0" layoutY="262.0" prefHeight="35.0" prefWidth="377.0" promptText="Payment Type" />
-      <TextField fx:id="txtEmail" layoutX="652.0" layoutY="177.0" prefHeight="35.0" prefWidth="377.0" />
-      <Label layoutX="524.0" layoutY="494.0" text="Net Total:">
+      <JFXComboBox fx:id="cmbMethod" layoutX="654.0" layoutY="252.0" prefHeight="35.0" prefWidth="377.0" promptText="Payment Type" AnchorPane.rightAnchor="77.0" />
+      <TextField fx:id="txtEmail" layoutX="652.0" layoutY="167.0" prefHeight="35.0" prefWidth="377.0" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="167.0" />
+      <Label layoutX="524.0" layoutY="484.0" text="Net Total:" AnchorPane.leftAnchor="514.0">
          <font>
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <TextField fx:id="txtNetTotal" editable="false" layoutX="614.0" layoutY="484.0" prefHeight="35.0" prefWidth="82.0" style="-fx-background-radius: 10;" />
+      <TextField fx:id="txtNetTotal" editable="false" layoutX="614.0" layoutY="474.0" prefHeight="35.0" prefWidth="82.0" style="-fx-background-radius: 10;" AnchorPane.leftAnchor="604.0" />
    </children>
 </AnchorPane>

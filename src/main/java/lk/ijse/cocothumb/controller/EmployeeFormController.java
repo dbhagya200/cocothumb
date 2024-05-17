@@ -14,11 +14,13 @@ import javafx.scene.input.KeyEvent;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+import lk.ijse.cocothumb.controller.Util.EmailSender;
 import lk.ijse.cocothumb.controller.Util.Regex;
 import lk.ijse.cocothumb.controller.Util.TextField;
 import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Employee;
 import lk.ijse.cocothumb.model.Job;
+import lk.ijse.cocothumb.model.User;
 import lk.ijse.cocothumb.model.tModel.CartTm;
 import lk.ijse.cocothumb.model.tModel.CustomerTm;
 import lk.ijse.cocothumb.model.tModel.EmployeeTm;
@@ -35,7 +37,7 @@ import java.util.List;
 public class EmployeeFormController {
 
 
-
+    public JFXTextField txtEmail;
     @FXML
     private TableColumn<?, ?> colSalary;
     @FXML
@@ -95,6 +97,7 @@ public class EmployeeFormController {
         txtAddress.setText("");
         txtContact.setText("");
         txtSalary.setText("");
+        txtEmail.setText("");
         loadNextEmployeeId();
 
     }
@@ -118,19 +121,34 @@ public class EmployeeFormController {
         String e_address = txtAddress.getText();
         String e_contact = txtContact.getText();
         double e_salary = Double.parseDouble(txtSalary.getText());
+        String e_email = txtEmail.getText();
         String machine_id = AddMachineController.getMachineId();
 
          if (isValid()) {
 
 
-        Employee employee = new Employee(e_id, e_name, e_jobrole, e_address, e_contact, e_salary, machine_id);
+        Employee employee = new Employee(e_id, e_name, e_jobrole, e_address, e_contact, e_salary,e_email, machine_id);
+       // User user = new User(e_id, e_email);
         System.out.println(employee);
         try {
             boolean isSaved = EmployeeRepo.save(employee);
             if (isSaved) {
-                new Alert(Alert.AlertType.CONFIRMATION, "machine saved!").show();
+                new Alert(Alert.AlertType.CONFIRMATION, "Employee saved!").show();
                 initialize();
                 btnClear(event);
+
+                String body = "<html>"
+                        + "<body>"
+                        + "<p>Dear " + e_name + ",</p>"
+                        + "<p>We are pleased to inform you that your account for accessing our system has been successfully created. Below are your login credentials:</p>"
+                        + "<p>Username: <span style='color:blue; font-size:14px;'>" + e_email + "</span></p>"
+                        + "<p>Password: <span style='color:green; font-size:14px;'>" + e_contact + "</span></p>"
+                        + "<p>For security reasons, we recommend that you change your password upon your first login.</p>"
+                        + "<p>If you have any questions or need assistance, please don't hesitate to contact our support team at support@example.com.</p>"
+                        + "<p>Best regards,<br>CocoThumb</p>"
+                        + "</body>"
+                        + "</html>";
+                EmailSender.sendEmail(e_email, "CocoThumb System User Login Access", body);
             }
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
@@ -150,9 +168,10 @@ public class EmployeeFormController {
         String e_address = txtAddress.getText();
         String e_contact = txtContact.getText();
         double e_salary = Double.parseDouble(txtSalary.getText());
+        String e_email = txtEmail.getText();
         String machine_id = AddMachineController.getMachineId();
     if (isValid()) {
-    Employee employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact,e_salary,machine_id);
+    Employee employee = new Employee(e_id, e_name,e_jobrole, e_address, e_contact,e_salary,e_email,machine_id);
 
     boolean isUpdated = EmployeeRepo.update(employee);
     if (isUpdated) {
@@ -229,7 +248,8 @@ public class EmployeeFormController {
                     employee.getE_jobrole(),
                     employee.getE_Address(),
                     employee.getE_Contact(),
-                    employee.getE_Salary()
+                    employee.getE_Salary(),
+                    employee.getE_email()
             );
             System.out.println("employeeTm load");
 
@@ -292,6 +312,7 @@ public class EmployeeFormController {
             txtAddress.setText(employee.getE_Address());
             txtContact.setText(employee.getE_Contact());
             txtSalary.setText(String.valueOf(employee.getE_Salary()));
+            txtEmail.setText(employee.getE_email());
         }
     }
 
@@ -314,6 +335,12 @@ public class EmployeeFormController {
         else if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.contact,txtContact)) return false;
         else if (!Regex.setTextColor(TextField.address,txtAddress)) return false;
         else if (!Regex.setTextColor(TextField.Double,txtSalary)) return false;
+        else if (!Regex.setTextColor(TextField.email,txtEmail)) return false;
         return true;
+    }
+
+    public void txtEmailOnKeyReleased(KeyEvent keyEvent) {
+        Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.email.email,txtEmail);
+
     }
 }

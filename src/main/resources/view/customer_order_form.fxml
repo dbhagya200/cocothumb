@@ -58,9 +58,9 @@
       </Label>
       <JFXButton fx:id="btnAddToCart" buttonType="RAISED" layoutX="690.0" layoutY="525.0" onAction="#btnAddToCartOnAction" prefHeight="33.0" prefWidth="120.0" style="-fx-background-color: #f6b93b;" text="Add to cart" textFill="WHITE" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="690.0" AnchorPane.topAnchor="525.0">
          <graphic>
-            <ImageView fitHeight="16.0" fitWidth="20.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="28.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../../../../../database-programming/_06-supermarket-mvc/src/main/resources/asserts/icon/cart(2).png" />
+                  <Image url="@../asserts.icon/shopping-cart.png" />
                </image>
             </ImageView>
          </graphic>
@@ -68,7 +68,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </JFXButton>
-      <JFXButton buttonType="RAISED" layoutX="927.0" layoutY="523.0" onAction="#btnPlaceOrder" prefHeight="34.0" prefWidth="152.0" style="-fx-background-color: #16a085;" text="Place Order" textFill="WHITE" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="927.0" AnchorPane.rightAnchor="20.0" AnchorPane.topAnchor="525.0">
+      <JFXButton buttonType="RAISED" layoutX="819.0" layoutY="525.0" onAction="#btnPlaceOrder" prefHeight="34.0" prefWidth="152.0" style="-fx-background-color: #16a085;" text="Place Order" textFill="WHITE" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="819.0" AnchorPane.rightAnchor="128.0" AnchorPane.topAnchor="525.0">
          <cursor>
             <Cursor fx:constant="HAND" />
          </cursor>
@@ -84,7 +84,7 @@
       <TextField fx:id="txtItemType" editable="false" layoutX="240.0" layoutY="351.0" prefHeight="35.0" prefWidth="200.0" AnchorPane.leftAnchor="240.0" AnchorPane.topAnchor="351.0" />
       <TextField fx:id="txtUnitPrice" editable="false" layoutX="33.0" layoutY="450.0" prefHeight="35.0" prefWidth="140.0" AnchorPane.leftAnchor="30.0" AnchorPane.topAnchor="450.0" />
       <TextField fx:id="txtStockQty" editable="false" layoutX="177.0" layoutY="450.0" prefHeight="35.0" prefWidth="140.0" AnchorPane.topAnchor="450.0" />
-      <JFXButton buttonType="RAISED" layoutX="819.0" layoutY="526.0" onAction="#btnPrintBill" prefHeight="34.0" prefWidth="100.0" style="-fx-background-radius: 10 10 10 10; -fx-background-color: #41B06E;" text="Bill" textFill="#ecf1f5" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="819.0" AnchorPane.rightAnchor="179.0" AnchorPane.topAnchor="525.0">
+      <JFXButton buttonType="RAISED" layoutX="978.0" layoutY="525.0" onAction="#btnPrintBill" prefHeight="34.0" prefWidth="100.0" style="-fx-background-radius: 10 10 10 10; -fx-background-color: #41B06E;" text="Bill" textFill="#ecf1f5" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="978.0" AnchorPane.topAnchor="525.0">
          <font>
             <Font name="System Bold Italic" size="13.0" />
          </font>
@@ -128,12 +128,22 @@
             <Font name="System Bold Italic" size="14.0" />
          </font>
       </Label>
-      <Label layoutX="646.0" layoutY="134.0" text="Email Address:">
+      <Label layoutX="646.0" layoutY="134.0" text="Email Address:" AnchorPane.rightAnchor="325.0">
          <font>
             <Font name="System Bold Italic" size="15.0" />
          </font>
       </Label>
-      <JFXComboBox fx:id="cmbMethod" layoutX="644.0" layoutY="252.0" prefHeight="35.0" prefWidth="377.0" promptText="Payment Type" />
-      <TextField fx:id="txtEmail" layoutX="642.0" layoutY="167.0" onKeyReleased="#txtEmailOnKeyReleased" prefHeight="35.0" prefWidth="377.0" />
+      <JFXComboBox fx:id="cmbMethod" layoutX="644.0" layoutY="252.0" prefHeight="35.0" prefWidth="377.0" promptText="Payment Type" AnchorPane.rightAnchor="77.0" />
+      <TextField fx:id="txtEmail" layoutX="642.0" layoutY="167.0" onKeyReleased="#txtEmailOnKeyReleased" prefHeight="35.0" prefWidth="377.0" AnchorPane.rightAnchor="79.0" AnchorPane.topAnchor="167.0" />
+      <ImageView fitHeight="27.0" fitWidth="26.0" layoutX="827.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/online-shop.png" />
+         </image>
+      </ImageView>
+      <ImageView fitHeight="26.0" fitWidth="26.0" layoutX="985.0" layoutY="528.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../asserts.icon/bill.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>

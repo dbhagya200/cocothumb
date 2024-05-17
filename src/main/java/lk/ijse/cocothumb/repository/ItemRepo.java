@@ -1,8 +1,7 @@
 package lk.ijse.cocothumb.repository;
 
-import lk.ijse.cocothumb.controller.LoginFormController;
+import lk.ijse.cocothumb.controller.NewLoginController;
 import lk.ijse.cocothumb.database.dbConnection;
-import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Item;
 import lk.ijse.cocothumb.model.OrderDetails;
 import lk.ijse.cocothumb.model.SuppDetails;
@@ -26,7 +25,7 @@ public class ItemRepo {
         pstm.setObject(3, item.getUnit_price());
         pstm.setObject(4, item.getUnit_price_forCompany());
         pstm.setObject(5, item.getStock_qty());
-        pstm.setObject(6, LoginFormController.getUserId());
+        pstm.setObject(6, NewLoginController.getUserId());
 
         return pstm.executeUpdate() > 0;
 

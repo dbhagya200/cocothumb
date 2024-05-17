@@ -1,6 +1,5 @@
 package lk.ijse.cocothumb.repository;
 
-import lk.ijse.cocothumb.controller.LoginFormController;
 import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.Payment;
 

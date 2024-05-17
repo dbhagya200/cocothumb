@@ -1,8 +1,6 @@
 package lk.ijse.cocothumb.repository;
 
-import lk.ijse.cocothumb.controller.LoginFormController;
 import lk.ijse.cocothumb.database.dbConnection;
-import lk.ijse.cocothumb.model.Customer;
 import lk.ijse.cocothumb.model.Machine;
 
 import java.sql.Connection;

@@ -103,10 +103,15 @@
             <Font size="14.0" />
          </font>
       </JFXTextField>
-      <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="430.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="524.0" AnchorPane.leftAnchor="430.0" AnchorPane.rightAnchor="646.0" AnchorPane.topAnchor="33.0">
+      <ImageView fitHeight="25.0" fitWidth="31.0" layoutX="675.0" layoutY="33.0" pickOnBounds="true" preserveRatio="true">
          <image>
             <Image url="@../asserts.icon/icons8-search-50.png" />
          </image>
       </ImageView>
+      <JFXTextField fx:id="txtEmail" layoutX="81.0" layoutY="315.0" onKeyReleased="#txtEmailOnKeyReleased" prefHeight="26.0" prefWidth="220.0" promptText="enter employee email here">
+         <font>
+            <Font name="System Italic" size="14.0" />
+         </font>
+      </JFXTextField>
    </children>
 </AnchorPane>

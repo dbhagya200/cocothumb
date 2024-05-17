@@ -55,7 +55,7 @@ public class NewLoginController {
     }
     @FXML
     void actionFpassword(ActionEvent event) throws IOException {
-        AnchorPane rootNodeForgot = FXMLLoader.load(getClass().getResource("/view/forgort_password.fxml"));
+        AnchorPane rootNodeForgot = FXMLLoader.load(getClass().getResource("/view/forgot_password.fxml"));
 
         Stage popupStage = new Stage();
         popupStage.initModality(Modality.APPLICATION_MODAL);
@@ -78,6 +78,8 @@ public class NewLoginController {
                 System.out.println("pw = " + pw);
                 navigateToTheDashboard();
                 System.out.println("done");
+
+
             } else {
                 new Alert(Alert.AlertType.ERROR, "Password is incorrect!").show();
             }
@@ -99,15 +101,7 @@ public class NewLoginController {
     }
 
 
-    public void btnSignup(ActionEvent actionEvent) throws IOException {
-        AnchorPane rootNodeUserForm = FXMLLoader.load(getClass().getResource("/view/user_form.fxml"));
 
-        Stage popupStage = new Stage();
-        popupStage.initModality(Modality.APPLICATION_MODAL);
-        popupStage.setTitle("Popup Window");
-        popupStage.setScene(new Scene(rootNodeUserForm));
-        popupStage.showAndWait();
-    }
 }
 
 

@@ -18,6 +18,7 @@ public final class Employee extends EmployeeTm {
     private String e_Address;
     private String e_Contact;
     private double e_Salary;
+    private String e_email;
     private String machine_id;
 
 

@@ -193,7 +193,7 @@ public class CustomerOrderFormController {
         String order_id = txtOrderId.getText();
         String cust_NIC = cmbCustomerNIC.getValue();
          cust_id = txtCustId.getText();
-        String user_id = LoginFormController.getUserId();
+        String user_id = NewLoginController.getUserId();
         Date date = Date.valueOf(LocalDate.now());
 
 

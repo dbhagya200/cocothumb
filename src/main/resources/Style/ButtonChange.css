@@ -8,7 +8,7 @@
     -fx-font-weight: bold;
     -fx-font-style: italic;
     -fx-font-family: "system";
-    -fx-border-color: #1C82AD;
+    -fx-border-color: #0D1282;
     -fx-border-width: 2;
     -fx-border-radius: 20;
     -fx-border-insets: 2;
@@ -34,7 +34,7 @@
     -fx-cursor: hand;
     -fx-font-weight: bold;
     -fx-font-family: "system";
-    -fx-border-color: #1C82AD;
+    -fx-border-color: #E8AA42;
     -fx-border-width: 2;
     -fx-border-insets: 2;
     -fx-border-radius: 20;
@@ -46,4 +46,14 @@
 .bb:hover{
     -fx-background-color: #ffffff;
     -fx-text-fill: #CDE8E5;
+}
+.LL{
+    -fx-background-color:  #86C4BA;
+    -fx-border-width: 2;
+    -fx-border-color: #ffffff;
+    fx-background-radius: 25;
+    -fx-border-radius: 20;
+}
+.LL:hover{
+    -fx-background-color: #ffffff;
 }

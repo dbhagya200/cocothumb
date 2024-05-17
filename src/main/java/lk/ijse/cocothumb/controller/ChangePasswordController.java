@@ -51,8 +51,6 @@ public class ChangePasswordController {
             new Alert(Alert.AlertType.CONFIRMATION, "Password changed!").show();
 
       }
-
-
     }
 
     public void initialize() throws SQLException, IOException {
