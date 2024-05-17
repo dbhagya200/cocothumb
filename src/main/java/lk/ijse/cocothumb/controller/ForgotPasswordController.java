@@ -1,5 +1,6 @@
 package lk.ijse.cocothumb.controller;
 
+import com.jfoenix.controls.JFXButton;
 import com.jfoenix.controls.JFXPasswordField;
 import com.jfoenix.controls.JFXTextField;
 import javafx.event.ActionEvent;
@@ -30,6 +31,7 @@ public class ForgotPasswordController {
     public JFXPasswordField txtConfirm;
     public JFXTextField txtUserName;
     public JFXTextField txtUseId;
+    public JFXButton btnconfirm;
 
 
     public void btnConfirm(ActionEvent actionEvent) throws SQLException {
@@ -115,6 +117,28 @@ public class ForgotPasswordController {
 
         } catch (SQLException e) {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
+        }
+    }
+
+    public void txtOtpKeyOnAction(KeyEvent keyEvent) {
+        if (txtOTP.getText().length()>0 && txtOTP.getText().length()<=6){
+            txtOTP.setStyle("-fx-border-color: green");
+            btnconfirm.setDisable(false);
+        }
+        else {
+            txtOTP.setStyle("-fx-border-color: red");
+            btnconfirm.setDisable(true);
+        }
+    }
+
+    public void txtConfirmKeyType(KeyEvent keyEvent) {
+        if (txtConfirm.getText().equals(txtNewPassword.getText())){
+            txtConfirm.setStyle("-fx-border-color: green");
+            btnconfirm.setDisable(false);
+        }
+        else {
+            btnconfirm.setDisable(true);
+            txtConfirm.setStyle("-fx-border-color: red");
         }
     }
 }
