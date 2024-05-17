@@ -232,6 +232,7 @@ public class CustomerOrderFormController {
             new Alert(Alert.AlertType.ERROR, e.getMessage()).show();
         }
 
+
     }
 
     private void calculateNetTotal() {
@@ -380,6 +381,20 @@ public class CustomerOrderFormController {
                         dbConnection.getInstance().getConnection());
 
         JasperViewer.viewReport(jasperPrint,false);
+        txtCustName.setText("");
+        txtCustId.setText("");
+        txtEmail.setText("");
+        txtNetTotal.setText("");
+        txtItemType.setText("");
+        txtQty.setText("");
+        txtUnitPrice.setText("");
+        cmbItemCode.setValue("");
+        cmbCustomerNIC.setValue("");
+        cmbMethod.setValue("");
+        txtStockQty.setText("");
+        tblOrderCart.getItems().clear();
+        loadNextOrderId();
+
         /*JasperDesign jasperDesign =
                 JRXmlLoader.load("src/main/resources/Report/coco_bill.jrxml");
         JasperReport jasperReport =
