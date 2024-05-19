@@ -4,6 +4,7 @@ import lk.ijse.cocothumb.controller.AddMachineController;
 import lk.ijse.cocothumb.controller.UserFormController;
 import lk.ijse.cocothumb.database.dbConnection;
 import lk.ijse.cocothumb.model.Employee;
+import lk.ijse.cocothumb.model.Machine;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -125,4 +126,6 @@ public class EmployeeRepo {
 
         return pstm.executeUpdate() > 0;
     }
+
+
 }

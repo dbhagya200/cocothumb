@@ -156,6 +156,8 @@ public class SuppPlaceOrderFormController {
                 tblSuppOrderCart.refresh();
                 calculateNetTotal();
                 txtQty.setText("");
+                txtItemType.setText("");
+                cmbItemCode.setValue("");
                 return;
             }
         }

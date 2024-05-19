@@ -40,6 +40,7 @@ public class CustomerOrderFormController {
     public TableColumn colMethod;
     public JFXComboBox cmbMethod;
     public TextField txtEmail;
+    public JFXButton bttnPlaseOrder;
     @FXML
     private  TextField txtCustId;
     public Label lblNetTotal;
@@ -170,10 +171,13 @@ public class CustomerOrderFormController {
                         return;
                     }
                 }
-                CartTm cartTm = new CartTm(item_code,  qty,description, unitPrice, amount,pay_method,email, btnRemove);
 
-                cartList.add(cartTm);
-                tblOrderCart.setItems(cartList);
+                    CartTm cartTm = new CartTm(item_code,  qty,description, unitPrice, amount,pay_method,email, btnRemove);
+
+                    cartList.add(cartTm);
+                    tblOrderCart.setItems(cartList);
+
+
 
             }else {
                 new Alert(Alert.AlertType.ERROR, "Item is out of stock").show();
@@ -431,5 +435,27 @@ public class CustomerOrderFormController {
         if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.INT, (JFXTextField) txtQty)) return false;
         else if (!Regex.setTextColor(lk.ijse.cocothumb.controller.Util.TextField.email, (JFXTextField) txtEmail)) return false;
         return true;
+    }
+    public void txtQtyOnKeyType(KeyEvent keyEvent) {
+        /*if (txtQty.getText().equals(Integer.parseInt(txtStockQty.getText()))) {
+            txtQty.setStyle("-fx-border-color: green");
+            btnAddToCart.setDisable(false);
+        }
+        else {
+            btnAddToCart.setDisable(true);
+            txtQty.setStyle("-fx-border-color: red");
+        }*/
+    }
+    public void txtEmailOnKeyType(KeyEvent keyEvent) {
+       /* if (isValid()) {
+            txtEmail.setStyle("-fx-border-color: green");
+            btnAddToCart.setDisable(false);
+            bttnPlaseOrder.setDisable(false);
+        }
+        else {
+            btnAddToCart.setDisable(true);
+            bttnPlaseOrder.setDisable(true);
+            txtEmail.setStyle("-fx-border-color: red");
+        }*/
     }
 }

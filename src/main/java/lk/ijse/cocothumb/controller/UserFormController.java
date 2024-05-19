@@ -19,7 +19,7 @@ import java.sql.SQLException;
 public class UserFormController {
 
     @FXML
-    private  JFXComboBox<JobRole> cmbJobrole;
+    static  JFXComboBox<JobRole> cmbJobrole;
 
     @FXML
     private AnchorPane rootNodeUserForm;
@@ -28,19 +28,19 @@ public class UserFormController {
     private TextField txtConfirm;
 
     @FXML
-    private TextField txtEmail;
+    static TextField txtEmail;
 
     @FXML
-    private TextField txtEmpId;
+    static TextField txtEmpId;
 
     @FXML
-    private TextField txtPassword;
+    static TextField txtPassword;
 
     @FXML
-    private TextField txtUserId;
+    static TextField txtUserId;
 
     @FXML
-    private TextField txtUserName;
+    static TextField txtUserName;
 
 
 
@@ -111,12 +111,12 @@ public class UserFormController {
 
     public void initialize() {
        //loadNextEmployeeId();
-       loadNextUserId();
+      // loadNextUserId();
        comboJob();
 
     }
 
-    private void loadNextUserId() {
+   /* private void loadNextUserId() {
         try {
             String currentId = UserRepo.currentUserId();
             String nextUId = nextUId(currentId);
@@ -134,7 +134,7 @@ public class UserFormController {
             return "u" + String.format("%04d", ++id);
         }
         return "u0001";
-    }
+    }*/
 
 
     public void txtEmailOnKeyReleased(KeyEvent keyEvent) {

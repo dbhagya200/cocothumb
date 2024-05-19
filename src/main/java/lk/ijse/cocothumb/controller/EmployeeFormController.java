@@ -27,12 +27,15 @@ import lk.ijse.cocothumb.model.tModel.EmployeeTm;
 import lk.ijse.cocothumb.repository.CustomerRepo;
 import lk.ijse.cocothumb.repository.EmployeeRepo;
 import lk.ijse.cocothumb.repository.JobRepo;
+import lk.ijse.cocothumb.repository.UserRepo;
 
 import java.io.IOException;
 import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
+
+import static lk.ijse.cocothumb.controller.UserFormController.*;
 
 public class EmployeeFormController {
 
@@ -79,7 +82,11 @@ public class EmployeeFormController {
     private JFXComboBox<JobRole> cmbjobrole;
     private List<Employee> employeeList = new ArrayList<>();
     private static String e_id;
+    private static String e_contact;
 
+    public static String getE_contact() {
+        return e_contact;
+    }
     public static String getE_id() {
         return e_id;
     }
@@ -124,6 +131,17 @@ public class EmployeeFormController {
         String e_email = txtEmail.getText();
         String machine_id = AddMachineController.getMachineId();
 
+if (e_jobrole.equals("Manager")||e_jobrole.equals("Assistant")){
+    loadNextUserId();
+    txtUserId.setText(String.valueOf(UserFormController.txtUserId));
+    txtUserName.setText(EmployeeFormController.getE_id());
+    txtPassword.setText(EmployeeFormController.getE_contact());
+    UserFormController.txtEmail.setText(e_email);
+    UserFormController.cmbJobrole.setValue(JobRole.valueOf(e_jobrole));
+    UserFormController.txtEmpId.setText(e_id);
+
+
+}
          if (isValid()) {
 
 
@@ -158,6 +176,25 @@ public class EmployeeFormController {
             initialize();
             btnClear(event);
 
+    }
+    private void loadNextUserId() {
+        try {
+            String currentId = UserRepo.currentUserId();
+            String nextUId = nextUId(currentId);
+
+            UserFormController.txtUserId.setText(nextUId);
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    private String nextUId(String currentId) {
+        if (currentId != null) {
+            String[] split = currentId.split("u");
+            int id = Integer.parseInt(split[1],10);
+            return "u" + String.format("%04d", ++id);
+        }
+        return "u0001";
     }
 
     @FXML
@@ -203,6 +240,7 @@ public class EmployeeFormController {
         loadEmployeeTable();
         loadNextEmployeeId();
         comboJob();
+
 
     }
 
