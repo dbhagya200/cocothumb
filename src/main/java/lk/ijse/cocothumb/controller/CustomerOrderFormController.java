@@ -385,6 +385,9 @@ public class CustomerOrderFormController {
                         dbConnection.getInstance().getConnection());
 
         JasperViewer.viewReport(jasperPrint,false);
+
+
+
         txtCustName.setText("");
         txtCustId.setText("");
         txtEmail.setText("");

@@ -1,5 +1,6 @@
 package lk.ijse.cocothumb.controller;
 
+import com.jfoenix.controls.JFXButton;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -23,6 +24,10 @@ import javafx.animation.Timeline;
 public class NewDashboardController {
 
     public AnchorPane customRoot;
+    public AnchorPane pp;
+    public JFXButton Button;
+    public JFXButton LL;
+    public JFXButton bb;
     @FXML
     private AnchorPane tabPane1;
     @FXML
@@ -52,6 +57,7 @@ public class NewDashboardController {
 
     @FXML
     private Label lblOrdersCount;
+
 
     @FXML
     void btncustomer(ActionEvent event) throws IOException {
@@ -241,7 +247,7 @@ public class NewDashboardController {
     }
 
     public void btnHome(ActionEvent actionEvent) throws IOException {
-        AnchorPane rootNode1 = FXMLLoader.load(getClass().getResource("/view/dashboard_form.fxml"));
+        AnchorPane rootNode1 = FXMLLoader.load(getClass().getResource("/view/new_dashboard.fxml"));
         Stage stage = (Stage) customRoot.getScene().getWindow();
         customRoot.getChildren().clear();
         customRoot.getChildren().add(tabPane);
