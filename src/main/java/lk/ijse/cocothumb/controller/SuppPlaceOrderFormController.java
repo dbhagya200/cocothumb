@@ -322,11 +322,11 @@ public class SuppPlaceOrderFormController {
 
     private String nextId(String currentId) {
         if (currentId != null) {
-            String[] split = currentId.split("#");
+            String[] split = currentId.split("s");
             int id = Integer.parseInt(split[1],10);
-            return "#" + String.format("%04d", ++id);
+            return "s" + String.format("%04d", ++id);
         }
-        return "#0001";
+        return "s0001";
     }
 
     private void setCellValueFactory() {
